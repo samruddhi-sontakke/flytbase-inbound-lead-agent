@@ -1,5 +1,7 @@
 # FlytBase Inbound Lead Desk: an AI agent for inbound BDR work
 
+**Samruddhi Sontakke** · [samruddhisontakke.com](https://samruddhisontakke.com/) · [sontakkesamruddhijain89@gmail.com](mailto:sontakkesamruddhijain89@gmail.com) · +91 72196 00321 · [LinkedIn](https://www.linkedin.com/in/samruddhi-sontakke-11601621a) · Pune, India
+
 > **Start here**
 > - **[Walkthrough deck (PDF)](docs/Inbound-Lead-Desk-Walkthrough.pdf)**: the whole system in 15 pages, with real screenshots of the live run
 > - **Walkthrough video:** _[add your Loom / YouTube unlisted link here]_ · script synced to the PDF page by page: [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)
