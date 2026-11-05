@@ -1,0 +1,30 @@
+{
+  "motion": "AE-led with partner (co-sell)",
+  "justification": {
+    "region": "The lead is based in Chile, requiring local expertise for the Atacama Desert's harsh environment and logistics.",
+    "deal_complexity": "High; involves scaling existing autonomous operations across three large-scale sites with complex procurement and integration requirements.",
+    "partner_availability": "Strong; Dronestore Chile is a Gold System Integrator already present in the region.",
+    "existing_account_relationship": "SQM is an existing customer who successfully implemented their current autonomous workflow via Adentu and FlytBase. Engaging the existing ecosystem is critical for continuity."
+  },
+  "recommended_partners": [
+    {
+      "name": "Dronestore Chile",
+      "type": "System Integrator",
+      "country": "Chile",
+      "evidence": "Listed as a Gold System Integrator in the FlytBase partner directory for Chile.",
+      "role_in_deal": "Primary local partner for hardware deployment, site maintenance, and integration support, leveraging their existing presence in the Chilean market.",
+      "verified_in_sources": true
+    }
+  ],
+  "partner_type_needed": "System Integrator with expertise in DJI Dock hardware and remote site operations in the Atacama region.",
+  "roles": {
+    "flytbase_ae": "Lead the commercial conversation, align on Q3 budget timelines, and leverage the '4x iodine yield' case study to justify expansion.",
+    "partner": "Provide on-the-ground technical support, site-specific hardware maintenance for the Atacama sites, and facilitate local procurement.",
+    "bdr": "Qualify the specific decision-makers for the Q3 budget and schedule a discovery call involving the AE and the partner."
+  },
+  "risks": [
+    "The Q3 budget timeline may be too far out if immediate operational needs are critical.",
+    "Potential complexity in procurement processes for large-scale mining operations in Chile.",
+    "Lack of clarity on whether the contact has full budgetary authority."
+  ]
+}

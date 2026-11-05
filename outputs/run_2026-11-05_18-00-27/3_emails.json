@@ -1,0 +1,83 @@
+{
+  "sequence_strategy": "Leverage existing internal success to build immediate credibility, then transition to specific operational scaling questions to align with the Q3 budget timeline. The sequence balances technical validation with professional, respectful persistence.",
+  "emails": [
+    {
+      "step": 1,
+      "send_when": "Within 1 hour",
+      "goal": "Acknowledge existing relationship and confirm current scope.",
+      "meddpicc_gaps_targeted": [
+        "Metrics",
+        "Champion"
+      ],
+      "research_used": [
+        "S40",
+        "S14"
+      ],
+      "subject": "Autonomous inspection for Atacama sites / SQM-FlytBase partnership",
+      "body": "Hi Rodrigo, thank you for reaching out. Given your role in the Northern Operations Division, I wanted to connect regarding your interest in expanding our drone-based inspection capabilities.\n\nWe are proud of the work already achieved at your 678 km² site through our partnership with Adentu, which resulted in a 4x iodine yield improvement and 95% mission reliability. Since Anglo American also utilizes our autonomous platform for their mining operations in Peru, I am curious how you are looking to bridge the current success at your existing sites with the requirements for these specific Atacama locations.\n\nAre you currently looking to replicate that same Adentu/FlytBase deployment model, or are there new technical requirements for these sites? I’d like to ensure our team is aligned for your Q3 budget discussion. Do you have 15 minutes this Thursday at 10:00 AM or Friday at 2:00 PM CLT? (Podemos continuar en español si prefiere.)\n\nBest,\nSamruddhi Sontakke, Business Development, FlytBase",
+      "why_this_email_now": "Immediate recognition of the existing SQM relationship prevents redundant sales pitches and establishes trust.",
+      "success_signal": "Confirmation of the specific site scope or a meeting booking."
+    },
+    {
+      "step": 2,
+      "send_when": "3 days later",
+      "goal": "Identify the Economic Buyer and procurement process.",
+      "meddpicc_gaps_targeted": [
+        "Economic Buyer",
+        "Decision Process"
+      ],
+      "research_used": [
+        "S10",
+        "S14"
+      ],
+      "subject": "Salar Futuro and procurement alignment",
+      "body": "Hi Rodrigo, following up on my previous note. With the Salar Futuro project representing a major $3 billion investment over the next seven years, I imagine the procurement process for operational technology is quite rigorous.\n\nTo help me prepare the right documentation for your Q3 budget review, who should I be coordinating with regarding the internal approval process for this expansion? I want to ensure we have the necessary technical and legal alignment early to avoid delays.\n\nBest,\nSamruddhi Sontakke, Business Development, FlytBase",
+      "why_this_email_now": "Connects the request to the high-level 'Salar Futuro' project to demonstrate understanding of the company's long-term capital strategy.",
+      "success_signal": "Introduction to a procurement lead or clarification of the approval hierarchy."
+    },
+    {
+      "step": 3,
+      "send_when": "6 days later",
+      "goal": "Address safety and sustainability metrics.",
+      "meddpicc_gaps_targeted": [
+        "Metrics",
+        "Competition"
+      ],
+      "research_used": [
+        "S33",
+        "S36"
+      ],
+      "subject": "Safety and sustainability goals at Atacama",
+      "body": "Hi Rodrigo, as you work toward SQM’s goal of zero workplace accidents and the 2030 brine extraction reduction targets, we have found that autonomous drones provide a distinct advantage in keeping teams out of hazardous zones while maintaining 24/7 visibility.\n\nAre you currently comparing our autonomous solution against manual inspection alternatives, or is the focus primarily on scaling the existing automated workflow? I’d be happy to share a brief comparison of safety incident reduction data we’ve seen in similar lithium environments.\n\nBest,\nSamruddhi Sontakke, Business Development, FlytBase",
+      "why_this_email_now": "Targets the 'Safety' and 'Sustainability' pillars, which are top-of-mind for SQM's leadership.",
+      "success_signal": "Insight into the competitive landscape or interest in safety data."
+    },
+    {
+      "step": 4,
+      "send_when": "12 days later",
+      "goal": "Final check-in before Q3.",
+      "meddpicc_gaps_targeted": [
+        "Paper Process"
+      ],
+      "research_used": [
+        "S14"
+      ],
+      "subject": "Supporting your Q3 planning",
+      "body": "Hi Rodrigo, I know Q3 is approaching quickly. I’m checking in to see if there is any additional information, such as technical specifications or case study data, that would be helpful for your internal business case.\n\nIf you are still in the planning phase, I am happy to pause until you are closer to the budget conversation. Please let me know how I can best support you.\n\nBest,\nSamruddhi Sontakke, Business Development, FlytBase",
+      "why_this_email_now": "Low-pressure exit strategy that maintains professionalism while keeping the door open.",
+      "success_signal": "A request for specific resources or a timeline update."
+    }
+  ],
+  "branches": [
+    {
+      "if_reply": "Not until Q3 / Budget",
+      "next_action": "Nurture with relevant content and check back in mid-Q3.",
+      "draft_reply": "Understood, Rodrigo. I will step back to allow you to focus on your internal Q3 planning. I’ll send over a brief summary of our latest safety integration features for your review in the meantime. I’ll reach out again in a few weeks to see if you are ready to discuss the technical requirements."
+    },
+    {
+      "if_reply": "Referral to someone else",
+      "next_action": "Pivot to the new stakeholder while keeping Rodrigo in the loop.",
+      "draft_reply": "Thank you for the introduction, Rodrigo. I will reach out to [Name] to coordinate the operational requirements for the Atacama sites. I’ll keep you copied on our progress to ensure we remain aligned with your division's goals."
+    }
+  ]
+}

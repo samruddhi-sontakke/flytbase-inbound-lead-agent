@@ -1,0 +1,82 @@
+{
+  "sequence_strategy": "A high-authority, consultative approach that acknowledges SQM's existing technical maturity. We leverage the internal success of the Adentu/FlytBase partnership to build immediate credibility, address the Q3 budget timeline, and transition to a co-sell motion with Dronestore Chile.",
+  "emails": [
+    {
+      "step": 1,
+      "send_when": "Within 1 hour of inbound",
+      "goal": "Acknowledge existing relationship and qualify decision-making authority.",
+      "meddpicc_gaps_targeted": [
+        "Economic Buyer",
+        "Decision Criteria"
+      ],
+      "research_used": [
+        "S42",
+        "S21"
+      ],
+      "subject": "Autonomous inspection for your Atacama sites",
+      "body": "Hi Rodrigo,\n\nThank you for reaching out. Given your role in the Northern Operations Division, I am familiar with the work your team has already done with Adentu and FlytBase to automate inspection zones at your mines, achieving over 95% mission reliability. We also recently supported Anglo American with their autonomous drone deployment at Quellaveco, which helped them significantly improve site safety.\n\nSince you are looking to expand this coverage across your three Atacama sites, I would like to ensure we align the right technical requirements for your 24/7 operations. \n\nWho else needs to be involved in the technical sign-off for this expansion, and what are the top three operational requirements for these specific sites? \n\nAre you available for a 15-minute call on Tuesday at 10:00 AM or Wednesday at 2:00 PM CLST to discuss this? I am happy to continue in Spanish if that is easier for you.\n\nBest regards,\n\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "The lead is an existing customer; acknowledging this immediately establishes expertise and prevents the BDR from looking like an outsider.",
+      "success_signal": "Confirmed meeting or introduction to the internal project lead."
+    },
+    {
+      "step": 2,
+      "send_when": "3 days after no reply",
+      "goal": "Provide value through operational outcomes and address budget timing.",
+      "meddpicc_gaps_targeted": [
+        "Metrics",
+        "Champion"
+      ],
+      "research_used": [
+        "S42",
+        "S6"
+      ],
+      "subject": "Scaling autonomous workflows at SQM",
+      "body": "Hi Rodrigo,\n\nI know your Q3 budget planning is currently underway. Given that your team has already seen inspection times drop from weeks to hours at your existing sites, I wanted to share how we are currently helping other mining operators scale these workflows to support the production pressures SQM is facing in 2026.\n\nTo help you build the business case for the Q3 cycle, what is the current annual spend on the contracted crews you are looking to replace with this autonomous solution?\n\nBest regards,\n\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "Focuses on the 'Metrics' gap by tying the request to the Q3 budget cycle mentioned in the lead's email.",
+      "success_signal": "Data regarding cost savings or budget approval process."
+    },
+    {
+      "step": 3,
+      "send_when": "5 days after no reply",
+      "goal": "Address technical/procurement hurdles and introduce the local partner.",
+      "meddpicc_gaps_targeted": [
+        "Paper Process",
+        "Decision Process"
+      ],
+      "research_used": [
+        "S21"
+      ],
+      "subject": "Deployment support for Atacama",
+      "body": "Hi Rodrigo,\n\nAs you look at expanding autonomous operations, we often work alongside Dronestore Chile to manage the on-the-ground hardware deployment and BVLOS compliance requirements for our mining partners in the region.\n\nAre there specific security or legal compliance hurdles unique to your current sites that we should account for in our proposal? I want to ensure we have the right stakeholders from our local integration team involved early.\n\nBest regards,\n\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "Introduces the GTM partner (Dronestore) to add tangible local support value and uncover 'Paper Process' gaps.",
+      "success_signal": "Request for a technical scoping call with the partner."
+    },
+    {
+      "step": 4,
+      "send_when": "7 days after no reply",
+      "goal": "Final check-in/breakup.",
+      "meddpicc_gaps_targeted": [
+        "Competition"
+      ],
+      "research_used": [
+        "S42"
+      ],
+      "subject": "Following up / SQM autonomous inspections",
+      "body": "Hi Rodrigo,\n\nI am checking in one last time regarding the expansion of your autonomous inspection zones. I understand you are focused on the Q3 budget cycle and may be evaluating other priorities.\n\nAre you currently looking at other drone providers for these three sites, or is the plan to scale the existing FlytBase/Adentu framework? If now is not the right time, I will step back and wait for your signal.\n\nBest regards,\n\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "Closes the loop and attempts to identify if there is a competitive threat or if the project has been deprioritized.",
+      "success_signal": "Clear 'yes' or 'no' on project status."
+    }
+  ],
+  "branches": [
+    {
+      "if_reply": "Not until Q3 / budget",
+      "next_action": "Nurture with relevant content and schedule a touchpoint for late Q2.",
+      "draft_reply": "Understood, Rodrigo. I will respect your timeline. In the meantime, I will send over a brief summary of how we helped optimize the inspection frequency at your other sites, which may be useful for your Q3 internal budget presentation. Would it be helpful if I checked in again in mid-June?"
+    },
+    {
+      "if_reply": "Referral to another person",
+      "next_action": "Pivot to the new stakeholder while keeping Rodrigo in the loop.",
+      "draft_reply": "Thank you for the introduction, Rodrigo. I will reach out to [Name] to coordinate the technical requirements. I’ll keep you copied on our progress as we align the solution with your Q3 objectives."
+    }
+  ]
+}

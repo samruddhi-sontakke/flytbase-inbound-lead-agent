@@ -1,0 +1,122 @@
+{
+  "elements": [
+    {
+      "key": "M",
+      "name": "Metrics",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Quantifiable impact of current costs or safety incidents.",
+      "discovery_question": "What is the current annual spend on contracted crews for these three sites, and how many safety-related incidents have occurred in the last year?"
+    },
+    {
+      "key": "E",
+      "name": "Economic Buyer",
+      "status": "partial",
+      "evidence": "Rodrigo Castillo, Head of Operations, Northern Operations Division.",
+      "missing": "Confirmation if he has final sign-off authority or if a CFO/VP level approval is required.",
+      "discovery_question": "Who else, besides yourself, needs to approve the budget for this initiative to move forward?"
+    },
+    {
+      "key": "D1",
+      "name": "Decision Criteria",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Specific technical or operational requirements for the drone solution.",
+      "discovery_question": "What are the top three technical or operational requirements the solution must meet to be considered successful for your Atacama sites?"
+    },
+    {
+      "key": "D2",
+      "name": "Decision Process",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "The internal steps to move from evaluation to procurement.",
+      "discovery_question": "Once you identify the right solution, what does the internal approval process look like to get a contract signed?"
+    },
+    {
+      "key": "P",
+      "name": "Paper Process",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Legal, procurement, and security review requirements.",
+      "discovery_question": "Are there specific security or legal compliance hurdles we should be aware of for deploying autonomous technology at your sites?"
+    },
+    {
+      "key": "I",
+      "name": "Identify Pain",
+      "status": "known",
+      "evidence": "Expensive contracted crews and hazardous operations.",
+      "missing": "The specific operational bottlenecks caused by these pains.",
+      "discovery_question": "How do these hazardous conditions and crew costs currently impact your production uptime or operational efficiency?"
+    },
+    {
+      "key": "C1",
+      "name": "Champion",
+      "status": "partial",
+      "evidence": "Rodrigo Castillo initiated the inquiry.",
+      "missing": "Evidence of his willingness to sell internally on our behalf.",
+      "discovery_question": "How are you planning to socialize this initiative with your leadership team to ensure it gets prioritized in the Q3 budget?"
+    },
+    {
+      "key": "C2",
+      "name": "Competition",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Other vendors or internal projects being considered.",
+      "discovery_question": "Are you currently evaluating other drone providers or considering keeping the inspection process manual?"
+    }
+  ],
+  "fit_ratings": {
+    "industry_fit": {
+      "rating": 5,
+      "reason": "SQM is a major player in lithium mining, a core target industry."
+    },
+    "site_scale": {
+      "rating": 4,
+      "reason": "Three large-scale lithium extraction sites in the Atacama Desert represent a significant deployment opportunity."
+    },
+    "continuous_operations": {
+      "rating": 5,
+      "reason": "The sites operate 24/7, making autonomous inspection a high-value use case."
+    },
+    "pain_severity": {
+      "rating": 5,
+      "reason": "High costs and hazardous operations are primary drivers for autonomous adoption."
+    },
+    "buyer_authority": {
+      "rating": 4,
+      "reason": "Head of Operations is a strong stakeholder for operational technology."
+    },
+    "warm_introduction": {
+      "rating": 5,
+      "reason": "Referral from Anglo American provides immediate credibility."
+    },
+    "timing_and_budget": {
+      "rating": 4,
+      "reason": "Clear alignment with Q3 budget planning."
+    }
+  },
+  "risks": [
+    "Potential for long procurement cycles typical in large-scale mining operations.",
+    "Regulatory or safety compliance hurdles for autonomous flight in remote desert environments.",
+    "Dependency on Q3 budget approval which may be subject to broader corporate shifts."
+  ],
+  "summary": "This is a high-potential lead with strong industry alignment and clear pain points regarding safety and operational costs. The referral from Anglo American and the Q3 budget timeline provide a solid foundation for a structured sales process, provided we can quickly identify the full decision-making unit.",
+  "framework": "MEDDPICC",
+  "framework_rationale": "MEDDPICC fits enterprise industrial deals like this one: a multi-site, multi-stakeholder purchase where safety, operations, IT/OT and procurement all have a say, and where a partner (integrator/reseller) often shapes the deal. BANT is too shallow for that buying committee, and SPICED is built for recurring SaaS expansion. MEDDPICC also makes the gaps explicit (Economic Buyer, Decision Process, Paper Process), which tells the BDR exactly what the first emails must uncover.",
+  "fit_weights": {
+    "industry_fit": 20,
+    "site_scale": 15,
+    "continuous_operations": 10,
+    "pain_severity": 15,
+    "buyer_authority": 15,
+    "warm_introduction": 10,
+    "timing_and_budget": 15
+  },
+  "scores": {
+    "icp_fit_score": 91,
+    "meddpicc_completeness": 25,
+    "priority_score": 71,
+    "priority_tier": "P1 - Hot: respond same business day, involve AE early",
+    "formula": "priority = 0.7 x ICP fit + 0.3 x MEDDPICC completeness; tier set by ICP fit (>=75 P1, >=55 P2)"
+  }
+}

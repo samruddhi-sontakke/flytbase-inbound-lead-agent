@@ -1,0 +1,30 @@
+{
+  "motion": "AE-led with partner (co-sell)",
+  "justification": {
+    "region": "The lead is based in Chile, requiring local expertise for remote Atacama Desert operations.",
+    "deal_complexity": "High; involves scaling autonomous drone infrastructure across three large-scale, 24/7 mining sites with complex procurement and safety requirements.",
+    "partner_availability": "Dronestore Chile is a Gold System Integrator and partner already established in the region.",
+    "existing_account_relationship": "Adentu and FlytBase have a proven track record with SQM; Dronestore Chile is the primary local partner for FlytBase in the country."
+  },
+  "recommended_partners": [
+    {
+      "name": "Dronestore Chile",
+      "type": "System Integrator",
+      "country": "Chile",
+      "evidence": "Listed as a Gold System Integrator and Solution Provider in Chile in the FlytBase partner directory.",
+      "role_in_deal": "Primary local deployment partner for hardware installation, site-specific integration, and ongoing maintenance at the Atacama sites.",
+      "verified_in_sources": true
+    }
+  ],
+  "partner_type_needed": "System Integrator with expertise in BVLOS and industrial mining automation.",
+  "roles": {
+    "flytbase_ae": "Lead the commercial relationship, align with SQM's Q3 budget cycle, and leverage existing case study metrics to secure executive buy-in.",
+    "partner": "Provide on-the-ground technical support, hardware deployment (DJI Docks), and local regulatory/BVLOS compliance management.",
+    "bdr": "Qualify the specific decision-making unit for the new expansion and schedule the initial discovery call with the AE and Dronestore Chile."
+  },
+  "risks": [
+    "Procurement delays typical of large-scale mining operations.",
+    "Regulatory hurdles for autonomous flight in remote desert environments.",
+    "Dependency on Q3 budget approval which may be subject to broader corporate shifts."
+  ]
+}

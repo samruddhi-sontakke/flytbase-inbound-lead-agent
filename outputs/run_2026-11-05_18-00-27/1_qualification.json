@@ -1,0 +1,122 @@
+{
+  "elements": [
+    {
+      "key": "M",
+      "name": "Metrics",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Quantifiable impact of current inspection costs or safety incident rates.",
+      "discovery_question": "What is the current annual spend on contracted inspection crews, and how many safety incidents have occurred at the Atacama sites in the last 12 months?"
+    },
+    {
+      "key": "E",
+      "name": "Economic Buyer",
+      "status": "partial",
+      "evidence": "Rodrigo Castillo, Head of Operations, Northern Operations Division.",
+      "missing": "Confirmation if Rodrigo has final sign-off authority or if a VP/C-level executive must approve the budget.",
+      "discovery_question": "Who else, besides yourself, is involved in the final approval of the budget for this operational improvement?"
+    },
+    {
+      "key": "D1",
+      "name": "Decision Criteria",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "The specific technical or business requirements SQM uses to evaluate drone solutions.",
+      "discovery_question": "What are the top three technical or operational requirements that a drone-based inspection solution must meet to be considered for your Atacama sites?"
+    },
+    {
+      "key": "D2",
+      "name": "Decision Process",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "The internal steps and stakeholders required to move from evaluation to procurement.",
+      "discovery_question": "Could you walk me through the internal process SQM follows to move from a pilot project to a full-scale procurement decision?"
+    },
+    {
+      "key": "P",
+      "name": "Paper Process",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Legal, procurement, and security review timelines.",
+      "discovery_question": "Once a decision is made, what does the typical contract review and procurement process look like at SQM?"
+    },
+    {
+      "key": "I",
+      "name": "Identify Pain",
+      "status": "known",
+      "evidence": "Expensive contracted crews and hazardous work environment.",
+      "missing": "None.",
+      "discovery_question": "How do these hazardous conditions currently impact your operational uptime or insurance premiums?"
+    },
+    {
+      "key": "C1",
+      "name": "Champion",
+      "status": "partial",
+      "evidence": "Rodrigo Castillo reached out directly regarding a specific use case.",
+      "missing": "Evidence of his willingness to sell internally on our behalf.",
+      "discovery_question": "Are you planning to present this initiative to your leadership team, and how can I best support you in that internal business case?"
+    },
+    {
+      "key": "C2",
+      "name": "Competition",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Whether they are evaluating other drone providers or internal manual processes.",
+      "discovery_question": "Are you currently evaluating other drone service providers, or are you comparing this against keeping the status quo with contracted crews?"
+    }
+  ],
+  "fit_ratings": {
+    "industry_fit": {
+      "rating": 5,
+      "reason": "SQM is a major player in lithium mining, a core target industry for autonomous inspection."
+    },
+    "site_scale": {
+      "rating": 5,
+      "reason": "Three large-scale lithium extraction sites in the Atacama Desert provide significant deployment potential."
+    },
+    "continuous_operations": {
+      "rating": 5,
+      "reason": "The sites operate 24/7, making autonomous, recurring inspection highly valuable."
+    },
+    "pain_severity": {
+      "rating": 4,
+      "reason": "High costs and hazardous environments are primary drivers for adopting autonomous solutions."
+    },
+    "buyer_authority": {
+      "rating": 4,
+      "reason": "Head of Operations is a strong stakeholder for operational efficiency projects."
+    },
+    "warm_introduction": {
+      "rating": 5,
+      "reason": "Referral from Anglo American provides immediate credibility."
+    },
+    "timing_and_budget": {
+      "rating": 3,
+      "reason": "Budget conversation is set for Q3, indicating a clear but future-dated timeline."
+    }
+  },
+  "risks": [
+    "The Q3 budget timeline may be too far out if immediate operational needs are critical.",
+    "Potential complexity in procurement processes for large-scale mining operations in Chile.",
+    "Lack of clarity on whether the contact has full budgetary authority."
+  ],
+  "summary": "This is a high-potential lead with strong industry alignment and clear pain points regarding safety and cost. The referral from Anglo American and the specific focus on 24/7 lithium sites make this a priority account, though we need to clarify the internal decision-making process and budget approval path before Q3.",
+  "framework": "MEDDPICC",
+  "framework_rationale": "MEDDPICC fits enterprise industrial deals like this one: a multi-site, multi-stakeholder purchase where safety, operations, IT/OT and procurement all have a say, and where a partner (integrator/reseller) often shapes the deal. BANT is too shallow for that buying committee, and SPICED is built for recurring SaaS expansion. MEDDPICC also makes the gaps explicit (Economic Buyer, Decision Process, Paper Process), which tells the BDR exactly what the first emails must uncover.",
+  "fit_weights": {
+    "industry_fit": 20,
+    "site_scale": 15,
+    "continuous_operations": 10,
+    "pain_severity": 15,
+    "buyer_authority": 15,
+    "warm_introduction": 10,
+    "timing_and_budget": 15
+  },
+  "scores": {
+    "icp_fit_score": 88,
+    "meddpicc_completeness": 25,
+    "priority_score": 69,
+    "priority_tier": "P1 - Hot: respond same business day, involve AE early",
+    "formula": "priority = 0.7 x ICP fit + 0.3 x MEDDPICC completeness; tier set by ICP fit (>=75 P1, >=55 P2)"
+  }
+}

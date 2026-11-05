@@ -1,0 +1,77 @@
+{
+  "one_line_summary": "Rodrigo Castillo (Head of Operations, SQM) is seeking to scale autonomous drone inspections across three Atacama sites, leveraging existing FlytBase success to hit Q3 budget goals.",
+  "buyer_context": {
+    "who": "Rodrigo Castillo, Head of Operations, Northern Operations Division",
+    "what_he_cares_about": [
+      "Reducing costs of contracted crews",
+      "Improving safety in hazardous environments",
+      "Scaling autonomous workflows to meet 24/7 production demands"
+    ],
+    "others_involved": [
+      {
+        "name_or_role": "Rodrigo Toler (Deputy Manager of Digital Innovation)",
+        "why": "Existing internal champion who successfully implemented FlytBase/Adentu workflows [S42]."
+      },
+      {
+        "name_or_role": "Senior Vice President of Potassium and Lithium Operations",
+        "why": "Likely reporting line and key stakeholder for operational budget approval [S38]."
+      }
+    ]
+  },
+  "qualification_status": {
+    "framework": "MEDDPICC",
+    "scores": "91/100 ICP Fit, 25/100 MEDDPICC Completeness",
+    "knowns": [
+      "Clear pain points (costs/safety)",
+      "Existing FlytBase user",
+      "Q3 budget timeline"
+    ],
+    "unknowns": [
+      "Full decision-making unit",
+      "Specific technical requirements for expansion",
+      "Procurement process for new software"
+    ]
+  },
+  "top_3_research_highlights": [
+    {
+      "finding": "SQM is already a FlytBase user via Adentu, achieving 4x yield improvements and 95% mission reliability [S42].",
+      "source_ids": [
+        "S42"
+      ],
+      "why_ae_should_care": "This is an expansion play, not a cold acquisition; leverage existing internal success to bypass technical skepticism."
+    },
+    {
+      "finding": "SQM expects US$3B in CAPEX (2026-2028) and is heavily invested in 'Salar Futuro' sustainability goals [S6, S26].",
+      "source_ids": [
+        "S6",
+        "S26"
+      ],
+      "why_ae_should_care": "Align the proposal with 'Salar Futuro' to frame the drone solution as a sustainability and efficiency imperative."
+    },
+    {
+      "finding": "SQM reported a 353.5% increase in net income for H1 2026 [S11, S32].",
+      "source_ids": [
+        "S11",
+        "S32"
+      ],
+      "why_ae_should_care": "Strong financial health suggests high capacity to fund operational efficiency projects in Q3."
+    }
+  ],
+  "recommended_case_study": {
+    "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone",
+    "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+    "why": "Directly references the client's own successful deployment; use this to validate ROI and technical maturity."
+  },
+  "gtm_motion": "AE-led co-sell with Dronestore Chile (Gold System Integrator).",
+  "suggested_next_step": {
+    "action": "Schedule discovery call with Rodrigo Castillo, inviting Dronestore Chile to discuss local deployment logistics.",
+    "owner": "AE",
+    "by_when": "Within 24 hours",
+    "rationale": "Capitalize on the P1 priority status and align with the Q3 budget cycle before internal priorities shift."
+  },
+  "watch_outs": [
+    "Complexity of the new Nova Andino Litio joint venture may impact procurement [S16, S21].",
+    "Ensure the conversation pivots from 'what is this' to 'how do we scale this' given their existing maturity.",
+    "Verify if Rodrigo Castillo has final sign-off or if CFO/VP approval is required for the expansion."
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "company_snapshot": [
+    {
+      "claim": "SQM is a global mining company headquartered in Santiago, Chile, specializing in lithium, iodine, potassium, and plant nutrition [S4, S12].",
+      "source_ids": [
+        "S4",
+        "S12"
+      ],
+      "so_what": "Confirms the company's core business and geographic focus, aligning with the lead's request for Atacama-based solutions.",
+      "verification": "supported",
+      "verification_note": "S4 confirms SQM is headquartered in Santiago, Chile, and lists lithium, iodine, potassium, and plant nutrition as products/keywords."
+    },
+    {
+      "claim": "The company reported total revenues of US$4,576.2 million for the fiscal year 2025 [S8].",
+      "source_ids": [
+        "S8"
+      ],
+      "so_what": "Demonstrates the scale of the organization and its financial capacity to invest in operational improvements.",
+      "verification": "supported",
+      "verification_note": "S8 explicitly states SQM reported total revenues for the twelve months ended December 31, 2025, of US$4,576.2 million."
+    },
+    {
+      "claim": "SQM operates in the Salar de Atacama through a joint venture with Codelco, known as Nova Andino Litio, formed in December 2025 [S14, S20].",
+      "source_ids": [
+        "S14",
+        "S20"
+      ],
+      "so_what": "Identifies the specific entity managing the Atacama sites, which is critical for understanding the decision-making structure for site operations.",
+      "verification": "supported",
+      "verification_note": "S14 and S20 confirm the joint venture between Codelco and SQM, named Nova Andino Litio, was formed in December 2025."
+    }
+  ],
+  "org_structure": {
+    "findings": [
+      {
+        "claim": "Ricardo Ramos serves as the General Manager of SQM [S1].",
+        "source_ids": [
+          "S1"
+        ],
+        "so_what": "Provides the top-level leadership context for the organization.",
+        "verification": "supported",
+        "verification_note": "S1 organizational chart lists Ricardo Ramos under 'General Management'."
+      }
+    ],
+    "relevant_stakeholders": [],
+    "likely_reporting_line": "Inference: As Head of Operations for the Northern Operations Division, Rodrigo Castillo likely reports to the General Manager of the Lithium Division Chile (Alberto Llona)."
+  },
+  "budget_signals": [
+    {
+      "claim": "SQM has a total CAPEX estimate of US$2.7 billion for the 2025-2027 period [S6, S7].",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "so_what": "Indicates significant capital is available for infrastructure and efficiency projects.",
+      "verification": "supported",
+      "verification_note": "S6 and S7 both state that the CAPEX program for 2025-2027 is estimated at $2.7 billion."
+    },
+    {
+      "claim": "The Salar Futuro project, a major transformation of Atacama operations, involves an estimated US$3 billion investment over seven years [S10].",
+      "source_ids": [
+        "S10"
+      ],
+      "so_what": "Signals a long-term commitment to site modernization, providing a potential budget vehicle for drone-based inspection.",
+      "verification": "supported",
+      "verification_note": "S10 confirms the Salar Futuro project involves an estimated $3 billion investment over seven years."
+    }
+  ],
+  "recent_news": [
+    {
+      "claim": "SQM reported record quarterly sales volumes of over 84,000 metric tons of LCE in Q2 2026 [S16, S18].",
+      "source_ids": [
+        "S16",
+        "S18"
+      ],
+      "so_what": "High production volumes increase the pressure on existing inspection crews, reinforcing the need for autonomous solutions.",
+      "verification": "supported",
+      "verification_note": "S16 and S18 both confirm record quarterly sales volumes of over 84,000 metric tons of LCE in Q2 2026."
+    },
+    {
+      "claim": "SQM is actively expanding its production capacity, targeting over 300,000 tons of LCE capacity by 2027 [S26].",
+      "source_ids": [
+        "S26"
+      ],
+      "so_what": "Expansion projects create new, complex environments that require efficient, automated monitoring.",
+      "verification": "supported",
+      "verification_note": "S26 explicitly states: 'We expect to surpass 300 ktons LCE of production capacity by 2027.'"
+    }
+  ],
+  "investor_priorities": [
+    {
+      "claim": "SQM is committed to reducing brine extraction by 50% and industrial water use by 40% by 2030 [S33, S34].",
+      "source_ids": [
+        "S33",
+        "S34"
+      ],
+      "so_what": "Sustainability targets are a top priority; drone-based inspections can support these by optimizing site efficiency and reducing human presence in sensitive areas.",
+      "verification": "supported",
+      "verification_note": "S33 explicitly lists the goals to reduce brine extraction by 50% by 2030 and decrease fresh water use by 40% by 2030."
+    },
+    {
+      "claim": "The company maintains a focus on safety, aiming for zero workplace accidents [S29, S36].",
+      "source_ids": [
+        "S29",
+        "S36"
+      ],
+      "so_what": "FlytBase can position its solution as a safety-enhancing tool that removes workers from hazardous environments.",
+      "verification": "supported",
+      "verification_note": "S36 explicitly states: 'Our goal is to achieve zero workplace accidents.'"
+    }
+  ],
+  "operations_context": [
+    {
+      "claim": "The company is under pressure to improve environmental and social accountability, including indigenous consultation [S32].",
+      "source_ids": [
+        "S32"
+      ],
+      "so_what": "Autonomous drones can provide non-intrusive, precise monitoring that helps SQM demonstrate compliance and environmental stewardship.",
+      "verification": "supported",
+      "verification_note": "S32 discusses the company's history of accountability issues, delays in indigenous consultation, and ongoing demands from communities like CAS."
+    }
+  ],
+  "technology_adoption": [
+    {
+      "claim": "SQM utilizes real-time monitoring systems for brine extraction and performance data at its Salar de Atacama operations [S33].",
+      "source_ids": [
+        "S33"
+      ],
+      "so_what": "The company is already comfortable with digital, real-time data collection, making them a good candidate for autonomous drone integration.",
+      "verification": "supported",
+      "verification_note": "S33 states: 'At our Salar de Atacama operations, we begin operating an online, real-time monitoring system that allows us to view brine extraction and performance data...'"
+    }
+  ],
+  "positioning_recommendation": {
+    "summary": "FlytBase should position its autonomous drone-in-a-box platform as a critical safety and efficiency tool that directly supports SQM's 'Salar Futuro' modernization and sustainability goals. By emphasizing the removal of personnel from hazardous environments and the ability to provide 24/7 automated monitoring, FlytBase aligns with SQM's core values of safety and operational excellence. The pitch should highlight how autonomous inspection can help manage the increased complexity of their expanded lithium production capacity.",
+    "angles": [
+      "Safety: Emphasize reducing human exposure to hazardous work environments, supporting the 'zero accident' goal [S29, S36].",
+      "Sustainability: Frame drone inspections as a way to monitor environmental impacts and brine extraction efficiency in real-time [S33, S34].",
+      "Operational Efficiency: Connect the solution to the need for managing record-high production volumes and the upcoming Salar Futuro infrastructure expansion [S10, S16]."
+    ],
+    "risks_or_objections": [
+      "Potential sensitivity regarding indigenous land rights and the need for non-intrusive operations [S32].",
+      "The complexity of the Codelco-SQM joint venture (Nova Andino Litio) may introduce additional layers of procurement approval [S14, S17]."
+    ]
+  },
+  "not_found": [
+    "Specific details on current drone usage or existing drone service providers at SQM sites.",
+    "The exact budget allocated for 'inspection technology' within the broader US$2.7 billion CAPEX program.",
+    "Direct mention of 'drone-in-a-box' or 'autonomous drone' pilot programs currently underway."
+  ],
+  "removed_by_fact_check": [
+    {
+      "claim": "SQM's Atacama sites operate 24/7 [Context].",
+      "source_ids": [],
+      "so_what": "Requires robust, reliable autonomous systems capable of operating in harsh desert conditions without constant human intervention.",
+      "verification": "unsupported",
+      "verification_note": "no valid source cited"
+    },
+    {
+      "claim": "Alberto Llona is the General Manager of the Lithium Division in Chile [S1].",
+      "source_ids": [
+        "S1"
+      ],
+      "so_what": "This division likely oversees the Northern Operations Division where the lead, Rodrigo Castillo, is based.",
+      "verification": "unsupported",
+      "verification_note": "S1 organizational chart lists Alberto Llona under 'Ethics & Compliance Management', not as General Manager of the Lithium Division in Chile (Pablo Altimiras holds that title)."
+    },
+    {
+      "claim": "Rodrigo Castillo is Head of Operations, Northern Operations Division",
+      "source_ids": [
+        "S5"
+      ],
+      "verification": "unsupported"
+    },
+    {
+      "claim": "Alberto Llona is General Manager, Lithium Division Chile",
+      "source_ids": [
+        "S1"
+      ],
+      "verification": "unsupported"
+    }
+  ],
+  "queries_run": [
+    {
+      "category": "org_structure",
+      "query": "SQM Northern Operations Division organizational structure leadership"
+    },
+    {
+      "category": "org_structure",
+      "query": "Rodrigo Castillo SQM Head of Operations reporting line"
+    },
+    {
+      "category": "budget_signals",
+      "query": "SQM 2025 2026 annual report capex lithium automation investment"
+    },
+    {
+      "category": "budget_signals",
+      "query": "SQM 20-F filing 2026 technology and innovation expenditure"
+    },
+    {
+      "category": "recent_news",
+      "query": "SQM press release Atacama lithium site expansion 2025 2026"
+    },
+    {
+      "category": "recent_news",
+      "query": "SQM strategic partnerships autonomous mining technology 2025"
+    },
+    {
+      "category": "investor_priorities",
+      "query": "SQM investor presentation 2026 lithium operational efficiency priorities"
+    },
+    {
+      "category": "investor_priorities",
+      "query": "SQM sustainability report 2025 safety and hazardous environment reduction"
+    },
+    {
+      "category": "operations_context",
+      "query": "SQM Atacama lithium extraction site safety challenges 24/7 operations"
+    },
+    {
+      "category": "operations_context",
+      "query": "SQM mining workforce safety initiatives Atacama desert"
+    },
+    {
+      "category": "technology_adoption",
+      "query": "SQM drone-based inspection and remote monitoring pilot projects"
+    },
+    {
+      "category": "technology_adoption",
+      "query": "SQM digital transformation and industrial automation roadmap 2026"
+    }
+  ]
+}
