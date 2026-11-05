@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Inbound Lead Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side" id="side">
+    <div class="brand"><span>flytbase /</span> <b>inbound</b><span class="int">internal</span></div>
+    <button type="button" class="btn ease jump" id="jumpBtn">
+      <span class="row gap8"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" class="ico"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Jump to</span>
+      <kbd>Ctrl K</kbd>
+    </button>
+    <div class="navgroup">
+      <span class="navlabel">desk</span>
+      <nav aria-label="Sections" id="nav"></nav>
+    </div>
+    <div class="sidecard" id="workerCard">
+      <span class="row gap8 strong"><span class="dot" id="workerDot"></span><span id="workerTitle">Checking…</span></span>
+      <span class="mono xs muted" id="workerNote">&nbsp;</span>
+    </div>
+  </aside>
+  <main class="main" id="main" tabindex="-1"></main>
+</div>
+<div id="palette"></div>
+<div id="toast"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

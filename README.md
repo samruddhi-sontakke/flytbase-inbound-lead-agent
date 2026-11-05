@@ -79,6 +79,26 @@ A run takes about 2-5 minutes on the free tiers. Results go to `outputs/run_<dat
 | `sources.json` | Every source used, with URL and the query that found it |
 | `trace.jsonl` | Every AI prompt and response (full audit trail) |
 
+## Internal web app: Inbound Lead Desk
+
+An internal-only web app over the same pipeline. Each inbound email becomes a lead stored in MongoDB.
+
+- **Leads:** a list with P1/P2/P3 filters, search, and status (New → Working → Meeting booked → Handed to AE).
+- **New lead:** paste an email and run the agent. The page shows live progress stage by stage, with the log the command line prints.
+- **Lead page:** one tab per stage (AE handoff, MEDDPICC, cited research, emails with copy buttons, case-study ranking, partner), plus sources, the full AI trace, notes, an owner field, and the original email.
+- **Ctrl K** jumps to any page or lead.
+
+Setup: add a MongoDB connection string to `.env` next to the API keys:
+
+```
+GEMINI=...
+TAVILY=...
+MONGODB=mongodb+srv://user:pass@cluster.mongodb.net/   # database defaults to flytbase_leads
+```
+
+Run it with `py -m app.server` (or double-click `app.bat`), then open http://127.0.0.1:8000. It binds to this machine only.
+Earlier command-line runs in `outputs/` are imported automatically. API docs are at `/api/docs`.
+
 ## Project layout
 
 ```
@@ -90,6 +110,10 @@ agent/tools.py            web search (Tavily), page reading, sitemap crawler
 agent/sources.py          source registry ([S#] IDs)
 agent/stages/s0..s6       one file per stage, prompts included
 agent/report.py           JSON -> REPORT.md / REPORT.html (no AI)
+agent/pipeline.py         the stages as one function, shared by run.py and the web app
+app/server.py             web app: FastAPI API + background worker
+app/db.py                 MongoDB connection (one document per lead)
+app/static/               the UI (plain HTML/CSS/JS, no build step)
 ```
 
 ## Known limitations / next steps
