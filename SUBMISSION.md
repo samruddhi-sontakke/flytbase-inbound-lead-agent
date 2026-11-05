@@ -23,14 +23,16 @@ How to run it is in the [README](README.md#run-it).
 ## 2. Live run output
 The assignment's input email (Rodrigo Castillo, SQM) as processed by the system, from Gmail through all six stages:
 
-- **Report:** [REPORT.md](outputs/run_2026-11-05_19-32-11/REPORT.md) · [REPORT.pdf](outputs/run_2026-11-05_19-32-11/REPORT.pdf) · [REPORT.html](outputs/run_2026-11-05_19-32-11/REPORT.html)
-- **Raw stage outputs:** `0_lead.json` … `6_handoff.json`, `sources.json` (33 sources) and `trace.jsonl` (every agent call) in [the run folder](outputs/run_2026-11-05_19-32-11/)
-- **Result:** P1 hot, priority 77. Assignment and playbook requirements: 39/39 met.
+- **Report:** [REPORT.pdf](outputs/run_2026-11-06_02-15-07/REPORT.pdf) · [REPORT.md](outputs/run_2026-11-06_02-15-07/REPORT.md) · [REPORT.html](outputs/run_2026-11-06_02-15-07/REPORT.html)
+- **Everything in one place:** [submission/](submission/) (`1_final-report-SQM.pdf` = deck + live run output, the raw run, screenshots)
+- **Raw stage outputs:** `0_lead.json` … `6_handoff.json`, `sources.json` (38 sources) and `trace.jsonl` (every agent call) in [the run folder](outputs/run_2026-11-06_02-15-07/)
+- **Result:** one clean pass from Gmail in 893 seconds. P1 hot, priority 73. Assignment and playbook requirements: 39/39 met.
+  (An earlier run of the same email, shown in the deck, is in [outputs/run_2026-11-05_19-32-11](outputs/run_2026-11-05_19-32-11/).)
 
 A second lead, a test sent to show the system generalises: [E.ON run](outputs/run_2026-11-05_20-03-27/REPORT.md) (P2 warm, 29/29).
 
 ## 3. Walkthrough video (8–12 minutes)
-- **Video:** _[add the Loom / YouTube unlisted link here]_
+- **Video:** https://www.youtube.com/watch?v=vJoj80MXrRc
 - **Slides shown in the video:** [docs/Inbound-Lead-Desk-Walkthrough.pdf](docs/Inbound-Lead-Desk-Walkthrough.pdf)
 - **Script, synced to the slides page by page:** [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)
 

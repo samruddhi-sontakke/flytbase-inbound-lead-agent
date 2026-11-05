@@ -1,0 +1,208 @@
+{
+  "framework_rationale": "MEDDPICC fits SQM because this is an enterprise industrial purchase across 3 large 24/7 lithium sites in the Atacama, where operations (Rodrigo, Head of Operations), safety, IT/OT and procurement will all weigh in, and a partner/integrator in Chile is likely to shape delivery. The email gives strong Pain and partial Metrics (crew cost and hazard) but leaves the Economic Buyer, Decision Process and Paper Process open beyond a Q3 budget conversation, and MEDDPICC makes exactly those gaps explicit for the BDR's first emails. BANT would collapse this into budget/authority/need/timing and miss the buying committee, competition (status quo contracted crews) and procurement path; SPICED is tuned to recurring SaaS expansion rather than a new multi-site industrial deployment.",
+  "elements": [
+    {
+      "key": "M",
+      "name": "Metrics",
+      "status": "partial",
+      "evidence": "Contracted crews are expensive and hazardous",
+      "missing": "Quantified current crew cost, inspection frequency, hours, incident rates and target coverage per site",
+      "discovery_question": "Roughly what do the contracted inspection crews cost you per site per year, and how often do they inspect today?"
+    },
+    {
+      "key": "E",
+      "name": "Economic Buyer",
+      "status": "partial",
+      "evidence": "Internal budget conversation scheduled for Q3 (budget owner not named; contact is Head of Operations, Northern Operations Division)",
+      "missing": "Who owns and signs the budget for this initiative and whether Rodrigo holds it",
+      "discovery_question": "Who else will be part of the Q3 budget conversation, and who ultimately signs off on the spend?"
+    },
+    {
+      "key": "D1",
+      "name": "Decision Criteria",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Technical requirements (desert heat/dust, connectivity, docks, BVLOS, integrations) and commercial criteria",
+      "discovery_question": "What would a drone platform need to prove to work reliably in your Atacama conditions?"
+    },
+    {
+      "key": "D2",
+      "name": "Decision Process",
+      "status": "partial",
+      "evidence": "Internal budget conversation scheduled for Q3",
+      "missing": "Evaluation steps, stakeholders, pilot expectations and decision date",
+      "discovery_question": "What steps would you expect between now and the Q3 budget discussion, for example a pilot at one site?"
+    },
+    {
+      "key": "P",
+      "name": "Paper Process",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Procurement, legal, IT/OT security review, vendor onboarding and contracting path at SQM",
+      "discovery_question": "How does SQM usually procure new technology like this: direct vendor contract, tender, or through a local integrator?"
+    },
+    {
+      "key": "I",
+      "name": "Identify Pain",
+      "status": "known",
+      "evidence": "Contracted crews are expensive and hazardous; 3 large-scale 24/7 sites need inspection",
+      "missing": "Business consequence in numbers and which assets/inspections are most painful",
+      "discovery_question": "Which inspections are the most hazardous or costly for the crews today?"
+    },
+    {
+      "key": "C1",
+      "name": "Champion",
+      "status": "partial",
+      "evidence": "Rodrigo Castillo, Head of Operations, reached out directly via flytbase.com/contact",
+      "missing": "Confirmation that Rodrigo will advocate internally and has influence over the budget decision",
+      "discovery_question": "Would you be open to us helping you build the case for the Q3 budget conversation?"
+    },
+    {
+      "key": "C2",
+      "name": "Competition",
+      "status": "partial",
+      "evidence": "Status quo is contracted inspection crews",
+      "missing": "Other drone vendors being evaluated or in-house drone programs",
+      "discovery_question": "Are you looking at any other drone or automation options alongside FlytBase?"
+    }
+  ],
+  "fit_ratings": {
+    "industry_fit": {
+      "rating": 5,
+      "reason": "Lithium extraction in the Atacama Desert: heavy mining with large outdoor assets"
+    },
+    "site_scale": {
+      "rating": 5,
+      "reason": "\"3 large-scale\" lithium extraction sites"
+    },
+    "continuous_operations": {
+      "rating": 5,
+      "reason": "Sites are described as \"24/7\""
+    },
+    "pain_severity": {
+      "rating": 4,
+      "reason": "\"Contracted crews are expensive and hazardous\" - cost and safety pain autonomy removes, but not quantified"
+    },
+    "buyer_authority": {
+      "rating": 4,
+      "reason": "\"Head of Operations, Northern Operations Division\" - senior operational owner, budget authority not confirmed"
+    },
+    "warm_introduction": {
+      "rating": 5,
+      "reason": "\"Referred by Anglo American\""
+    },
+    "timing_and_budget": {
+      "rating": 3,
+      "reason": "\"Internal budget conversation scheduled for Q3\" - budget process exists but no amount or committed timeline"
+    }
+  },
+  "risks": [
+    "Budget not yet approved; depends on Q3 internal conversation",
+    "Economic buyer and procurement path unknown",
+    "Harsh desert conditions (heat, dust, connectivity) may raise technical requirements",
+    "Large mining procurement may require tenders and local partner involvement",
+    "Incumbent contracted crew providers are the status quo"
+  ],
+  "summary": "SQM is a strong ICP fit: a major lithium miner with 3 large 24/7 Atacama sites, clear cost and safety pain, a senior operations contact and a warm referral from Anglo American. Priority is high, held back only by the unconfirmed economic buyer, decision and paper process, with budget pending a Q3 conversation.",
+  "framework": "MEDDPICC",
+  "fit_weights": {
+    "industry_fit": 20,
+    "site_scale": 15,
+    "continuous_operations": 10,
+    "pain_severity": 15,
+    "buyer_authority": 15,
+    "warm_introduction": 10,
+    "timing_and_budget": 15
+  },
+  "scores": {
+    "icp_fit_score": 88,
+    "meddpicc_completeness": 44,
+    "priority_score": 75,
+    "priority_tier": "P1 - Hot: respond same business day, involve AE early",
+    "formula": "priority = 0.7 x ICP fit + 0.3 x MEDDPICC completeness; tier set by ICP fit (>=75 P1, >=55 P2)",
+    "calculation": [
+      "industry_fit 5/5 x 20 = 20.0",
+      "site_scale 5/5 x 15 = 15.0",
+      "continuous_operations 5/5 x 10 = 10.0",
+      "pain_severity 4/5 x 15 = 12.0",
+      "buyer_authority 4/5 x 15 = 12.0",
+      "warm_introduction 5/5 x 10 = 10.0",
+      "timing_and_budget 3/5 x 15 = 9.0",
+      "ICP fit = 88.0",
+      "MEDDPICC completeness = 43.8%",
+      "priority = 0.7 x 88.0 + 0.3 x 43.8 = 75"
+    ]
+  },
+  "known_information": [
+    "Identify Pain"
+  ],
+  "missing_information": [
+    {
+      "element": "Metrics",
+      "status": "partial",
+      "missing": "Quantified current crew cost, inspection frequency, hours, incident rates and target coverage per site",
+      "discovery_question": "Roughly what do the contracted inspection crews cost you per site per year, and how often do they inspect today?"
+    },
+    {
+      "element": "Economic Buyer",
+      "status": "partial",
+      "missing": "Who owns and signs the budget for this initiative and whether Rodrigo holds it",
+      "discovery_question": "Who else will be part of the Q3 budget conversation, and who ultimately signs off on the spend?"
+    },
+    {
+      "element": "Decision Criteria",
+      "status": "unknown",
+      "missing": "Technical requirements (desert heat/dust, connectivity, docks, BVLOS, integrations) and commercial criteria",
+      "discovery_question": "What would a drone platform need to prove to work reliably in your Atacama conditions?"
+    },
+    {
+      "element": "Decision Process",
+      "status": "partial",
+      "missing": "Evaluation steps, stakeholders, pilot expectations and decision date",
+      "discovery_question": "What steps would you expect between now and the Q3 budget discussion, for example a pilot at one site?"
+    },
+    {
+      "element": "Paper Process",
+      "status": "unknown",
+      "missing": "Procurement, legal, IT/OT security review, vendor onboarding and contracting path at SQM",
+      "discovery_question": "How does SQM usually procure new technology like this: direct vendor contract, tender, or through a local integrator?"
+    },
+    {
+      "element": "Champion",
+      "status": "partial",
+      "missing": "Confirmation that Rodrigo will advocate internally and has influence over the budget decision",
+      "discovery_question": "Would you be open to us helping you build the case for the Q3 budget conversation?"
+    },
+    {
+      "element": "Competition",
+      "status": "partial",
+      "missing": "Other drone vendors being evaluated or in-house drone programs",
+      "discovery_question": "Are you looking at any other drone or automation options alongside FlytBase?"
+    }
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Framework stated and explained",
+      "ok": true
+    },
+    {
+      "item": "Known information extracted from the email",
+      "ok": true,
+      "detail": "Identify Pain"
+    },
+    {
+      "item": "Missing information required for full qualification",
+      "ok": true,
+      "detail": "Metrics, Economic Buyer, Decision Criteria, Decision Process, Paper Process, Champion, Competition"
+    },
+    {
+      "item": "Fit assessment (every ICP factor rated with a reason)",
+      "ok": true
+    },
+    {
+      "item": "Priority score with reasoning",
+      "ok": true,
+      "detail": "75/100, P1 - Hot: respond same business day, involve AE early"
+    }
+  ]
+}

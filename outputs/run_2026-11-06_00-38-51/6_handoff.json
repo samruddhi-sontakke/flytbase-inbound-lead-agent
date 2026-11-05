@@ -1,0 +1,163 @@
+{
+  "one_line_summary": "P1 expansion: SQM's Head of Operations (Northern Operations Division) wants autonomous drone inspection for 3 Atacama lithium sites that run 24/7. He was referred by Anglo American, and SQM's iodine division already runs FlytBase with integrator Adentu [S1]. Budget is pending a Q3 conversation. Co-sell with Adentu once the channel check is done.",
+  "buyer_context": {
+    "who": "Rodrigo Castillo (r.castillo@sqm.cl), Head of Operations, Northern Operations Division, SQM, Chile. He came in through the flytbase.com/contact form, referred by Anglo American. He is a senior operations owner, but his budget authority is not confirmed. Public sources do not name a 'Northern Operations Division' and have no record of him, so confirm his business unit. It may be Novandino lithium, the Codelco-SQM JV that has run the Salar de Atacama lithium business since 27 Dec 2025 [S8][S18].",
+    "what_he_cares_about": [
+      "Replacing contracted inspection crews, which he calls expensive and hazardous (his stated pain)",
+      "Inspection coverage across 3 large lithium extraction sites that run 24/7 in the Atacama Desert",
+      "Building a case for the internal budget conversation scheduled for Q3",
+      "Crew safety: SQM's corporate values make safe, accident-free operations a priority commitment [S17][S18], and in Feb 2026 the Labour Directorate partially suspended work at SQM Salar, and suspended a contractor there, over conditions for outdoor workers [S21]"
+    ],
+    "others_involved": [
+      {
+        "name_or_role": "Rodrigo Toler, Deputy Manager of Digital Innovation / M1+ Digital, SQM",
+        "why": "Led SQM's existing FlytBase deployment with Adentu in iodine. He is the internal reference and a possible co-champion [S1][S20]"
+      },
+      {
+        "name_or_role": "José Pablo Mujica, Commercial Manager, Adentu",
+        "why": "Commercial contact at SQM's incumbent Chilean integrator. Align with him on deal registration and delivery before outreach [S1]"
+      },
+      {
+        "name_or_role": "Carlos Díaz, General Manager, Novandino Litio",
+        "why": "Top executive over the Atacama lithium operations. He is the likely final approver of a multi-site programme if the sites are Novandino assets [S12][S13][S25]"
+      },
+      {
+        "name_or_role": "Gerson Salas, Maintenance and Automation Manager, Novandino",
+        "why": "Natural technical evaluator and a possible budget holder for inspection automation [S12]"
+      },
+      {
+        "name_or_role": "Andrés Pinto, Digitalisation and IT Manager",
+        "why": "IT/OT, connectivity and data-integration review. The iodine programme sends data into Azure [S12][S1]"
+      },
+      {
+        "name_or_role": "Luis Acuña, Risk Management Superintendency",
+        "why": "Safety and risk sign-off on reducing crew exposure [S12]"
+      },
+      {
+        "name_or_role": "Germán Pérez, Supply Chain Manager, Novandino",
+        "why": "Likely procurement route for the vendor and integrator contract [S12]"
+      },
+      {
+        "name_or_role": "Gilbert Maldonado, Salar Operations Manager, Novandino",
+        "why": "Runs the salar operations (wells, ponds) where the inspections would happen [S12]"
+      }
+    ]
+  },
+  "qualification_status": {
+    "framework": "MEDDPICC",
+    "scores": "ICP 88/100, completeness 44%, priority 75/100, P1 - Hot: respond same business day, involve AE early",
+    "knowns": [
+      "Identify Pain (known): contracted crews are expensive and hazardous, and 3 large sites need inspection 24/7",
+      "Metrics (partial): pain is stated as cost and hazard, with no figures yet",
+      "Champion (partial): Rodrigo Castillo reached out himself, but whether he will advocate internally is unconfirmed",
+      "Economic Buyer and Decision Process (partial): a Q3 internal budget conversation is scheduled, with no budget owner named",
+      "Competition (partial): the status quo is contracted inspection crews",
+      "Warm referral from Anglo American, itself a FlytBase drone-in-a-box user at Quellaveco, Peru, delivered with UAV LATAM [S2]",
+      "Existing account: SQM already runs FlytBase on DJI Docks with Adentu across its 678 km² iodine operation [S1]"
+    ],
+    "unknowns": [
+      "Economic Buyer: who owns and signs the budget, and whether that is Rodrigo Castillo, SQM corporate or the Novandino JV",
+      "Metrics: current crew cost per site, how often inspections run, incident rates, target coverage",
+      "Decision Criteria: technical needs (heat, dust, connectivity, docks, BVLOS, integrations) and commercial criteria",
+      "Decision Process: evaluation steps, stakeholders, whether a pilot is expected, decision date",
+      "Paper Process: direct contract, tender or integrator-led purchase; IT/OT security review; JV approvals",
+      "Competition: other drone vendors or in-house programmes under evaluation",
+      "Which business unit 'Northern Operations Division' is, and which 3 sites he means (salar, Carmen plant or iodine sites)"
+    ]
+  },
+  "top_3_research_highlights": [
+    {
+      "finding": "SQM is already a FlytBase customer. With Chilean integrator Adentu, it runs DJI Dock autonomy on FlytBase across its 678 km² iodine operation, with Starlink connectivity and imagery sent into SQM's Azure environment. Inspection frequency went from biweekly to twice daily, mission reliability is above 95% in desert conditions and detection time fell from days to under 90 minutes. The system cost USD 70-80k with ROI in under a year, and SQM's security department has ordered more docks for 24/7 surveillance.",
+      "source_ids": [
+        "S1",
+        "S11",
+        "S20"
+      ],
+      "why_ae_should_care": "This is an expansion inside an existing account, not a new logo. The integration pattern, the local partner and a payback benchmark already exist inside SQM for Castillo's Q3 budget case. It also means Adentu's channel position has to be cleared before engaging.",
+      "source_ids_valid": [
+        "S1",
+        "S11",
+        "S20"
+      ]
+    },
+    {
+      "finding": "Since 27 Dec 2025, SQM's Salar de Atacama lithium business has been Nova Andino Litio (Novandino), a JV with Codelco that runs until 2060. The board is split 3/3 between Codelco and SQM, Carlos Díaz is general manager and Codelco's Eduardo Foix is finance manager. Novandino's named operations, automation, IT, supply chain and risk managers are the people a drone programme must win over.",
+      "source_ids": [
+        "S8",
+        "S12",
+        "S13",
+        "S18"
+      ],
+      "why_ae_should_care": "If the 3 lithium sites are Novandino assets, the buyer and paper process run through JV governance with a Codelco-appointed finance manager, not SQM corporate. Map the economic buyer early and expect a longer approval path.",
+      "source_ids_valid": [
+        "S8",
+        "S12",
+        "S13",
+        "S18"
+      ]
+    },
+    {
+      "finding": "SQM guided about US$3B of capex for 2026-2028: roughly 60% for Novandino, plus about US$300M a year of sustaining capex across divisions. But in Nov 2025 it cut its 2025-2027 capex estimate to US$2.7B and delayed some investment decisions, and 2025 actual spend (more than US$876M) came in below the roughly US$1.1B projected a year earlier.",
+      "source_ids": [
+        "S10",
+        "S7",
+        "S9",
+        "S17",
+        "S18"
+      ],
+      "why_ae_should_care": "There is money aimed at the lithium JV, but management is capex-disciplined. Pitch a low-capex, fast-payback one-site pilot sized to the sustaining budget, and lead with savings on crew cost and safety, not a large hardware outlay.",
+      "source_ids_valid": [
+        "S10",
+        "S7",
+        "S9",
+        "S17",
+        "S18"
+      ]
+    }
+  ],
+  "recommended_case_study": {
+    "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone",
+    "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+    "why": "It is about the lead's own company (fit score 96). It covers the same Atacama Desert, the same use case (docked autonomous inspection replacing engineers walking and driving to inspect), and the same local partner (Adentu) and IT stack (Azure) [S1]. It turns the question from 'does this work at SQM?' into 'how do we extend it to Castillo's lithium sites?'. Use Anglo American's Quellaveco case as the secondary piece to validate the referral [S2]. Quote the days-to-hours, >95% reliability and doubled-frequency figures. Do not quote the iodine yield figure, because the page gives both 2% and 4x [S1]."
+  },
+  "gtm_motion": "AE-led with partner (co-sell). The FlytBase AE owns account strategy, economic-buyer mapping, the Q3 business case and commercial terms. Adentu, SQM's incumbent Chilean integrator [S1], leads site surveys, dock install, Azure integration and on-site 24/7 support. Dronestore Chile (Gold SI, Chile) is the in-country backup or second bidder, and UAVLatam is a reference for the Anglo American referral [S14][S2].",
+  "suggested_next_step": {
+    "action": "Before the BDR sends Email 1, check deal registration and channel position with Adentu (and with the FlytBase channel team, since Adentu is missing from the partner directory). Then run a 30-minute discovery call with Rodrigo Castillo, using the slots proposed in Email 1: Tue 10 Nov 10:00 or Wed 11 Nov 15:00 Santiago time. On the call, confirm his business unit and the 3 sites, the Q3 budget owner and participants, crew cost and inspection frequency, and the Atacama technical criteria. Offer a scoped one-site pilot for the Q3 conversation, with Rodrigo Toler's team and Adentu as references.",
+    "owner": "AE (BDR sends Email 1 and books the call; AE runs the channel check and leads discovery)",
+    "by_when": "Channel check by end of day Fri 6 Nov 2026 so Email 1 goes out the same business day; discovery call by Wed 11 Nov 2026",
+    "rationale": "P1 lead (ICP 88) with a warm referral and a dated budget event. The biggest lever is the existing SQM/Adentu deployment, and the biggest risk is channel conflict if Adentu has already registered an expansion. Discovery has to close the gaps that block a Q3 business case: economic buyer, metrics, decision criteria and paper process (completeness is 44%). A one-site pilot fits SQM's capex discipline [S7][S9] and its record of piloting new technology at the salar [S10]."
+  },
+  "watch_outs": [
+    "Channel conflict: Adentu is SQM's incumbent integrator and is not listed in the flytbase.com/partner directory. Confirm its partner status and any deal registration before the AE engages directly.",
+    "Identity and scope: no public record of Rodrigo Castillo or a 'Northern Operations Division'. Confirm whether the 3 sites are Novandino lithium (salar, Carmen plant) or something else, and confirm he is part of SQM's buying committee.",
+    "JV governance: the Atacama lithium assets sit in the Codelco-SQM JV with a Codelco-appointed finance manager, which can lengthen approvals and may bring a tender [S12][S13].",
+    "Capex discipline: SQM cut and delayed investments in late 2025, so avoid a large upfront hardware ask [S7][S9].",
+    "Case study data: the SQM page gives the iodine yield gain as both 2% and 4x. Do not quote either until FlytBase confirms which is right.",
+    "Community sensitivity: the Salar Futuro EIA declares a significant impact on Atacameño ancestral territory, so flight paths near the eastern edge may need community consideration [S15].",
+    "Harsh conditions and regulation: the site sits at about 2,300 m with large temperature swings [S21], and BVLOS was still on the roadmap in the iodine deployment [S1], which may limit initial coverage.",
+    "Inside SQM, the lithium side is a different part of the company from the digital innovation team that ran the iodine deployment, so it is unclear who owns the budget."
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Buyer context: who he is, what he cares about, who else is involved",
+      "ok": true
+    },
+    {
+      "item": "Qualification status: framework score, knowns, unknowns",
+      "ok": true
+    },
+    {
+      "item": "Top 3 research highlights, each citing kept research",
+      "ok": true
+    },
+    {
+      "item": "Recommended case study and why",
+      "ok": true
+    },
+    {
+      "item": "Suggested next step with rationale",
+      "ok": true,
+      "detail": "Before the BDR sends Email 1, check deal registration and channel position with Adentu (and with the FlytBase channel team, since Adentu is missing from the partner directory). Then run a 30-minute discovery call with Rodrigo Castillo, using the slots proposed in Email 1: Tue 10 Nov 10:00 or Wed 11 Nov 15:00 Santiago time. On the call, confirm his business unit and the 3 sites, the Q3 budget owner and participants, crew cost and inspection frequency, and the Atacama technical criteria. Offer a scoped one-site pilot for the Q3 conversation, with Rodrigo Toler's team and Adentu as references."
+    }
+  ]
+}

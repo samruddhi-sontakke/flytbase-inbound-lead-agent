@@ -4,8 +4,9 @@
 
 > **Start here**
 > - **[Walkthrough deck (PDF)](docs/Inbound-Lead-Desk-Walkthrough.pdf)**: the whole system in 15 pages, with real screenshots of the live run
-> - **Walkthrough video:** _[add your Loom / YouTube unlisted link here]_ · script synced to the PDF page by page: [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)
-> - **Live run output (the assignment's SQM lead):** [REPORT.md](outputs/run_2026-11-05_19-32-11/REPORT.md) · [REPORT.pdf](outputs/run_2026-11-05_19-32-11/REPORT.pdf) · [run folder](outputs/run_2026-11-05_19-32-11/) (one JSON per stage, sources, agent trace), passing 39/39 checks
+> - **Walkthrough video:** https://www.youtube.com/watch?v=vJoj80MXrRc · script synced to the PDF page by page: [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)
+> - **Submission folder** (final report + live run output + screenshots): [submission/](submission/)
+> - **Live run output (the assignment's SQM lead, one clean pass from Gmail):** [REPORT.pdf](outputs/run_2026-11-06_02-15-07/REPORT.pdf) · [REPORT.md](outputs/run_2026-11-06_02-15-07/REPORT.md) · [run folder](outputs/run_2026-11-06_02-15-07/) (one JSON per stage, sources, agent trace): 893 s, 39/39 checks
 > - **A second lead (E.ON test):** [REPORT.md](outputs/run_2026-11-05_20-03-27/REPORT.md) · [REPORT.pdf](outputs/run_2026-11-05_20-03-27/REPORT.pdf)
 > - **Submission checklist:** [SUBMISSION.md](SUBMISSION.md)
 

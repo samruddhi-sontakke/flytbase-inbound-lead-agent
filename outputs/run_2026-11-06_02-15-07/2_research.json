@@ -1,0 +1,615 @@
+{
+  "company_snapshot": [
+    {
+      "claim": "SQM (NYSE: SQM; Santiago Stock Exchange: SQM-B, SQM-A) is headquartered at El Trovador 4285, Santiago, Chile, and files annual reports on Form 20-F.",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "A US-listed foreign issuer with SEC disclosure: procurement will expect enterprise-grade vendor, security and compliance documentation.",
+      "verification": "supported",
+      "verification_note": "S11: 'El Trovador 4285, Santiago, Chile', 'NYSE: SQM; Santiago Stock Exchange: SQM-B, SQM-A', 'Form 20-F: X'"
+    },
+    {
+      "claim": "For the six months ended June 30, 2026, SQM reported revenues of US$4,228.5 million and net income of US$1,024.7 million, versus US$2,079.3 million and US$225.9 million in the same period of 2025.",
+      "source_ids": [
+        "S10"
+      ],
+      "so_what": "Profitability has recovered sharply in 2026, which makes the lead's Q3 budget conversation more likely to fund operational technology than it would have been in the 2024-2025 downturn.",
+      "verification": "supported",
+      "verification_note": "S10: 6M2026 revenues 'US$4,228.5 million compared to ... US$2,079.3 million'; net income 'US$1,024.7 million ... compared to US$225.9 million'"
+    },
+    {
+      "claim": "In the first half of 2026, lithium accounted for 78% of SQM's consolidated gross profit, and lithium sales volumes in Q2 2026 were a record of more than 84 thousand metric tons LCE.",
+      "source_ids": [
+        "S10"
+      ],
+      "so_what": "Lithium in the Atacama is now the company's profit engine, so uptime and safety at those sites carry board-level weight.",
+      "verification": "supported",
+      "verification_note": "S10: lithium 'accounted for 78% of SQM's consolidated gross profit for the six months'; 'record-high quarterly sales volumes surpassing 84 thousand metric tons of LCE'"
+    },
+    {
+      "claim": "In October 2026 SQM presented a unified corporate identity, SQM Group, bringing SQM, Novandino Litio and SQM Litio Internacional under one corporate umbrella, with events in Santiago, Antofagasta and Iquique.",
+      "source_ids": [
+        "S24"
+      ],
+      "so_what": "FlytBase should map which entity owns the lead's three sites (SQM iodine/nitrates vs. Novandino lithium) because that decides the buyer and paper process.",
+      "verification": "supported",
+      "verification_note": "S24 (29 Oct 2026): 'nueva identidad unificada en eventos simultaneos ... Santiago, Antofagasta e Iquique ... SQM, Novandino Litio y SQM Litio Internacional'"
+    },
+    {
+      "claim": "A 2026 trade-press article describes SQM as having more than 8,300 employees.",
+      "source_ids": [
+        "S23"
+      ],
+      "so_what": "Large enterprise scale supports a multi-site, multi-dock rollout rather than a single-site project.",
+      "verification": "partial",
+      "verification_note": "S23: 'Con mas de 8.300 empleados' is stated, but the article's own publication year (2026) is not shown in the stored text"
+    }
+  ],
+  "org_structure": {
+    "findings": [
+      {
+        "claim": "On December 27, 2025, Codelco and SQM announced the creation of Nova Andino Litio SpA (merger of Minera Tarar SpA and SQM Salar SpA), the joint venture that will run lithium exploration, production and commercialization in the Salar de Atacama until 2060.",
+        "source_ids": [
+          "S9"
+        ],
+        "so_what": "If the lead's sites are lithium operations in the Salar de Atacama, the contracting entity is likely Novandino, not SQM S.A.; FlytBase must confirm this early.",
+        "verification": "supported",
+        "verification_note": "S9: 'December 27, 2025 ... Nova Andino Litio SpA ... merger between ... Minera Tarar SpA and SQM Salar SpA ... exploration, exploitation, production and commercialization ... until 2060'"
+      },
+      {
+        "claim": "The Novandino board has three Codelco directors (Máximo Pacheco, Josefina Montenegro, Alfredo Moreno) and three SQM directors (Ricardo Ramos, Hernán Uribe, Manuel Ovalle), with Pacheco as chairman and Ramos as vice-chairman.",
+        "source_ids": [
+          "S9",
+          "S13",
+          "S14"
+        ],
+        "so_what": "A public-private board means state-company governance and transparency expectations may apply to larger technology spends.",
+        "verification": "supported",
+        "verification_note": "S13: Pacheco 'presidente del directorio de la nueva firma', Codelco directors 'Josefina Montenegro y Alfredo Moreno'; Ramos 'vicepresidente del directorio ... junto a Hernan Uribe y Manuel Ovalle'"
+      },
+      {
+        "claim": "Per Diario Financiero (December 2025), Carlos Díaz, previously general manager of SQM Litio, was appointed general manager of Nova Andino, and Codelco's Eduardo Foix was named finance manager.",
+        "source_ids": [
+          "S12",
+          "S13"
+        ],
+        "so_what": "Díaz is the top executive of the lithium business and the likely ultimate sponsor of a multi-site lithium deployment.",
+        "verification": "supported",
+        "verification_note": "S13 (last Monday of 2025): 'actual gerente general de SQM Litio, Carlos Diaz, en el cargo de gerente general de Nova Andino, y a Eduardo Foix de Codelco como su gerente de Finanzas'"
+      },
+      {
+        "claim": "Diario Financiero reports Novandino starts with the 3,533 workers of SQM Litio, operating from the same offices, with Codelco not contributing workers, and a transition from 2026 to 2030 before the agreement is fully in force from 2031.",
+        "source_ids": [
+          "S13",
+          "S14"
+        ],
+        "so_what": "Operational teams and decision-makers are the same SQM Litio people, so existing SQM relationships (including the iodine drone program) remain relevant.",
+        "verification": "supported",
+        "verification_note": "S13: 'los 3.533 trabajadores de la filial SQM Litio', 'Codelco no aportara con trabajadores', 'mismas oficinas', transition 'iniciara en 2026 y se prolongara hasta 2030 ... en regimen a partir de 2031'"
+      },
+      {
+        "claim": "Diario Financiero's December 2025 organigram of Díaz's direct team includes Gilbert Maldonado (salar operations manager), Humberto Carvajal (lithium operations manager), Gerson Salas (maintenance and automation manager), Rodrigo Maffioletti (VP lithium projects) and Germán Pérez (supply chain manager), and places Andrés Pinto (digitalization and IT manager) and Luis Acuña (risk management superintendency) under José Miguel Berguño, VP corporate services and sustainability.",
+        "source_ids": [
+          "S12"
+        ],
+        "so_what": "This gives the BDR a concrete buying committee: operations, maintenance/automation, IT/digital, risk and supply chain.",
+        "verification": "partial",
+        "verification_note": "S12 names/titles match (Maldonado 'gerente de operaciones salar', Carvajal, Salas, Maffioletti, Perez; Pinto and Acuna under Bergueno 'Bajo su alero'), but the 'December 2025' date of the organigram is not stated in S12"
+      }
+    ],
+    "relevant_stakeholders": [
+      {
+        "name": "Carlos Díaz",
+        "title": "General Manager, Nova Andino Litio (formerly GM of SQM Litio)",
+        "why_relevant": "Top executive of the lithium business; likely final sponsor for a multi-site lithium deployment.",
+        "source_ids": [
+          "S12",
+          "S13"
+        ],
+        "verification": "supported",
+        "verification_note": "S12/S13: 'actual gerente general de SQM Litio ... gerente general de NovaAndino: se trata de Carlos Diaz'"
+      },
+      {
+        "name": "Gilbert Maldonado",
+        "title": "Gerente de operaciones salar (salar operations manager)",
+        "why_relevant": "Runs Salar de Atacama field operations where docks would be installed.",
+        "source_ids": [
+          "S12"
+        ],
+        "verification": "supported",
+        "verification_note": "S12: 'Gilbert Maldonado, gerente de operaciones salar'"
+      },
+      {
+        "name": "Humberto Carvajal",
+        "title": "Gerente de operaciones litio (lithium operations manager)",
+        "why_relevant": "Operational owner of lithium production; peer or superior of the inbound contact.",
+        "source_ids": [
+          "S12"
+        ],
+        "verification": "supported",
+        "verification_note": "S12: 'Humberto Carvajal, gerente de operaciones litio'"
+      },
+      {
+        "name": "Gerson Salas",
+        "title": "Gerente de mantenimiento y automatización (maintenance and automation manager)",
+        "why_relevant": "Owns automation and asset inspection; natural technical evaluator for drone-in-a-box.",
+        "source_ids": [
+          "S12"
+        ],
+        "verification": "supported",
+        "verification_note": "S12: 'Gerson Salas, gerente de mantenimiento y automatizacion'"
+      },
+      {
+        "name": "Andrés Pinto",
+        "title": "Gerente de digitalización y TI (digitalization and IT manager)",
+        "why_relevant": "IT/OT and data integration sign-off (network, cloud, cybersecurity).",
+        "source_ids": [
+          "S12"
+        ],
+        "verification": "supported",
+        "verification_note": "S12: 'el gerente de digitalizacion y TI, Andres Pinto'"
+      },
+      {
+        "name": "Luis Acuña",
+        "title": "Head of the Superintendencia de Gestión de Riesgos (risk management)",
+        "why_relevant": "Safety and risk case for removing people from hazardous inspection work.",
+        "source_ids": [
+          "S12"
+        ],
+        "verification": "supported",
+        "verification_note": "S12: 'la Superintendencia de Gestion de Riesgos liderada por Luis Acuna'"
+      },
+      {
+        "name": "Germán Pérez",
+        "title": "Gerente supply chain",
+        "why_relevant": "Likely owner of vendor onboarding and procurement path.",
+        "source_ids": [
+          "S12"
+        ],
+        "verification": "supported",
+        "verification_note": "S12: 'German Perez, gerente supply chain'"
+      },
+      {
+        "name": "Rodrigo Toler",
+        "title": "Deputy Manager of Digital Innovation, SQM",
+        "why_relevant": "Internal champion of the existing SQM FlytBase/Adentu drone program; a reference inside the same group.",
+        "source_ids": [
+          "S1"
+        ],
+        "verification": "supported",
+        "verification_note": "S1: 'said Rodrigo Toler, Deputy Manager of Digital Innovation, SQM'"
+      },
+      {
+        "name": "Matías Gatica",
+        "title": "Director de Transformación Digital, SQM YNV (Iodine and Plant Nutrition)",
+        "why_relevant": "Owns the iodine/nitrates data platform (AVEVA PI, Databricks) that drone data could feed.",
+        "source_ids": [
+          "S23"
+        ],
+        "verification": "supported",
+        "verification_note": "S23: 'Matias Gatica, director de Transformacion Digital de SQM YNV'; YNV = 'division de Yodo y Nutricion Vegetal'"
+      }
+    ],
+    "likely_reporting_line": "INFERENCE (not sourced): no public source found names a 'Northern Operations Division' or the contact, Rodrigo Castillo. If his three sites are Salar de Atacama lithium operations, his role most likely sits in Novandino's operations line, reporting into the salar or lithium operations managers named in the DF organigram, who report to the Novandino General Manager; budget for a multi-site deployment would probably need GM-level approval with input from maintenance and automation, digitalization/IT, risk management and supply chain. If the sites are instead iodine/nitrate operations in Tarapacá/Antofagasta, the line would run through SQM's Iodine and Plant Nutrition division, where the existing drone program sits."
+  },
+  "budget_signals": [
+    {
+      "claim": "In its 2Q2026 earnings release (August 18, 2026), SQM guided capital expenditures of approximately US$3 billion for 2026-2028, roughly 60% for Novandino, 20% for Iodine and Plant Nutrition and 20% for the International Lithium Division, including about US$300 million per year of sustaining capex across all divisions.",
+      "source_ids": [
+        "S10"
+      ],
+      "so_what": "About US$1.8B of 2026-2028 capex is earmarked for Novandino, and a sustaining-capex pool of roughly US$300M per year is the kind of budget an inspection-automation project can be funded from.",
+      "verification": "supported",
+      "verification_note": "S10 (August 18, 2026): 'approximately US$3 billion over the three-year period from 2026 to 2028 ... 60% for Novandino, 20% ... 20% ... approximately US$300 million per year of sustaining'"
+    },
+    {
+      "claim": "In November 2025 SQM had cut its 2025-2027 capex estimate to US$2.7 billion (about 25% for maintenance), from a previous US$3.1-3.8 billion range, delaying some investment decisions without changing production targets.",
+      "source_ids": [
+        "S7",
+        "S8"
+      ],
+      "so_what": "SQM was capital-disciplined through 2025; FlytBase should frame the project as opex/cost reduction with fast payback, not as discretionary capex.",
+      "verification": "supported",
+      "verification_note": "S7: 2025-2027 capex 'US$2.7 billion', 'approximately 25% allocated to maintenance', decisions delayed without impacting objectives; S8: 'down from a previous range of $3.1-$3.8 billion'"
+    },
+    {
+      "claim": "Novandino submitted environmental and technical documentation for the Salar Futuro project in July 2026; it contemplates about US$3 billion of capital investment over roughly seven years after approvals.",
+      "source_ids": [
+        "S10"
+      ],
+      "so_what": "A long expansion pipeline at the Salar de Atacama means more assets and construction areas to monitor, which supports a scalable autonomous inspection platform.",
+      "verification": "supported",
+      "verification_note": "S10: 'In July, Novandino submitted the environmental and technical documentation ... Salar Futuro'; 'approximately US$3 billion ... over approximately seven years following receipt of the required approvals'"
+    },
+    {
+      "claim": "SQM's 2Q2026 release says Novandino expects to produce 280,000-290,000 metric tons LCE in 2026 and to surpass 300,000 metric tons of capacity by end-2027, and that the Chilean lithium hydroxide plant is being converted to dual-purpose by mid-2027.",
+      "source_ids": [
+        "S10"
+      ],
+      "so_what": "Running at full capacity raises the cost of unplanned downtime, strengthening the ROI case for more frequent automated inspections.",
+      "verification": "supported",
+      "verification_note": "S10 Novandino section: 'expect to produce between 280,000 and 290,000 metric tons of LCE', 'surpass 300,000 metric tons of production capacity by the end of 2027', dual-purpose conversion 'completed by mid-2027'"
+    },
+    {
+      "claim": "FlytBase's published SQM case study reports the iodine irrigation-inspection system cost between USD 70,000 and 80,000 in total and reached ROI in less than a year.",
+      "source_ids": [
+        "S1"
+      ],
+      "so_what": "There is an internal SQM benchmark for drone-program cost and payback that the lead's Q3 budget discussion can reuse.",
+      "verification": "supported",
+      "verification_note": "S1: 'total system investment was between USD 70,000 and 80,000, with ROI achieved in less than a year'"
+    }
+  ],
+  "recent_news": [
+    {
+      "claim": "SQM's Q1 2026 results (May 26, 2026) were the first full quarter operating with Codelco through Nova Andino Litio; the CEO said operations were at full capacity and Novandino generated more than US$530 million in contributions to the Chilean state in the quarter.",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "The JV is operational and profitable, so the organization is stabilizing and can take on new operational projects.",
+      "verification": "supported",
+      "verification_note": "S11 (May 26, 2026): 'first full quarter operating alongside CODELCO through ... Nova Andino Litio', 'operating at full capacity', 'more than US$530 million in contributions to the Chilean state'"
+    },
+    {
+      "claim": "SQM reported 2025 net income of US$588.1 million versus a loss in 2024, with record Q4 2025 lithium sales volumes of more than 66,000 metric tons, per The Clinic (February 28, 2026).",
+      "source_ids": [
+        "S20"
+      ],
+      "so_what": "The return to profit removes the 2024 cost-cutting backdrop that could have stalled a new tech purchase.",
+      "verification": "supported",
+      "verification_note": "S20 (theclinic 2026/02/28): 'utilidades alcanzaron los US$ 588,1 millones ... perdidas ... del 2024'; Q4 2025 'ventas por mas de 66.000 toneladas metricas', headline 'record en ventas'"
+    },
+    {
+      "claim": "On February 18, 2026, Chile's Dirección del Trabajo partially suspended work at SQM Salar (about 2,300 m altitude, San Pedro de Atacama) over drinking-water and sanitation shortfalls, and also suspended a contractor operating there for insufficient personal protective equipment against weather and temperature swings.",
+      "source_ids": [
+        "S25"
+      ],
+      "so_what": "Regulators are scrutinizing working conditions for outdoor and contractor crews at the salar, which supports the lead's stated pain that contracted crews are hazardous and reinforces the case to reduce field exposure.",
+      "verification": "supported",
+      "verification_note": "S25 (18 Feb 2026): 'suspendio parcialmente las labores en SQM Salar' for lack of 'agua potable' and 'servicios higienicos'; '2.300 metros', San Pedro de Atacama; contractor suspended for insufficient 'elementos de proteccion personal' vs 'oscilaciones termicas'"
+    },
+    {
+      "claim": "On October 29, 2026, Reporte Minero reported that SQM launched the unified SQM Group identity covering SQM, Novandino Litio and SQM Litio Internacional.",
+      "source_ids": [
+        "S24"
+      ],
+      "so_what": "A group-level structure could let a proven drone platform be standardized across entities, a bigger deal than one division.",
+      "verification": "supported",
+      "verification_note": "S24: Reporte Minero, '29 de octubre de 2026', SQM Group unified identity grouping 'SQM, Novandino Litio y SQM Litio Internacional'"
+    },
+    {
+      "claim": "In its 1Q2026 release, SQM said IRMA's surveillance audit of the Salar de Atacama kept the operation at level 75 and highlighted improvements in safety performance and emergency preparedness, and that SQM began implementing ISO 37301 compliance management with certification expected in Q4 2026.",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "Safety and compliance certifications are live priorities; autonomous inspection with logged, auditable missions fits that narrative.",
+      "verification": "supported",
+      "verification_note": "S11: IRMA audit 'keeping level 75', 'improvements in safety performance ... enhanced emergency preparedness'; 'initiated the implementation of ISO 37301 ... Certification is expected ... in the fourth quarter of this year'"
+    }
+  ],
+  "investor_priorities": [
+    {
+      "claim": "In the Q3 2025 release, CEO Ricardo Ramos emphasized 'maintaining low costs and strong operating efficiency at our Atacama operations' alongside record lithium sales volumes.",
+      "source_ids": [
+        "S7"
+      ],
+      "so_what": "Cost and efficiency in the Atacama are stated CEO priorities, which matches replacing expensive contracted inspection crews.",
+      "verification": "supported",
+      "verification_note": "S7: 'highest lithium sales volumes in SQM's history, while maintaining low costs and strong operating efficiency at our Atacama operations'"
+    },
+    {
+      "claim": "In the 2Q2026 release, Ramos said Salar Futuro is designed to significantly reduce the environmental footprint, including eliminating continental water use at the Salar de Atacama and using renewable energy.",
+      "source_ids": [
+        "S10"
+      ],
+      "so_what": "Environmental footprint is a top message to investors; drone monitoring can support environmental and asset monitoring, not just maintenance inspection.",
+      "verification": "supported",
+      "verification_note": "S10: Salar Futuro 'designed to significantly reduce the environmental footprint ... elimination of continental water use ... use of renewable energy sources'"
+    },
+    {
+      "claim": "In the 1Q2026 release, Ramos said SQM believes it is well positioned to deliver solid results and improved returns to shareholders while advancing expansion plans in lithium and iodine.",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "Growth plus returns means projects need a clear payback; FlytBase should lead with ROI from the existing SQM case.",
+      "verification": "supported",
+      "verification_note": "S11: CEO 'We believe we are well positioned to deliver solid results and improved returns to our shareholders, while continuing to advance our expansion plans in both lithium and iodine'"
+    },
+    {
+      "claim": "In its Q4 2025 results, SQM attributed record volumes to long-term capacity expansion and to innovation in producing lithium from lithium sulfate, which allows more lithium with lower brine extraction (The Clinic, February 2026).",
+      "source_ids": [
+        "S20"
+      ],
+      "so_what": "Leadership publicly credits technology and process innovation for results, a receptive frame for autonomy.",
+      "verification": "supported",
+      "verification_note": "S20: 'esfuerzos sostenidos de expansion de capacidad a largo plazo ... innovacion en la produccion de litio a partir de sulfato de litio ... mas litio con una menor extraccion de salmuera'"
+    }
+  ],
+  "operations_context": [
+    {
+      "claim": "The Dirección del Trabajo describes SQM Salar as located at about 2,300 metres altitude in San Pedro de Atacama, with outdoor workers exposed to significant thermal swings.",
+      "source_ids": [
+        "S25"
+      ],
+      "so_what": "Altitude, heat and temperature swings are the conditions docks must handle; FlytBase should bring evidence of desert performance (the SQM iodine deployment reported more than 95% mission reliability).",
+      "verification": "supported",
+      "verification_note": "S25: 'ubicada a 2.300 metros de altura en la comuna de San Pedro de Atacama'; 'trabajadores que se desempenan a la intemperie'; 'significativas oscilaciones termicas'"
+    },
+    {
+      "claim": "The DF article lists the Carmen Lithium Chemical Plant east of Antofagasta, described as the world's largest lithium refinery with 210 thousand tonnes LCE of processing capacity and a 240 thousand tonne target for 2026, among the assets transferred into Nova Andino.",
+      "source_ids": [
+        "S13"
+      ],
+      "so_what": "Lithium operations span both the salar and a large chemical plant, so the three sites may include plant as well as brine-field assets with different inspection needs.",
+      "verification": "supported",
+      "verification_note": "S13 (DF): 'Planta Quimica de Litio Carmen, ubicada al este de ... Antofagasta ... la mayor refineria de litio del planeta', '210 mil toneladas ... LCE ... meta ... 240 mil en 2026', assets 'pasen a formar parte del pacto'"
+    },
+    {
+      "claim": "FlytBase's case study says SQM's iodine operation covers a 678 km² mining area in northern Chile, where manual inspections previously meant engineers walking or driving kilometres daily.",
+      "source_ids": [
+        "S1",
+        "S15"
+      ],
+      "so_what": "SQM already knows the walking-inspection problem at scale and has seen the drone alternative work internally.",
+      "verification": "supported",
+      "verification_note": "S1: '678 km2 mining operation in northern Chile', checks were manual 'with field engineers walking or driving kilometers each day'; S15 ties it to iodine yield/leaching heaps across 678 km2"
+    },
+    {
+      "claim": "Reporte Minero reported a worker died in an accident at SQM's Nueva Victoria site (Tarapacá) on February 14, 2024; SQM said the victim was a crane-truck operator and operations were suspended in the area.",
+      "source_ids": [
+        "S26"
+      ],
+      "so_what": "Fatal incidents at SQM sites make reducing people's exposure in the field a credible safety argument.",
+      "verification": "supported",
+      "verification_note": "S26: worker died at 'faena Nueva Victoria de SQM, Region de Tarapaca' on 'miercoles 14 de febrero' (2024); 'operador de camion pescante'; 'operaciones habian sido suspendidas en el area'"
+    },
+    {
+      "claim": "SQM's 2Q2026 release says Novandino is converting the Chilean lithium hydroxide plant to a dual-purpose facility by mid-2027 and has introduced lithium sulfate production at the Salar de Atacama.",
+      "source_ids": [
+        "S10"
+      ],
+      "so_what": "Ongoing construction and process change add inspection and progress-monitoring needs.",
+      "verification": "supported",
+      "verification_note": "S10 Novandino section: converting hydroxide plant to 'dual-purpose facility ... completed by mid-2027'; 'introduced ... lithium sulfate production at the Salar de Atacama'"
+    }
+  ],
+  "technology_adoption": [
+    {
+      "claim": "FlytBase's published case study says SQM, with Chilean integrator Adentu, deployed DJI Dock drones on FlytBase across a 678 km² operation, running two autonomous missions a day with RGB and thermal data sent to SQM's Azure environment, doubling inspection frequency and reaching more than 95% mission reliability.",
+      "source_ids": [
+        "S1"
+      ],
+      "so_what": "SQM is already a FlytBase customer in iodine; the lead is an expansion into lithium, and the known integrator (Adentu) and data stack (Azure) cut technical risk.",
+      "verification": "supported",
+      "verification_note": "S1: Adentu + FlytBase, DJI Dock, '678 km2', 'two fully autonomous missions', 'RGB and thermal imagery ... SQM's Azure environment', 'doubled inspection frequency', 'more than 95 percent mission reliability'"
+    },
+    {
+      "claim": "The same case study says SQM ordered additional DJI Docks for its security department for 24/7 surveillance and plans FlytBase AI-R edge analytics and BVLOS operations; a second FlytBase page says four more docks were on order.",
+      "source_ids": [
+        "S1",
+        "S15"
+      ],
+      "so_what": "Other SQM departments are already copying the model, which supports a group-wide standard and 24/7 operations that match the lead's 24/7 sites.",
+      "verification": "supported",
+      "verification_note": "S1: 'ordered additional DJI Docks for its security department, planning to run 24/7 site surveillance', 'FlytBase AI-R ... edge AI', 'BVLOS ... on the roadmap'; S15: 'Four more docks are already on order'"
+    },
+    {
+      "claim": "An ANDRITZ success story describes a phased transformation at SQM's lithium operations covering asset management, automation, optimization and digital twins at the PQLC plant, and notes the establishment of an Automation and Energy Management Department.",
+      "source_ids": [
+        "S21"
+      ],
+      "so_what": "The lithium side already invests in automation and asset monitoring; drone inspection data can plug into that program.",
+      "verification": "supported",
+      "verification_note": "S21: 'phased technological transformation ... asset management, automation, optimization, and the integration of digital twins', 'SQM's PQLC plant', 'establishment of the Automation and Energy Management Department'"
+    },
+    {
+      "claim": "SQM's Iodine and Plant Nutrition division adopted AVEVA PI System with Databricks and AI models reported at about 90% predictive accuracy, and the article says the infrastructure could extend to lithium.",
+      "source_ids": [
+        "S23"
+      ],
+      "so_what": "SQM has a data platform where drone-derived insights can land; FlytBase should stress API integration.",
+      "verification": "supported",
+      "verification_note": "S23: SQM YNV data flows 'desde AVEVA PI System a Databricks', 'Modelos predictivos con una precision cercana al 90%', infrastructure could extend to 'divisiones de yodo, litio y nutricion vegetal'"
+    },
+    {
+      "claim": "Reporte Minero (May 2025) reports SQM Iodine and Plant Nutrition uses the Lean M1+ methodology with multidisciplinary cells of data-analytics, AI and operations specialists.",
+      "source_ids": [
+        "S22"
+      ],
+      "so_what": "An internal culture for piloting and scaling digital tools makes a pilot-then-scale proposal fit how SQM adopts technology.",
+      "verification": "supported",
+      "verification_note": "S22 (22 de mayo de 2025): SQM Yodo Nutricion Vegetal uses 'metodologia Lean M1+', 'celulas de trabajo multidisciplinarias ... analitica de datos, modelos de inteligencia artificial y especialistas operacionales'"
+    }
+  ],
+  "positioning_recommendation": {
+    "summary": "Position FlytBase as the proven autonomy platform SQM already runs in its iodine operations, now extended to the lead's three 24/7 lithium sites: same integrator model (Adentu), same Azure data path, desert-proven reliability. Frame the deal as an operating-cost and safety project funded from the sustaining-capex pool rather than a new discretionary capex line, with payback benchmarked on the SQM iodine case. Because the lithium sites now sit in Novandino (the Codelco-SQM JV), confirm early which entity contracts and bring a governance-ready package (security, compliance, auditability) suited to a public-private board. Propose a one-site pilot before the Q3 budget conversation, with a roadmap to all three sites and to 24/7 security and environmental monitoring.",
+    "angles": [
+      "Internal reference: SQM's own iodine program on FlytBase with Adentu doubled inspection frequency, reported >95% mission reliability and paid back in under a year on a USD 70-80k system [S1]; offer an introduction to Rodrigo Toler, Deputy Manager of Digital Innovation [S1].",
+      "Budget fit: ~US$3B 2026-2028 capex with ~60% for Novandino and ~US$300M per year of sustaining capex [S10]; position the rollout as sustaining/opex-lowering, consistent with management's capital discipline after the 2025 capex cut [S7][S8].",
+      "Safety and compliance: the February 2026 Dirección del Trabajo partial suspension at SQM Salar, including a contractor suspended over PPE [S25], plus IRMA safety focus and ISO 37301 rollout [S11], support reducing field exposure through remote, logged missions.",
+      "24/7 match: SQM already ordered extra docks for 24/7 security surveillance [S1], so one platform can cover inspection by day and security around the clock at the lithium sites.",
+      "Integration: drone data can feed the existing Azure path [S1] and the AVEVA/Databricks platform that SQM says could extend to lithium [S23], plus the ANDRITZ asset-management program at the lithium plant [S21].",
+      "Scale story: Salar Futuro (~US$3B over about seven years) [S10] and 300k t LCE capacity by end-2027 [S10] mean more assets to monitor; sell a platform, not a point solution."
+    ],
+    "risks_or_objections": [
+      "Entity and governance: lithium assets moved into Novandino with a 3+3 Codelco/SQM board [S9][S13]; procurement may follow new JV rules, and the iodine reference may sit in a different legal entity.",
+      "The contact's 'Northern Operations Division' does not appear in any public org source found, so the sites may not be the Salar de Atacama lithium operations; confirm site names and owner before quoting.",
+      "Capital discipline: SQM delayed some investment decisions in 2025 [S7][S8]; a large multi-site upfront spend may be pushed back.",
+      "Harsh conditions (about 2,300 m altitude, large thermal swings) [S25] will drive technical scrutiny; the iodine case reliability data is vendor-published [S1] and SQM may want its own validation.",
+      "Reputational and legal noise around SQM (court activity on the 'Caso SQM' was being discussed on r/chile in 2026) [S28][S29] is anecdotal and unrelated to operations, but adds to public scrutiny of the group.",
+      "Incumbent automation vendors (ANDRITZ, AVEVA) [S21][S23] and in-house contractors may compete for the same budget."
+    ]
+  },
+  "not_found": [
+    "Any public source naming a 'Northern Operations Division' at SQM or Novandino, or the contact Rodrigo Castillo and his reporting line.",
+    "Which three sites the lead means (Salar de Atacama brine field, Carmen Lithium Chemical Plant, or other) - not identifiable from public sources.",
+    "SQM's spend on contracted inspection crews, or any public figure on inspection or maintenance opex.",
+    "Safety statistics (lost-time injury frequency) for SQM or Novandino in 2024-2025 from a sustainability report; the sustainability report page was blocked.",
+    "The text of the 2025 annual report chairman/CEO letter; the FY2025 20-F page only returned XBRL header data, so it is not cited.",
+    "Q3 2026 results (not yet published as of the research date) and FY2026 capex actuals.",
+    "Any public record of the Anglo American relationship with SQM beyond FlytBase's own case studies.",
+    "LinkedIn pages for the named stakeholders (Chrome tools not used); names come from Diario Financiero and FlytBase case studies only.",
+    "Practitioner Reddit discussion of SQM operations or drone use at the Atacama; r/mining and r/drones searches timed out or returned unrelated posts."
+  ],
+  "queries_run": [
+    {
+      "category": "budget_signals",
+      "query": "SQM capex 2025 guidance lithium",
+      "kept_sources": [
+        "S7",
+        "S8"
+      ]
+    },
+    {
+      "category": "budget_signals",
+      "query": "SQM third quarter 2025 results investment plan",
+      "kept_sources": [
+        "S7"
+      ]
+    },
+    {
+      "category": "budget_signals",
+      "query": "SQM 2025 annual report 20-F capital expenditures fourth quarter 2025 results capex 2026",
+      "kept_sources": [
+        "S10",
+        "S18"
+      ]
+    },
+    {
+      "category": "org_structure",
+      "query": "SQM Codelco NovaAndino Litio joint venture 2025",
+      "kept_sources": [
+        "S9"
+      ]
+    },
+    {
+      "category": "org_structure",
+      "query": "SQM executive team vice president operations lithium Salar de Atacama gerente",
+      "kept_sources": []
+    },
+    {
+      "category": "org_structure",
+      "query": "Nova Andino Litio gerente general operaciones nombramiento 2026",
+      "kept_sources": [
+        "S12",
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "category": "recent_news",
+      "query": "SQM NovaAndino results 2026 lithium quarter",
+      "kept_sources": [
+        "S11"
+      ]
+    },
+    {
+      "category": "recent_news",
+      "query": "SQM fourth quarter 2025 results",
+      "kept_sources": [
+        "S20"
+      ]
+    },
+    {
+      "category": "recent_news",
+      "query": "\"SQM Group\" unifica su estructura octubre 2026",
+      "kept_sources": [
+        "S24"
+      ]
+    },
+    {
+      "category": "recent_news",
+      "query": "SQM noticias octubre 2026 litio Nova Andino Salar Futuro",
+      "kept_sources": []
+    },
+    {
+      "category": "investor_priorities",
+      "query": "SQM Annual Report 2025 letter from the chairman CEO safety operational excellence",
+      "kept_sources": []
+    },
+    {
+      "category": "operations_context",
+      "query": "SQM Salar de Atacama operations Salar del Carmen Nueva Victoria sites description 20-F",
+      "kept_sources": []
+    },
+    {
+      "category": "operations_context",
+      "query": "SQM accidente trabajador contratista Salar de Atacama 2025 2026",
+      "kept_sources": [
+        "S25",
+        "S26"
+      ]
+    },
+    {
+      "category": "operations_context",
+      "query": "SQM reporte de sustentabilidad 2025 seguridad tasa de frecuencia contratistas",
+      "kept_sources": []
+    },
+    {
+      "category": "technology_adoption",
+      "query": "SQM drones Salar de Atacama monitoreo drones inspección",
+      "kept_sources": [
+        "S1",
+        "S15"
+      ]
+    },
+    {
+      "category": "technology_adoption",
+      "query": "SQM innovación digitalización automatización operaciones litio inteligencia artificial centro de operaciones remoto",
+      "kept_sources": [
+        "S21",
+        "S22",
+        "S23"
+      ]
+    },
+    {
+      "category": "reddit",
+      "query": "SQM (r/mining, r/lithium, r/chile, r/UAVmapping, r/drones)",
+      "kept_sources": [
+        "S28",
+        "S29"
+      ]
+    },
+    {
+      "category": "reddit",
+      "query": "drone dock mining (r/mining, r/drones, r/UAVmapping)",
+      "kept_sources": []
+    }
+  ],
+  "removed_by_fact_check": [],
+  "fact_check": {
+    "claims_checked": 43,
+    "removed": 0,
+    "partial": 2
+  },
+  "sources_registered": 38,
+  "pdf_checklist": [
+    {
+      "item": "Organizational structure and reporting lines",
+      "ok": true,
+      "detail": "INFERENCE (not sourced): no public source found names a 'Northern Operations Division' or the contact, Rodrigo Castillo. If his three sites are Salar de Atacama lithium operations, his role most likely sits in Novandino's operations line, reporting into the salar or lithium operations managers named in the DF organigram, who report to the Novandino General Manager; budget for a multi-site deployment would probably need GM-level approval with input from maintenance and automation, digitalization/IT, risk management and supply chain. If the sites are instead iodine/nitrate operations in Tarapacá/Antofagasta, the line would run through SQM's Iodine and Plant Nutrition division, where the existing drone program sits."
+    },
+    {
+      "item": "Budget signals from public filings (capex, opex, technology)",
+      "ok": true
+    },
+    {
+      "item": "Recent news, press releases, strategic announcements",
+      "ok": true
+    },
+    {
+      "item": "Stakeholder or investor letters revealing priorities",
+      "ok": true
+    },
+    {
+      "item": "Synthesized FlytBase positioning recommendation",
+      "ok": true
+    },
+    {
+      "item": "All research real: every kept claim cites a stored source and passed the fact-check",
+      "ok": true,
+      "detail": "43 claims checked, 0 removed"
+    }
+  ]
+}

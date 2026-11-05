@@ -1,0 +1,209 @@
+{
+  "framework_rationale": "MEDDPICC fits this lead because it is an enterprise industrial purchase: 3 large-scale, 24/7 lithium sites in the Atacama, which means operations, safety, IT/OT and procurement will all weigh in. The contact (Head of Operations, Northern Operations Division) is a strong operational owner, but the email does not name who signs, and the 'internal budget conversation scheduled for Q3' hints at a formal budget and decision cycle that MEDDPICC tracks explicitly (Economic Buyer, Decision Process, Paper Process). The Anglo American referral, and the likely role of a LATAM integrator/reseller, add relationship and partner dynamics that BANT does not capture. BANT would score this lead as 'need + timing' and stop there, missing the buying committee and paper path. SPICED is built for recurring SaaS expansion and customer-success motions, not a first multi-site hardware-plus-software deployment. MEDDPICC also makes the gaps explicit (no metrics, criteria, champion confirmation or competition stated), which tells the BDR what the first emails must uncover.",
+  "elements": [
+    {
+      "key": "M",
+      "name": "Metrics",
+      "status": "partial",
+      "evidence": "Contracted crews are expensive and hazardous",
+      "missing": "Quantified current spend on contracted crews, inspection frequency, incident rates, and target savings or coverage",
+      "discovery_question": "Roughly what do the contracted inspection crews cost you per year across the three sites, and how often do they inspect?"
+    },
+    {
+      "key": "E",
+      "name": "Economic Buyer",
+      "status": "partial",
+      "evidence": "Internal budget conversation scheduled for Q3",
+      "missing": "Who owns the budget and signs off (Rodrigo, a VP of Operations, or corporate)",
+      "discovery_question": "Who besides yourself will be in the Q3 budget conversation, and who makes the final sign-off?"
+    },
+    {
+      "key": "D1",
+      "name": "Decision Criteria",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Technical and commercial criteria: desert/dust/heat performance, autonomy level, integration with existing systems, data security, pricing model",
+      "discovery_question": "What would a drone inspection solution need to prove to work in Atacama conditions around the clock?"
+    },
+    {
+      "key": "D2",
+      "name": "Decision Process",
+      "status": "partial",
+      "evidence": "Internal budget conversation scheduled for Q3",
+      "missing": "Steps after the budget conversation, stakeholders involved (safety, IT/OT, procurement), pilot expectations and target go-live",
+      "discovery_question": "After the Q3 budget conversation, what steps would a project like this go through, for example a pilot at one site first?"
+    },
+    {
+      "key": "P",
+      "name": "Paper Process",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Procurement path, vendor onboarding, legal/security review, preference for buying direct or through a local partner",
+      "discovery_question": "How does SQM usually procure new technology like this: direct from the vendor or through a local integrator, and is there a security or vendor review?"
+    },
+    {
+      "key": "I",
+      "name": "Identify Pain",
+      "status": "known",
+      "evidence": "Contracted crews are expensive and hazardous",
+      "missing": "Consequence and urgency: specific incidents, downtime, or compliance pressure driving the change now",
+      "discovery_question": "What is driving the move away from contracted crews now: a safety incident, cost pressure, or expanding production?"
+    },
+    {
+      "key": "C1",
+      "name": "Champion",
+      "status": "partial",
+      "evidence": "Rodrigo Castillo, Head of Operations, Northern Operations Division, reached out proactively via flytbase.com/contact",
+      "missing": "Whether Rodrigo will actively sponsor the project internally and has influence over the budget decision",
+      "discovery_question": "Would you be the one leading this internally, and who else should we involve early so the Q3 discussion goes well?"
+    },
+    {
+      "key": "C2",
+      "name": "Competition",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Status quo (contracted crews) is the known alternative; other drone vendors or in-house options being evaluated are not stated",
+      "discovery_question": "Are you looking at any other drone or robotics solutions, or would the alternative be staying with the contracted crews?"
+    }
+  ],
+  "fit_ratings": {
+    "industry_fit": {
+      "rating": 5,
+      "reason": "Mining: 'large-scale, 24/7 lithium extraction sites in the Atacama Desert' is heavy industry with large outdoor assets."
+    },
+    "site_scale": {
+      "rating": 5,
+      "reason": "'3 large-scale ... lithium extraction sites' is a multi-site deployment."
+    },
+    "continuous_operations": {
+      "rating": 5,
+      "reason": "Email states the sites run '24/7'."
+    },
+    "pain_severity": {
+      "rating": 4,
+      "reason": "'Contracted crews are expensive and hazardous' is cost plus safety pain that autonomy removes directly, but it is not quantified."
+    },
+    "buyer_authority": {
+      "rating": 4,
+      "reason": "'Head of Operations, Northern Operations Division' owns operations but is not confirmed as the budget signer."
+    },
+    "warm_introduction": {
+      "rating": 5,
+      "reason": "'Referred by Anglo American', a major mining peer."
+    },
+    "timing_and_budget": {
+      "rating": 3,
+      "reason": "'Internal budget conversation scheduled for Q3' gives a timeline but no budget amount or approval yet."
+    }
+  },
+  "risks": [
+    "Budget is not yet approved; it depends on the Q3 internal conversation",
+    "Economic buyer and sign-off path are unknown",
+    "Procurement path unknown; a large mining company may require long vendor onboarding or a local partner",
+    "Harsh Atacama conditions (dust, heat, altitude, wind) may raise technical evaluation hurdles",
+    "No quantified metrics yet to build an ROI case",
+    "Competitors or the status quo of contracted crews may be entrenched"
+  ],
+  "summary": "SQM is a near-ideal ICP fit: a major Chilean lithium miner with 3 large-scale 24/7 Atacama sites, clear cost and safety pain, a senior operations contact, and a warm referral from Anglo American. Priority is high, held back only by unknown economic buyer, decision criteria, paper process and competition, and a budget that is still pending the Q3 conversation.",
+  "framework": "MEDDPICC",
+  "fit_weights": {
+    "industry_fit": 20,
+    "site_scale": 15,
+    "continuous_operations": 10,
+    "pain_severity": 15,
+    "buyer_authority": 15,
+    "warm_introduction": 10,
+    "timing_and_budget": 15
+  },
+  "scores": {
+    "icp_fit_score": 88,
+    "meddpicc_completeness": 38,
+    "priority_score": 73,
+    "priority_tier": "P1 - Hot: respond same business day, involve AE early",
+    "formula": "priority = 0.7 x ICP fit + 0.3 x MEDDPICC completeness; tier set by ICP fit (>=75 P1, >=55 P2)",
+    "calculation": [
+      "industry_fit 5/5 x 20 = 20.0",
+      "site_scale 5/5 x 15 = 15.0",
+      "continuous_operations 5/5 x 10 = 10.0",
+      "pain_severity 4/5 x 15 = 12.0",
+      "buyer_authority 4/5 x 15 = 12.0",
+      "warm_introduction 5/5 x 10 = 10.0",
+      "timing_and_budget 3/5 x 15 = 9.0",
+      "ICP fit = 88.0",
+      "MEDDPICC completeness = 37.5%",
+      "priority = 0.7 x 88.0 + 0.3 x 37.5 = 73"
+    ]
+  },
+  "known_information": [
+    "Identify Pain"
+  ],
+  "missing_information": [
+    {
+      "element": "Metrics",
+      "status": "partial",
+      "missing": "Quantified current spend on contracted crews, inspection frequency, incident rates, and target savings or coverage",
+      "discovery_question": "Roughly what do the contracted inspection crews cost you per year across the three sites, and how often do they inspect?"
+    },
+    {
+      "element": "Economic Buyer",
+      "status": "partial",
+      "missing": "Who owns the budget and signs off (Rodrigo, a VP of Operations, or corporate)",
+      "discovery_question": "Who besides yourself will be in the Q3 budget conversation, and who makes the final sign-off?"
+    },
+    {
+      "element": "Decision Criteria",
+      "status": "unknown",
+      "missing": "Technical and commercial criteria: desert/dust/heat performance, autonomy level, integration with existing systems, data security, pricing model",
+      "discovery_question": "What would a drone inspection solution need to prove to work in Atacama conditions around the clock?"
+    },
+    {
+      "element": "Decision Process",
+      "status": "partial",
+      "missing": "Steps after the budget conversation, stakeholders involved (safety, IT/OT, procurement), pilot expectations and target go-live",
+      "discovery_question": "After the Q3 budget conversation, what steps would a project like this go through, for example a pilot at one site first?"
+    },
+    {
+      "element": "Paper Process",
+      "status": "unknown",
+      "missing": "Procurement path, vendor onboarding, legal/security review, preference for buying direct or through a local partner",
+      "discovery_question": "How does SQM usually procure new technology like this: direct from the vendor or through a local integrator, and is there a security or vendor review?"
+    },
+    {
+      "element": "Champion",
+      "status": "partial",
+      "missing": "Whether Rodrigo will actively sponsor the project internally and has influence over the budget decision",
+      "discovery_question": "Would you be the one leading this internally, and who else should we involve early so the Q3 discussion goes well?"
+    },
+    {
+      "element": "Competition",
+      "status": "unknown",
+      "missing": "Status quo (contracted crews) is the known alternative; other drone vendors or in-house options being evaluated are not stated",
+      "discovery_question": "Are you looking at any other drone or robotics solutions, or would the alternative be staying with the contracted crews?"
+    }
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Framework stated and explained",
+      "ok": true
+    },
+    {
+      "item": "Known information extracted from the email",
+      "ok": true,
+      "detail": "Identify Pain"
+    },
+    {
+      "item": "Missing information required for full qualification",
+      "ok": true,
+      "detail": "Metrics, Economic Buyer, Decision Criteria, Decision Process, Paper Process, Champion, Competition"
+    },
+    {
+      "item": "Fit assessment (every ICP factor rated with a reason)",
+      "ok": true
+    },
+    {
+      "item": "Priority score with reasoning",
+      "ok": true,
+      "detail": "73/100, P1 - Hot: respond same business day, involve AE early"
+    }
+  ]
+}

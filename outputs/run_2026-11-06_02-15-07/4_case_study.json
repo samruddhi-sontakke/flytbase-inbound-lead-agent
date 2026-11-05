@@ -1,0 +1,607 @@
+{
+  "search_log": [
+    "WebSearch 'site:flytbase.com case study Anglo American': no flytbase.com hits directly; a dronevideos.com repost pointed to a FlytBase/Anglo American Quellaveco deployment with UAV Latam.",
+    "WebSearch 'site:flytbase.com mining case study drone dock': found the flytbase.com Anglo American Peru case study, the Quellaveco blog post and an Anglo American docked-drones webinar, and referenced an SQM/Adentu 678 km2 case study.",
+    "WebSearch 'site:flytbase.com SQM lithium Chile': no flytbase.com results, only general SQM news.",
+    "case_study_candidates crawled the flytbase.com sitemap plus 2 extra URLs and scanned 25 case studies. Shortlist: SQM/Adentu (S1, pre_score 21, mentions_lead_company=true), Anglo American Peru (S2/S3, the same page under two hostnames, pre_score 19, mentions_referrer=true), MSS Security (S4), CSX (S5), TNB (S6)."
+  ],
+  "ranking": [
+    {
+      "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+      "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone",
+      "fit_score": 97,
+      "industry_match": "Exact: SQM itself, mining (lithium, iodine, nitrate).",
+      "use_case_match": "Strong: replaces manual field-engineer walking/driving inspections with daily autonomous dock-based RGB and thermal inspection. The lead wants to replace expensive, hazardous contracted crews.",
+      "context_match": "Exact: Atacama Desert, northern Chile, 678 km2 open-area operation, DJI Dock, local integrator Adentu."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/anglo-american-autonomous-mining-drones-peru-case-study",
+      "title": "How Anglo American Uses Autonomous Drones to Transform Mining Safety in Peru",
+      "fit_score": 88,
+      "industry_match": "Strong: large-scale mining (Quellaveco copper mine). This is the referrer's own deployment.",
+      "use_case_match": "Good: autonomous drone-in-a-box replacing manual drone flights and truck travel for topographic surveys, with personnel safety as a driver.",
+      "context_match": "Good: LATAM (Peru), extensive and inaccessible mine areas, mountainous terrain, LATAM partner UAV LATAM. Copper rather than lithium, and survey rather than inspection."
+    },
+    {
+      "url": "https://www.flytbase.com/case-studies/anglo-american-autonomous-mining-drones-peru-case-study",
+      "title": "How Anglo American Uses Autonomous Drones to Transform Mining Safety in Peru (www duplicate)",
+      "fit_score": 88,
+      "industry_match": "Duplicate of S2 (same page, www hostname).",
+      "use_case_match": "Same as S2.",
+      "context_match": "Same as S2."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/csx-autonomous-drone-rail-inspection",
+      "title": "How CSX Enhances Rail Safety with Autonomous Drone Inspections",
+      "fit_score": 45,
+      "industry_match": "Weak: rail transportation.",
+      "use_case_match": "Moderate: autonomous inspection that removes personnel from dangerous situations, multi-site (13 sites across 10 locations).",
+      "context_match": "Weak: US rail yards. The useful parallel is multi-site scale."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/tnb-warehouse-asset-monitoring-autonomous-drones-malaysia",
+      "title": "How TNB Reduced Warehouse Inventory Verification Time by 90x with Autonomous Drones In Malaysia",
+      "fit_score": 35,
+      "industry_match": "Weak: energy utility warehouse.",
+      "use_case_match": "Partial: replaces months-long manual inspection with dock-based autonomous monitoring.",
+      "context_match": "Weak: 43-hectare storage facility in Malaysia, though it uses Starlink connectivity, which is relevant to remote sites."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/mss-security-airport-bvlos-drone-operations-australia",
+      "title": "MSS Security Transforms Airport Safety with BVLOS Drone Operations in Australia",
+      "fit_score": 25,
+      "industry_match": "Weak: site security / airport.",
+      "use_case_match": "Weak: nighttime perimeter security inspections.",
+      "context_match": "Weak: Australia, airport BVLOS regulatory precedent."
+    }
+  ],
+  "primary": {
+    "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+    "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone",
+    "source_id": "S1",
+    "why_strongest_fit": "This case study is about the lead's own company. SQM already runs DJI Dock-based autonomous inspection on FlytBase across a 678 km² operation in the Atacama Desert, the same desert, country and kind of operation as Rodrigo Castillo's 3 lithium sites. It shows manual field inspection (engineers walking or driving kilometers under the desert sun) being replaced by daily autonomous missions, which maps directly to his goal of replacing expensive, hazardous contracted crews. It also names the local integrator (Adentu) and the data pipeline (FlytBase to Azure) that SQM has already approved internally, which lowers technical and procurement risk before the Q3 budget conversation. Expanding from an existing internal success to the Northern Operations Division is a far stronger argument than any outside reference.",
+    "key_proof_points": [
+      "SQM \"cut inspection time from days to hours\"",
+      "\"achieved more than 95 percent mission reliability\"",
+      "\"doubled inspection frequency\"",
+      "\"improved iodine extraction yield by two percent\"",
+      "678 km² mining operation in northern Chile (Atacama Desert)",
+      "\"It was the first time SQM's inspection team could start their day with a ranked list of priorities generated entirely by autonomous systems.\""
+    ],
+    "how_to_use_it": "Open with the internal proof point: 'Your colleagues on SQM's Digital Innovation team (Rodrigo Toler) already run FlytBase with Adentu across 678 km² in the Atacama.' Position the Northern Operations request as scaling a proven internal programme to 3 more 24/7 sites, not a new pilot. Ask whether he knows the Digital Innovation team and offer an introduction or joint call with Adentu. Use the >95% reliability, days-to-hours and doubled-frequency metrics in the Q3 budget business case. Note the page headline says '4× iodine yield' while the body says a two percent improvement, so quote the body text.",
+    "url_verified": true
+  },
+  "secondary": {
+    "url": "https://flytbase.com/case-studies/anglo-american-autonomous-mining-drones-peru-case-study",
+    "title": "How Anglo American Uses Autonomous Drones to Transform Mining Safety in Peru",
+    "why": "This is the referrer's own FlytBase deployment: drone-in-a-box at the Quellaveco copper mine in Peru with LATAM partner UAV LATAM. It replaced manual drone flights and truck travel across inaccessible, mountainous terrain to cut travel time and personnel safety exposure. Use it to acknowledge the referral and as a peer LATAM mining reference for safety and remote-site connectivity (elevated dock placement)."
+  },
+  "referral_connection": {
+    "found": true,
+    "url": "https://flytbase.com/case-studies/anglo-american-autonomous-mining-drones-peru-case-study",
+    "source_id": "S2",
+    "explanation": "FlytBase's site has an Anglo American case study. Anglo American deployed FlytBase-powered drone-in-a-box technology at its Quellaveco copper mine in Peru through implementation partner UAV LATAM. The deployment replaced manual drone flights and truck transport between survey locations, improving personnel safety in mountainous terrain, and the case study frames it as a new standard for mining safety in Latin America. The likely referral path is a mining peer who has seen autonomous docks working in LATAM."
+  },
+  "existing_relationship": {
+    "found": true,
+    "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+    "source_id": "S1",
+    "explanation": "Yes. SQM partnered with Chile-based integrator Adentu and FlytBase to automate inspection across its 678 km² operation in northern Chile. It started as a single-DJI-Dock pilot detecting irrigation leaks and leaching inefficiencies and grew into a daily automated inspection ecosystem, with RGB and thermal imagery feeding SQM's Azure ML environment. Reported results: inspection time from days to hours, >95% mission reliability, doubled inspection frequency and a 2% iodine extraction yield improvement. The case study names Rodrigo Toler (Deputy Manager of Digital Innovation, SQM). The inbound lead comes from a different person and division (Rodrigo Castillo, Northern Operations Division) and does not mention this, so treat it as account expansion and coordinate with the existing account owner and Adentu."
+  },
+  "people_named": [
+    {
+      "name": "Rodrigo Toler",
+      "title": "Deputy Manager of Digital Innovation",
+      "company": "SQM",
+      "source_id": "S1",
+      "relevance": "Internal SQM champion of the existing FlytBase deployment. He can vouch internally to the Northern Operations Division and is a potential coach for the Q3 budget decision."
+    },
+    {
+      "name": "José Pablo Mujica",
+      "title": "Commercial Manager",
+      "company": "Adentu",
+      "source_id": "S1",
+      "relevance": "Commercial contact at the Chile-based integrator already delivering FlytBase at SQM, and the likely partner for a partner-led expansion."
+    },
+    {
+      "name": "Kimberly Rojas Ruiz",
+      "title": "",
+      "company": "UAV LATAM",
+      "source_id": "S2",
+      "relevance": "Quoted on the referrer's (Anglo American) Quellaveco deployment. A possible contact at the LATAM partner behind the referral reference."
+    }
+  ],
+  "pre_scores": [
+    {
+      "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+      "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone | FlytBase | FlytBase",
+      "keyword_hits": [
+        "atacama",
+        "autonomous",
+        "based",
+        "chile",
+        "desert",
+        "drone",
+        "drones",
+        "extraction",
+        "inspection",
+        "lithium",
+        "mining",
+        "operations",
+        "site"
+      ],
+      "pre_score": 21,
+      "mentions_referrer": false,
+      "mentions_lead_company": true,
+      "source_id": "S1"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/anglo-american-autonomous-mining-drones-peru-case-study",
+      "title": "How Anglo American Uses Autonomous Drones to Transform Mining Safety in Peru | FlytBase Case Study | FlytBase",
+      "keyword_hits": [
+        "american",
+        "anglo",
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "mining",
+        "operations",
+        "replacing",
+        "safety",
+        "site"
+      ],
+      "pre_score": 19,
+      "mentions_referrer": true,
+      "mentions_lead_company": false,
+      "source_id": "S2"
+    },
+    {
+      "url": "https://www.flytbase.com/case-studies/anglo-american-autonomous-mining-drones-peru-case-study",
+      "title": "How Anglo American Uses Autonomous Drones to Transform Mining Safety in Peru | FlytBase Case Study | FlytBase",
+      "keyword_hits": [
+        "american",
+        "anglo",
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "mining",
+        "operations",
+        "replacing",
+        "safety",
+        "site"
+      ],
+      "pre_score": 19,
+      "mentions_referrer": true,
+      "mentions_lead_company": false,
+      "source_id": "S3"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/mss-security-airport-bvlos-drone-operations-australia",
+      "title": "MSS Security Transforms Airport Safety with BVLOS Drone Operations in Australia | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "contracted",
+        "drone",
+        "drones",
+        "inspection",
+        "mining",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 10,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S4"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/csx-autonomous-drone-rail-inspection",
+      "title": "How CSX Enhances Rail Safety with Autonomous Drone Inspections | FlytBase",
+      "keyword_hits": [
+        "american",
+        "autonomous",
+        "crews",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 9,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S5"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/tnb-warehouse-asset-monitoring-autonomous-drones-malaysia",
+      "title": "How TNB Reduced Warehouse Inventory Verification Time by 90x with Autonomous Drones In Malaysia | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "mining",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 9,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S6"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/ibn-firnas-drone-center-oman-government-construction-monitoring",
+      "title": "How IFDC Monitors 3 Oman Gov't Sites With Zero Pilots | FlytBase | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "replacing",
+        "safety",
+        "site"
+      ],
+      "pre_score": 9,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/24-7-drone-force-residential-estate-security-docks-south-africa",
+      "title": "24-7 Drone Force Secures Residential Estates using Autonomous Drones in South Africa | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "mining",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/aerial-fences-automating-ranch-security-oversight-drones-flytbase",
+      "title": "How Aerial Fences is Automating Ranch Security and Oversight using Autonomous Drones | FlytBase | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/agtech360-livestock-monitoring-autonomous-drones-australia",
+      "title": "<title>Case Study: AgTech360 Transforms Livestock Monitoring with Autonomous Drones</title> | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "crews",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/aiview-autonomous-drones-italian-highway-monitoring",
+      "title": "AI View Group Transforms Italian Highway Monitoring with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/axpo-hydropower-plant-monitoring-autonomous-drones",
+      "title": "Hydropower Monitoring with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/enbw-scaled-solar-pv-inspections-150-mw-to-1-gw-autonomous-drone-docks",
+      "title": "EnBW Case Study: Autonomous Drones for Gigawatt Solar Portfolio | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "replacing",
+        "site"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/sensorem-autonomous-docked-drones-deployment-australia",
+      "title": "How Sensorem Deployed 20+ Autonomous Drones Across Remote Australian Industrial Sites | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/titan-protection-autonomous-drone-security",
+      "title": "How Titan Protection Reduced Security Costs by 60% with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/uae-waste-management-autonomous-drone-implementation-case-study",
+      "title": "Months ROI timeline | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/discovery-land-autonomous-drone-security",
+      "title": "How Discovery Land Company Enhanced Security with Autonomous Drones | Case Study | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 7,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/how-bf-kiel-turned-emergency-response-into-a-3-minute-aerial-operation-with-autonomous-drones",
+      "title": "Autonomous Emergency Response by BF Kiel Fire Department with FlytBase | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "crews",
+        "drone",
+        "drones",
+        "operations",
+        "safety"
+      ],
+      "pre_score": 7,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/ovrwatch-asheville-hurricane-disaster-recovery-drones-public-safety",
+      "title": "Disaster Recovery Case Study: Autonomous Drone Network in Asheville | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 7,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/premier-security-autonomous-drone-surveillance",
+      "title": "How Premier Security Reduces Theft with Autonomous Drone Surveillance | Case Study | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 7,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/autonomous-drone-inspections-oil-and-gas",
+      "title": "Autonomous Drone Inspections Boost Oil & Gas Efficiency  | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "drone",
+        "drones",
+        "inspection",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 7,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/daniel-yomtobian-private-estate-autonomous-drone-surveillance",
+      "title": "How Daniel Yomtobian Secures His Private Estate With Autonomous Drones | FlytBase | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "contracted",
+        "crews",
+        "drone",
+        "operations",
+        "site"
+      ],
+      "pre_score": 7,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/dole-asia-autonomous-plantation-drone-security-philippines",
+      "title": "How Dole Asia Company Enhanced Plantation Security with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "operations",
+        "safety"
+      ],
+      "pre_score": 6,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/accelerating-road-incident-response-with-remotely-operated-drone-technology-at-transport-for-nsw",
+      "title": "Accelerating Road Incident Response with BVLOS Drone Technology | Transport for NSW & FlytBase | FlytBase",
+      "keyword_hits": [
+        "drone",
+        "drones",
+        "operations",
+        "safety",
+        "site"
+      ],
+      "pre_score": 5,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/slovakia-military-wildfire-detection-dock-drones",
+      "title": "How Slovakia's Military Forest Enhances Wildfire Detection with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "autonomous",
+        "based",
+        "drone",
+        "drones",
+        "operations"
+      ],
+      "pre_score": 5,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    }
+  ],
+  "case_studies_scanned": 25,
+  "prescore_inputs": {
+    "keyword_terms": [
+      "american",
+      "anglo",
+      "atacama",
+      "autonomous",
+      "based",
+      "chile",
+      "contracted",
+      "crews",
+      "desert",
+      "drone",
+      "drones",
+      "extraction",
+      "inspection",
+      "lithium",
+      "mining",
+      "operations",
+      "replacing",
+      "safety",
+      "site"
+    ],
+    "referrer_names": [
+      "anglo american"
+    ],
+    "own_company_names": [
+      "sqm",
+      "sociedad quimica y minera de chile (sqm)",
+      "sociedad quimica y minera de chile",
+      "sqm"
+    ]
+  },
+  "pdf_checklist": [
+    {
+      "item": "Autonomously searched FlytBase's public website for case studies",
+      "ok": true,
+      "detail": "25 case studies scanned"
+    },
+    {
+      "item": "Referral connection identified (no hard-coding)",
+      "ok": true,
+      "detail": "found=True https://flytbase.com/case-studies/anglo-american-autonomous-mining-drones-peru-case-study"
+    },
+    {
+      "item": "Matched on industry, use case and operational context",
+      "ok": true
+    },
+    {
+      "item": "Explains why the case study is the strongest fit",
+      "ok": true,
+      "detail": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone"
+    },
+    {
+      "item": "Primary match is a page the crawler actually read",
+      "ok": true
+    }
+  ]
+}
