@@ -1,0 +1,38 @@
+{
+  "motion": "AE-led with partner (co-sell)",
+  "justification": {
+    "region": "The lead is based in Chile (LATAM), where local expertise is critical for navigating the Atacama Desert's harsh environment and SQM's internal procurement.",
+    "deal_complexity": "High. The project involves scaling autonomous operations across three large-scale sites, requiring hardware integration (docks), BVLOS compliance, and data pipeline integration with Azure.",
+    "partner_availability": "Strong. Dronestore Chile is a Gold System Integrator already present in the region and listed in the FlytBase partner directory.",
+    "existing_account_relationship": "SQM is an existing customer who has already successfully deployed FlytBase with Adentu. Leveraging the existing ecosystem is the lowest-risk path to expansion."
+  },
+  "recommended_partners": [
+    {
+      "name": "Adentu",
+      "type": "System Integrator",
+      "country": "Chile",
+      "evidence": "SQM partnered with Adentu and FlytBase to bring autonomy from concept to daily routine across its 678 km² mining operation in northern Chile.",
+      "role_in_deal": "Primary implementation partner; they already understand the site infrastructure, the Azure data integration, and the internal stakeholder landscape at SQM.",
+      "verified_in_sources": true
+    },
+    {
+      "name": "Dronestore Chile",
+      "type": "System Integrator",
+      "country": "Chile",
+      "evidence": "Listed as a Gold System Integrator in the FlytBase partner directory for Chile.",
+      "role_in_deal": "Backup/Support partner for hardware procurement and on-the-ground technical assistance if Adentu requires additional capacity.",
+      "verified_in_sources": true
+    }
+  ],
+  "partner_type_needed": "System Integrator with expertise in mining, BVLOS operations, and hardware/dock deployment.",
+  "roles": {
+    "flytbase_ae": "Lead the commercial expansion, align with the Q3 budget cycle, and leverage the existing success metrics (4x yield improvement) to secure the expansion.",
+    "partner": "Provide on-site technical validation, hardware maintenance for the Atacama sites, and manage the integration of new docks into the existing FlytBase/Azure workflow.",
+    "bdr": "Qualify the specific scope of the three new sites and schedule a discovery call involving the AE and the Adentu account lead."
+  },
+  "risks": [
+    "Procurement delays typical of large-scale mining operations.",
+    "Technical challenges related to scaling connectivity and data processing across three distinct sites.",
+    "Dependency on the Q3 budget approval process."
+  ]
+}

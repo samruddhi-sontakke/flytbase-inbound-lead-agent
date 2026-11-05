@@ -1,0 +1,82 @@
+{
+  "sequence_strategy": "Leverage SQM's existing successful deployment with Adentu as the primary anchor, while using the Anglo American referral to establish industry credibility. The sequence focuses on transitioning from current site successes to the new Atacama project, aligning with the Q3 budget cycle and the Salar Futuro sustainability goals.",
+  "emails": [
+    {
+      "step": 1,
+      "send_when": "Within 1 hour",
+      "goal": "Acknowledge inbound, validate existing relationship, and schedule discovery.",
+      "meddpicc_gaps_targeted": [
+        "Metrics",
+        "Champion"
+      ],
+      "research_used": [
+        "S37",
+        "S44"
+      ],
+      "subject": "Autonomous inspection for Atacama sites / SQM & FlytBase",
+      "body": "Hi Rodrigo, thank you for reaching out. Given your role in the Northern Operations Division, I’m familiar with the work your team has already done with Adentu to automate inspections across your 678 km² mining operation, which notably achieved a 4× iodine yield improvement. It is also great to hear that Anglo American—who we’ve supported in scaling their own autonomous mining safety programs—referred you our way.\n\nI would like to understand how these three new Atacama sites differ from your initial deployment. Do you have a moment on Tuesday at 10:00 AM or Wednesday at 2:00 PM CLT to discuss the operational requirements for this expansion? We are happy to continue this conversation in Spanish if that is easier for you.\n\nBest regards,\n\nSamruddhi Sontakke, Business Development, FlytBase",
+      "why_this_email_now": "Immediate response to inbound lead using high-trust social proof (referral) and internal validation (existing case study).",
+      "success_signal": "Response confirming the meeting time or clarifying the scope of the new sites."
+    },
+    {
+      "step": 2,
+      "send_when": "3 days after No-Reply",
+      "goal": "Provide value regarding sustainability/Salar Futuro and probe for budget/decision process.",
+      "meddpicc_gaps_targeted": [
+        "Economic Buyer",
+        "Decision Process"
+      ],
+      "research_used": [
+        "S9",
+        "S23"
+      ],
+      "subject": "Salar Futuro and autonomous operations",
+      "body": "Hi Rodrigo, following up on my note regarding your Atacama expansion. With SQM’s US$3 billion investment plan for the Salar Futuro project, we are seeing many operations leaders prioritize autonomous data collection to hit their 2030 carbon neutrality goals by reducing vehicle-based site inspections.\n\nAs you prepare for your Q3 internal budget conversations, could you share who else needs to be involved in the procurement process for this technology? I want to ensure we provide the right technical documentation to support your internal business case.\n\nBest regards,\n\nSamruddhi Sontakke, Business Development, FlytBase",
+      "why_this_email_now": "Connects the solution to the company's major strategic initiative (Salar Futuro) to maintain relevance.",
+      "success_signal": "Introduction to a stakeholder or confirmation of the budget approval path."
+    },
+    {
+      "step": 3,
+      "send_when": "5 days after No-Reply",
+      "goal": "Address technical requirements and potential competition.",
+      "meddpicc_gaps_targeted": [
+        "Decision Criteria",
+        "Competition"
+      ],
+      "research_used": [
+        "S40"
+      ],
+      "subject": "Integrating drone data into your existing framework",
+      "body": "Hi Rodrigo, I know your team is likely balancing this with existing digital transformation initiatives, such as your work with Databricks and AVEVA. \n\nTo ensure our solution aligns with your current technical architecture, what are the top three operational requirements this system must meet for your Atacama sites? I’d like to ensure our integration path is as seamless as your previous deployments.\n\nBest regards,\n\nSamruddhi Sontakke, Business Development, FlytBase",
+      "why_this_email_now": "Targets the technical decision criteria and acknowledges the existing digital ecosystem.",
+      "success_signal": "Specific technical requirements provided."
+    },
+    {
+      "step": 4,
+      "send_when": "7 days after No-Reply",
+      "goal": "Final check-in before Q3.",
+      "meddpicc_gaps_targeted": [
+        "Paper Process"
+      ],
+      "research_used": [
+        "S6"
+      ],
+      "subject": "Q3 planning for Atacama",
+      "body": "Hi Rodrigo, with Q3 approaching, I wanted to see if you have the resources you need to move forward with the drone expansion. If you are starting your internal procurement or legal review process, I can provide our security and compliance documentation ahead of time to help streamline the approval.\n\nAre you still planning to move forward with this in Q3, or should I reconnect with you at a later date?\n\nBest regards,\n\nSamruddhi Sontakke, Business Development, FlytBase",
+      "why_this_email_now": "Low-pressure nudge that offers administrative help, signaling readiness for the procurement phase.",
+      "success_signal": "Confirmation of timeline or request for documentation."
+    }
+  ],
+  "branches": [
+    {
+      "if_reply": "Not until Q3 / Budget constraints",
+      "next_action": "Nurture with relevant content and check back in mid-Q3.",
+      "draft_reply": "Understood, Rodrigo. I will mark my calendar to reconnect in July to ensure you have everything you need for the Q3 budget review. In the meantime, I’ll send over a brief technical brief on how we’ve helped other lithium sites manage 24/7 autonomous operations."
+    },
+    {
+      "if_reply": "Referral to another person",
+      "next_action": "Reach out to the new stakeholder referencing Rodrigo.",
+      "draft_reply": "Thank you for the introduction, [Name]. Rodrigo Castillo suggested I reach out to you regarding the autonomous inspection expansion at the Atacama sites, given your oversight of the procurement process. Do you have 10 minutes next week to discuss?"
+    }
+  ]
+}

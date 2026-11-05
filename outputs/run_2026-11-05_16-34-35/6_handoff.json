@@ -1,0 +1,76 @@
+{
+  "one_line_summary": "Expand existing FlytBase autonomous drone operations to three new Atacama lithium sites, leveraging SQM's successful history with Adentu and the Q3 Salar Futuro budget cycle.",
+  "buyer_context": {
+    "who": "Rodrigo Castillo, Head of Operations, Northern Operations Division",
+    "what_he_cares_about": [
+      "Reducing costs of contracted inspection crews",
+      "Improving safety in hazardous environments",
+      "Scaling autonomous inspection to support the US$3B Salar Futuro project"
+    ],
+    "others_involved": [
+      {
+        "name_or_role": "Rodrigo Toler (Deputy Manager of Digital Innovation)",
+        "why": "Existing internal champion who understands the history of the FlytBase/Adentu deployment [S37]."
+      },
+      {
+        "name_or_role": "Ricardo Ramos (General Manager)",
+        "why": "Top-level executive overseeing the Salar Futuro strategy [S1, S14]."
+      }
+    ]
+  },
+  "qualification_status": {
+    "framework": "MEDDPICC",
+    "scores": "91 ICP Fit / 25 MEDDPICC Completeness",
+    "knowns": [
+      "Clear pain points (cost/safety)",
+      "Existing customer relationship",
+      "Q3 budget timeline"
+    ],
+    "unknowns": [
+      "Final sign-off authority",
+      "Specific technical requirements for new sites",
+      "Internal procurement/legal process"
+    ]
+  },
+  "top_3_research_highlights": [
+    {
+      "finding": "SQM is an existing customer that achieved 4x iodine yield improvement and 95% mission reliability using FlytBase [S37].",
+      "source_ids": [
+        "S37"
+      ],
+      "why_ae_should_care": "This is a 'land and expand' opportunity; the technology is already proven within their infrastructure."
+    },
+    {
+      "finding": "SQM has a US$3B investment plan through 2028 focused on the Salar Futuro project [S9, S23].",
+      "source_ids": [
+        "S9",
+        "S23"
+      ],
+      "why_ae_should_care": "Aligning the drone expansion with this specific initiative increases the likelihood of budget approval."
+    },
+    {
+      "finding": "SQM has a goal to be carbon neutral in all products by 2040 [S29].",
+      "source_ids": [
+        "S29"
+      ],
+      "why_ae_should_care": "Position autonomous drones as a sustainability tool that reduces vehicle-based site inspections."
+    }
+  ],
+  "recommended_case_study": {
+    "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone",
+    "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+    "why": "It validates the existing partnership and provides the specific ROI metrics needed to justify expansion to the new Atacama sites."
+  },
+  "gtm_motion": "AE-led co-sell with Adentu (System Integrator).",
+  "suggested_next_step": {
+    "action": "Schedule a discovery call with Rodrigo Castillo, involving the Adentu account lead.",
+    "owner": "AE",
+    "by_when": "Same business day",
+    "rationale": "The lead is P1-Hot; leveraging the existing Adentu relationship immediately will accelerate trust and technical validation."
+  },
+  "watch_outs": [
+    "Do not treat this as a cold lead; acknowledge the existing Adentu/FlytBase deployment.",
+    "Be prepared for long procurement cycles typical of large-scale mining operations.",
+    "Ensure the solution integrates with their existing Azure/Databricks data framework."
+  ]
+}

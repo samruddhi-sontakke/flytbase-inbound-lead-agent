@@ -1,0 +1,197 @@
+{
+  "company_snapshot": [
+    {
+      "claim": "SQM is a major Chilean mining company and global leader in lithium, iodine, and plant nutrition, with 4,578 employees as of 2026 [S4].",
+      "source_ids": [
+        "S4"
+      ],
+      "so_what": "Provides scale and confirms the company's status as a top-tier industrial partner.",
+      "verification": "partial",
+      "verification_note": "The text confirms the company name, industry, and headcount of 4,578, but does not specify the date as 2026; it lists the headcount as 'Now'."
+    },
+    {
+      "claim": "The company operates primarily in the Atacama Desert and has recently formed a joint venture, Nova Andino Litio, with Codelco to manage lithium extraction through 2060 [S15, S17].",
+      "source_ids": [
+        "S15",
+        "S17"
+      ],
+      "so_what": "Confirms long-term operational stability and the specific entity managing the sites of interest.",
+      "verification": "supported",
+      "verification_note": "The text confirms the joint venture Nova Andino Litio with Codelco to manage lithium extraction in the Salar de Atacama through 2060."
+    }
+  ],
+  "org_structure": {
+    "findings": [
+      {
+        "claim": "SQM is organized into divisions including Lithium, Iodine, and Plant Nutrition, with a centralized General Management structure [S1].",
+        "source_ids": [
+          "S1"
+        ],
+        "so_what": "Helps identify the correct division (Northern Operations) for the lead's scope.",
+        "verification": "supported",
+        "verification_note": "The organizational chart in the text confirms the divisions and the General Management structure."
+      }
+    ],
+    "relevant_stakeholders": [
+      {
+        "name": "Ricardo Ramos",
+        "title": "General Manager",
+        "why_relevant": "Top-level executive overseeing company-wide strategy and major project announcements like Salar Futuro [S1, S14].",
+        "source_ids": [
+          "S1",
+          "S14"
+        ],
+        "verification": "supported"
+      }
+    ],
+    "likely_reporting_line": "Inference: As Head of Operations for the Northern Operations Division, Rodrigo Castillo likely reports to the General Manager of the Lithium Division Chile or a regional operations director within the Northern Operations structure."
+  },
+  "budget_signals": [
+    {
+      "claim": "SQM has committed to a US$3 billion investment plan through 2028, primarily focused on the Salar Futuro project in the Atacama [S9, S23].",
+      "source_ids": [
+        "S9",
+        "S23"
+      ],
+      "so_what": "Indicates significant capital availability for projects that improve production efficiency and sustainability.",
+      "verification": "supported",
+      "verification_note": "The text confirms the US$3 billion investment plan through 2028, with the Salar Futuro project being a primary focus."
+    },
+    {
+      "claim": "The company reported a 70% year-over-year revenue increase to US$1.76 billion in 1Q2026, signaling strong financial health [S6, S7].",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "so_what": "Suggests a favorable environment for budget approval for operational technology investments.",
+      "verification": "supported",
+      "verification_note": "The text explicitly states revenue jumped 70% year-over-year to US$1.76 billion in 1Q2026."
+    }
+  ],
+  "recent_news": [
+    {
+      "claim": "In July 2026, Nova Andino Litio submitted environmental and technical documentation for the Salar Futuro project [S8, S23].",
+      "source_ids": [
+        "S8",
+        "S23"
+      ],
+      "so_what": "Highlights a major focus on environmental compliance and long-term infrastructure development.",
+      "verification": "supported",
+      "verification_note": "The text confirms that in July 2026, Nova Andino Litio submitted environmental and technical documentation for the Salar Futuro project."
+    }
+  ],
+  "investor_priorities": [
+    {
+      "claim": "Investors are focused on SQM's ability to execute its US$2.7B–$3B capex plan while maintaining cost discipline and environmental performance [S6, S9, S10].",
+      "source_ids": [
+        "S6",
+        "S9",
+        "S10"
+      ],
+      "so_what": "FlytBase should emphasize how autonomous drones reduce operational costs and improve environmental monitoring.",
+      "verification": "supported",
+      "verification_note": "The text confirms investor focus on the capex plan, cost discipline, and environmental performance."
+    }
+  ],
+  "operations_context": [
+    {
+      "claim": "SQM's Atacama operations are 24/7, involving large-scale brine extraction and chemical processing [S33, S37].",
+      "source_ids": [
+        "S33",
+        "S37"
+      ],
+      "so_what": "Confirms the need for robust, autonomous, and reliable inspection solutions that operate continuously.",
+      "verification": "partial",
+      "verification_note": "The text confirms large-scale brine extraction and chemical processing, but does not explicitly state the operations are 24/7, though it mentions planning for 24/7 surveillance."
+    },
+    {
+      "claim": "The company has a stated goal to be carbon neutral in lithium and other products by 2030 and 2040, respectively [S29].",
+      "source_ids": [
+        "S29"
+      ],
+      "so_what": "Aligns with the value proposition of drone-in-a-box solutions that reduce the need for vehicle-based site inspections.",
+      "verification": "supported",
+      "verification_note": "The text explicitly states the goal to be carbon neutral in iodine, lithium, and potassium chloride by 2030 and in all products by 2040."
+    }
+  ],
+  "technology_adoption": [
+    {
+      "claim": "SQM has already successfully implemented autonomous drone inspections at its sites, reducing manual inspection time and improving extraction efficiency [S37, S39].",
+      "source_ids": [
+        "S37",
+        "S39"
+      ],
+      "so_what": "Validates the technology's ROI and suggests the lead is already familiar with the benefits of FlytBase-style solutions.",
+      "verification": "supported",
+      "verification_note": "The text confirms the successful implementation of autonomous drone inspections, reducing manual inspection time and improving extraction efficiency."
+    }
+  ],
+  "positioning_recommendation": {
+    "summary": "Position FlytBase as the proven partner for scaling SQM's existing autonomous inspection success across new sites and functions. Leverage the lead's prior experience with drone autonomy to focus on advanced use cases like security, perimeter monitoring, and predictive maintenance. Emphasize how your solution directly supports their US$3B Salar Futuro sustainability and efficiency goals.",
+    "angles": [
+      "Highlight the transition from irrigation inspection to broader security and asset monitoring [S37].",
+      "Connect drone-based data collection to their existing Databricks/AVEVA digital transformation framework [S40].",
+      "Emphasize safety improvements by reducing personnel exposure to hazardous terrain [S33, S39]."
+    ],
+    "risks_or_objections": [
+      "Potential internal competition from existing digital transformation initiatives [S40].",
+      "Strict regulatory and environmental scrutiny regarding operations in the Atacama [S6, S30]."
+    ]
+  },
+  "not_found": [
+    "Specific budget allocation for drone technology in Q3 2026.",
+    "Direct reporting line for Rodrigo Castillo.",
+    "Specific procurement timeline for drone-in-a-box systems beyond the general investment plan."
+  ],
+  "removed_by_fact_check": [],
+  "queries_run": [
+    {
+      "category": "org_structure",
+      "query": "SQM Northern Operations Division organizational structure leadership"
+    },
+    {
+      "category": "org_structure",
+      "query": "Rodrigo Castillo SQM Head of Operations reporting line"
+    },
+    {
+      "category": "budget_signals",
+      "query": "SQM 2026 annual report capex lithium automation investment"
+    },
+    {
+      "category": "budget_signals",
+      "query": "SQM 20-F filing 2025 2026 technology expenditure"
+    },
+    {
+      "category": "recent_news",
+      "query": "SQM press release Atacama lithium site expansion 2025 2026"
+    },
+    {
+      "category": "recent_news",
+      "query": "SQM strategic partnership autonomous mining technology 2026"
+    },
+    {
+      "category": "investor_priorities",
+      "query": "SQM investor presentation 2026 lithium production efficiency"
+    },
+    {
+      "category": "investor_priorities",
+      "query": "SQM sustainability report 2025 safety and remote operations"
+    },
+    {
+      "category": "operations_context",
+      "query": "SQM Atacama lithium extraction site safety challenges"
+    },
+    {
+      "category": "operations_context",
+      "query": "SQM 24/7 mining operations workforce hazardous environment"
+    },
+    {
+      "category": "technology_adoption",
+      "query": "SQM drone-based inspection pilot projects mining"
+    },
+    {
+      "category": "technology_adoption",
+      "query": "SQM digital transformation and industrial automation initiatives"
+    }
+  ]
+}
