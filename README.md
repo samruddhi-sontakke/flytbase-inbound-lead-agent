@@ -1,124 +1,96 @@
-# Inbound Lead Agent - FlytBase BDR Assignment
+# FlytBase Inbound Lead Desk: an AI agent for inbound BDR work
 
-An AI agent workflow that takes **one raw inbound email** and automatically produces everything an
-inbound BDR would: MEDDPICC qualification, cited account research, case-study match, partner / GTM
-recommendation, an adaptive email sequence and an AE handoff.
+> **Start here**
+> - **[Walkthrough deck (PDF)](docs/Inbound-Lead-Desk-Walkthrough.pdf)**: the whole system in 15 pages, with real screenshots of the live run
+> - **Walkthrough video:** _[add your Loom / YouTube unlisted link here]_ · script synced to the PDF page by page: [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)
+> - **Live run output (the assignment's SQM lead):** [REPORT.md](outputs/run_2026-11-05_19-32-11/REPORT.md) · [REPORT.pdf](outputs/run_2026-11-05_19-32-11/REPORT.pdf) · [run folder](outputs/run_2026-11-05_19-32-11/) (one JSON per stage, sources, agent trace), passing 39/39 checks
+> - **A second lead (E.ON test):** [REPORT.md](outputs/run_2026-11-05_20-03-27/REPORT.md) · [REPORT.pdf](outputs/run_2026-11-05_20-03-27/REPORT.pdf)
+> - **Submission checklist:** [SUBMISSION.md](SUBMISSION.md)
 
-Built in Python so that every step is plain, readable code: no black boxes.
+An internal V1 system. An inbound lead arrives by email, and the agent produces the six artifacts the FlytBase BDR assignment asks
+for: **qualification, deep account research, an adaptive email sequence, a case-study match, a partner/GTM recommendation and an AE
+handoff**. It stores everything in MongoDB and shows it in an internal web app.
 
-## Live run output
-
-**[Read the full six-stage report from the live run](outputs/run_2026-11-05_16-34-35/REPORT.md)**
-(184 seconds, 9 AI calls, 57 sources). The raw output of each stage, every source and every AI prompt and
-response for that run are in [`outputs/run_2026-11-05_16-34-35/`](outputs/run_2026-11-05_16-34-35/).
-
-What the system found on its own (nothing hard-coded):
-- **SQM is already a FlytBase customer.** It has a published case study with Chilean integrator Adentu, so this
-  lead is an expansion opportunity, not a cold one.
-- **The Anglo American referral connects to a FlytBase case study** (an autonomous mining deployment in Peru).
-- **Recommended motion:** AE-led co-sell with Adentu (already deployed at SQM), with Dronestore Chile as backup.
-- **A likely internal champion** is named on FlytBase's site (SQM's Deputy Manager of Digital Innovation).
+> *"You are not writing the answers. You are building the thing that writes the answers."* Nothing here is hand-written per lead.
+> The stage logic lives in versioned agent files, numbers and checks are computed in Python, and every step is logged.
 
 ## How it works
 
 ```mermaid
 flowchart LR
-    A[Inbound email] --> S0[0 Intake<br/>extract fields]
-    S0 --> S1[1 Qualify<br/>MEDDPICC + scoring]
-    S0 --> S2[2 Research<br/>plan - search - write - fact-check]
-    S0 --> S4[4 Case study<br/>crawl flytbase.com sitemap]
-    S1 --> S5
-    S4 --> S5[5 Partner / GTM<br/>partner directory + search]
-    S1 & S2 & S4 & S5 --> S3[3 Email sequence<br/>gap-driven, branching]
-    S3 --> S6[6 AE handoff]
-    S6 --> R[REPORT.html + JSON per stage + trace.jsonl]
+    G[Gmail inbox<br/>unread mail] -->|Gmail MCP: read + label only| T
+    W[Web app<br/>paste a lead] --> Q
+    subgraph Agent [Claude Code session: cron runs /process-inbox]
+      T[Inbox sweep<br/>Python markers + agent verdict] --> Q[(Queue<br/>lease lock)]
+      Q --> S1[1 Qualification]
+      S1 --> S2[2 Research] & S4[4 Case study]
+      S2 --> FC[Fact-checker agent]
+      FC --> S3[3 Emails]
+      S4 --> S5[5 Partner]
+      S3 & S5 --> S6[6 AE handoff]
+    end
+    Agent <-->|leaddesk MCP server: Python tools| M[(MongoDB)]
+    S2 -.-> WEB[WebSearch · page reader · Reddit · LinkedIn via Chrome]
+    S4 & S5 -.-> FB[flytbase.com sitemap crawl]
+    M --> UI[Inbound Lead Desk web app]
 ```
 
-| Stage | What it does | Tools |
+| Piece | What it is | Why |
 |---|---|---|
-| 0 Intake | Turns the free-text email into structured fields (contact, company, sites, pains, referrer). Every later stage reads from this, so **nothing about the lead is hard-coded.** | Gemini |
-| 1 Qualification | MEDDPICC: known / partial / unknown for all 8 elements, the missing info, and a discovery question for each gap. The AI rates 7 ICP fit factors 0-5 **with evidence**; the **score itself is calculated in Python** (`s1_qualify.py`), so it's transparent and repeatable. | Gemini + Python |
-| 2 Research | The AI **plans** ~12 searches across 6 categories (org structure, capex/opex, news, investor letters, operations, tech adoption), Tavily runs them, the AI writes a brief that must cite source IDs `[S#]`, then a **separate fact-check pass** compares every claim to the text it cites. Unsupported claims are removed and listed. | Tavily + Gemini |
-| 4 Case study | Reads FlytBase's **sitemap** to find every case study, downloads all of them, pre-scores them in Python (keyword overlap, plus flags for *mentions the referrer* and *mentions the lead's own company*), then the AI ranks the shortlist. | requests + BeautifulSoup + Gemini |
-| 5 Partner / GTM | Reads the FlytBase **partner directory**, searches for partners in the lead's country/region, pulls in partners named in relevant case studies, then decides direct vs partner-led. Python then **checks that every recommended partner name actually appears in a source.** | requests + Tavily + Gemini |
-| 3 Emails | Runs after 2, 4 and 5 so the emails use real research, the matched case study and the partner. Each email is mapped to the MEDDPICC gaps it targets, with branches for different replies. | Gemini |
-| 6 AE handoff | A 2-minute summary: buyer context, qualification status, top 3 cited findings, case study, GTM motion, next step. | Gemini |
+| **Claude Code** | The agent. The skill `.claude/skills/process-inbox` is the orchestrator; `.claude/agents/stage-*.md` holds one subagent per PDF stage, plus an independent `research-fact-checker` | Orchestration over single prompts: each stage has its own instructions, tools and output schema, and the stages run in parallel where the data allows |
+| **Session cron** | `CronCreate */5 * * * *` → `/process-inbox` | Checks the inbox every 5 minutes while the session is open |
+| **Gmail MCP** (claude.ai connector) | Reads unread mail and adds `LeadDesk/*` labels | Send, reply, forward, draft, trash and unlabel are **denied** in `.claude/settings.json`. Mail stays unread |
+| **leaddesk MCP server** (`leaddesk_mcp/server.py`, Python) | 23 tools: inbox log, lead queue with lease lock, source registry, page and PDF reader, Reddit search (Arctic Shift), flytbase.com crawls, scoring, fact-check removal, partner verification, PDF checklist, reports | "The AI reads, Python decides": everything that must be exact is plain code, and the agent can't skip it |
+| **MongoDB** | `leads`, `sources` (raw text per S#), `inbox_log`, `agent_state` | One store shared by the agent and the web app |
+| **Web app** (`app/`) | FastAPI + plain JS: leads, live progress, a tab per stage with its PDF checklist, inbox verdicts, sources, agent trace and notes | The BDR's workspace. It never calls an AI and never sends email. (A demo CRM with lead routing exists in `app/crm.py` but is switched off: `LEADDESK_CRM=1` plus `SHOW_CRM` in `app.js`) |
 
-## Design decisions
+## The six stages, mapped one-to-one to the PDF
 
-- **The AI reads, Python decides.** Scores, flags, source registry, fact-check removal and partner verification are deterministic code. The AI is used for reading and writing.
-- **No fabricated research.** Each source gets an ID. The writer may only cite IDs, and a second model call checks each claim against the cited text. Anything unsupported is removed and logged in the report.
-- **Stage order is 0-1-2-4-5-3-6.** The emails are written last so they can use the case study and partner findings.
-- **Everything is inspectable.** Each run saves one JSON file per stage, `sources.json`, and `trace.jsonl` with every prompt and response.
-- **Works for any inbound lead.** Put another email in `input/` and run `python run.py --input input/that_file.txt`.
+| PDF stage | Subagent | What Python does (`agent/stages/`, `agent/store.py`) |
+|---|---|---|
+| 1 Qualification (MEDDPICC) | `stage-1-qualify`: extracts the known info from the raw email, sets known/partial/unknown for the 8 MEDDPICC elements, rates 7 ICP fit factors 0-5 with evidence | Validates the shape and **computes the ICP fit, completeness, priority and tier**, showing the full calculation |
+| 2 Deep account research | `stage-2-research`: plans 12-16 queries over org structure, budget signals, news, investor letters, operations and tech adoption; finds sources with WebSearch, Reddit and LinkedIn; writes the brief citing only `S#` | Every page is read by Python and stored with its **raw text** (HTML or PDF). Then `research-fact-checker`, a separate agent, judges each claim against the stored text, and Python **removes unsupported claims** and any claim citing no stored source |
+| 3 Response generation | `stage-3-emails`: 4 emails plus reply branches, written from the sourced [inbound reply playbook](.claude/agents/references/inbound-reply-playbook.md) (an inbound reply, not cold outreach) | Checks that every email cites **kept research IDs** and targets **real Stage 1 gaps**, and lints 10 playbook rules (length, questions, two time slots, banned phrases, close-the-loop…) |
+| 4 Case study matching | `stage-4-case-study`: adds `site:flytbase.com` search results, then ranks on industry, use case and context | **Crawls the whole sitemap**, reads every case study and pre-scores it: keyword overlap, plus `mentions_referrer` and `mentions_lead_company` built from the names in the email, **not hard-coded** |
+| 5 Partner identification | `stage-5-partner`: direct vs partner-led, justified by region, complexity and availability | Reads the partner directory and **verifies every partner name appears in a stored source** |
+| 6 AE handoff | `stage-6-handoff`: buyer context, status, top 3 findings, case study, next step | Checks that the highlights cite research that survived the fact-check |
 
-## Run it
+Every stage output gets a **PDF checklist**: each bullet from the assignment is checked in Python and shown in the app and in the
+report. The run order follows the data: 1 → (2 ∥ 4) → fact-check → (3 ∥ 5) → 6.
 
-1. Install Python 3.10+.
-2. Create `keys.txt` in this folder (it is git-ignored):
-   ```
-   GEMINI=your-gemini-api-key      # free at aistudio.google.com
-   TAVILY=your-tavily-api-key      # free at tavily.com
-   ```
-3. Install and run:
-   ```
-   pip install -r requirements.txt
-   python run.py
-   ```
-   On Windows you can double-click `setup.bat` once, then `run.bat`.
+## Inspecting a run
 
-   Optional: add `GEMINI_MODEL=gemini-flash-lite-latest` (or any other Gemini model) to `keys.txt` to pick
-   the model. If a model is busy or over its free-tier limit, the system switches to the next one automatically.
-
-A run takes about 2-5 minutes on the free tiers. Results go to `outputs/run_<date-time>/`:
+Each lead gets `outputs/run_<date-time>/` with:
 
 | File | Contents |
 |---|---|
-| `REPORT.html` / `REPORT.md` | Full six-stage report with clickable sources |
-| `0_lead.json` ... `6_handoff.json` | Raw output of each stage |
-| `sources.json` | Every source used, with URL and the query that found it |
-| `trace.jsonl` | Every AI prompt and response (full audit trail) |
+| `REPORT.md` / `REPORT.html` | The six-stage report with the requirements check and clickable sources |
+| `0_lead.json` … `6_handoff.json` | Raw output of each stage, including `pdf_checklist` |
+| `sources.json` | Every source with its URL, kind and the query that found it (the raw text is in MongoDB) |
+| `trace.jsonl` | One line per subagent call: which agent file ran, its input and exactly what it saved |
+| `input.txt` | The raw inbound email, the only input |
 
-## Internal web app: Inbound Lead Desk
+The Gmail sweep decisions (marker score, verdict and reason for every unread mail) are on the web app's **Inbox** page.
 
-An internal-only web app over the same pipeline. Each inbound email becomes a lead stored in MongoDB.
+## Run it
 
-- **Leads:** a list with P1/P2/P3 filters, search, and status (New → Working → Meeting booked → Handed to AE).
-- **New lead:** paste an email and run the agent. The page shows live progress stage by stage, with the log the command line prints.
-- **Lead page:** one tab per stage (AE handoff, MEDDPICC, cited research, emails with copy buttons, case-study ranking, partner), plus sources, the full AI trace, notes, an owner field, and the original email.
-- **Ctrl K** jumps to any page or lead.
+1. `py -m pip install -r requirements.txt`
+2. Put a MongoDB connection string in `.env` (git-ignored): `mongodb=mongodb+srv://...`
+3. Web app: `py -m app.server` (or `app.bat`), then open http://127.0.0.1:8000. It binds to this machine only.
+4. Agent: open Claude Code in this folder, approve the `leaddesk` MCP server, and make sure the Gmail connector is connected.
+   Run `/process-inbox` once, then start the cron: *"create a cron every 5 minutes that runs /process-inbox"*. For LinkedIn
+   research, keep Chrome open with the Claude in Chrome extension.
+5. Send a lead to the connected inbox from another address (for example the text of `input/lead_sqm.txt`), or paste one in the web app,
+   or run `py run.py --input input/lead_sqm.txt` (queues a file). To run a single lead immediately, use `/process-lead input/lead_sqm.txt`.
 
-Setup: add a MongoDB connection string to `.env` next to the API keys:
+Tests: `py -m pytest tests` covers scoring, fact-check removal, partner verification, the inbox markers and a full store flow on a throwaway database.
 
-```
-GEMINI=...
-TAVILY=...
-MONGODB=mongodb+srv://user:pass@cluster.mongodb.net/   # database defaults to flytbase_leads
-```
+## Honest limitations
 
-Run it with `py -m app.server` (or double-click `app.bat`), then open http://127.0.0.1:8000. It binds to this machine only.
-Earlier command-line runs in `outputs/` are imported automatically. API docs are at `/api/docs`.
+- **The scheduler lives in the Claude Code session.** It stops when the session closes, and recurring session crons expire after 7 days.
+  A production version would run headless (`claude -p /process-inbox`) from a real scheduler, or use a Gmail push webhook.
+- The agent's judgement steps (verdicts, ratings, writing) are model output. Python bounds them (schemas, citations, verification, checklists), but a human still reviews the emails before sending.
+- LinkedIn research depends on the Chrome extension being available to the session. Without it the agent falls back to public pages.
+- The inbox sweep looks at the last 2 days of unread mail, so an old backlog is ignored on purpose.
 
-## Project layout
-
-```
-run.py                    orchestrator: runs the stages in order, saves outputs
-input/lead_sqm.txt        the inbound email (the only input)
-agent/config.py           keys, model fallback list, research limits
-agent/llm.py              Gemini wrapper: retries, model fallback, trace logging
-agent/tools.py            web search (Tavily), page reading, sitemap crawler
-agent/sources.py          source registry ([S#] IDs)
-agent/stages/s0..s6       one file per stage, prompts included
-agent/report.py           JSON -> REPORT.md / REPORT.html (no AI)
-agent/pipeline.py         the stages as one function, shared by run.py and the web app
-app/server.py             web app: FastAPI API + background worker
-app/db.py                 MongoDB connection (one document per lead)
-app/static/               the UI (plain HTML/CSS/JS, no build step)
-```
-
-## Known limitations / next steps
-
-- Public web search can't reach paywalled filings or LinkedIn org charts, so reporting lines are partly inferred (clearly labelled as such).
-- The fact-checker is itself a model call. A stricter version would also match numbers and dates to the source text in Python.
-- Free-tier rate limits make runs slower than a paid setup would be.
-- Next: trigger it from the real contact form (webhook), write the results to the CRM, and send email 1 for human approval in Slack.
+`outputs/legacy_gemini/` holds the v0 runs from the earlier Python + Gemini pipeline, kept for history only.

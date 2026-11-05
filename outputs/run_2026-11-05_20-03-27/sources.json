@@ -1,0 +1,354 @@
+[
+  {
+    "id": "S1",
+    "url": "https://flytbase.com/case-studies/enbw-scaled-solar-pv-inspections-150-mw-to-1-gw-autonomous-drone-docks",
+    "title": "EnBW Case Study: Autonomous Drones for Gigawatt Solar Portfolio | FlytBase",
+    "kind": "case_study",
+    "query": null,
+    "published": null
+  },
+  {
+    "id": "S2",
+    "url": "https://flytbase.com/case-studies/tnb-warehouse-asset-monitoring-autonomous-drones-malaysia",
+    "title": "How TNB Reduced Warehouse Inventory Verification Time by 90x with Autonomous Drones In Malaysia | FlytBase",
+    "kind": "case_study",
+    "query": null,
+    "published": null
+  },
+  {
+    "id": "S3",
+    "url": "https://flytbase.com/case-studies/axpo-hydropower-plant-monitoring-autonomous-drones",
+    "title": "Hydropower Monitoring with Autonomous Drones | FlytBase",
+    "kind": "case_study",
+    "query": null,
+    "published": null
+  },
+  {
+    "id": "S4",
+    "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+    "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone | FlytBase | FlytBase",
+    "kind": "case_study",
+    "query": null,
+    "published": null
+  },
+  {
+    "id": "S5",
+    "url": "https://flytbase.com/case-studies/sensorem-autonomous-docked-drones-deployment-australia",
+    "title": "How Sensorem Deployed 20+ Autonomous Drones Across Remote Australian Industrial Sites | FlytBase",
+    "kind": "case_study",
+    "query": null,
+    "published": null
+  },
+  {
+    "id": "S6",
+    "url": "https://flytbase.com/case-studies/aerial-fences-automating-ranch-security-oversight-drones-flytbase",
+    "title": "How Aerial Fences is Automating Ranch Security and Oversight using Autonomous Drones | FlytBase | FlytBase",
+    "kind": "case_study",
+    "query": null,
+    "published": null
+  },
+  {
+    "id": "S7",
+    "url": "https://www.energy-robotics.com/post/automated-inspection-of-substations-at-bayernwerk",
+    "title": "A Shared Robot Platform for E.ON | Korial",
+    "kind": "technology_adoption",
+    "query": "Bayernwerk Drohne Inspektion Umspannwerk Freileitung",
+    "published": null
+  },
+  {
+    "id": "S8",
+    "url": "https://www.siemens-energy.com/de/de/home/press-releases/multisensorsystem-und-kuenstliche-intelligenz-stellen-stromversorgung-aus-der-vogelperspektive-sicher.html",
+    "title": "KI & Multisensorik sichern Stromnetz aus der Luft",
+    "kind": "technology_adoption",
+    "query": "Bayernwerk Drohne Inspektion Umspannwerk Freileitung",
+    "published": null
+  },
+  {
+    "id": "S9",
+    "url": "https://www.investegate.co.uk/announcement/eqs/e-on-ag--0mpp/eqs-news-e-on-continues-growth-path-in-2025-/9445200",
+    "title": "EQS-News: E.ON continues growth path in 2025 and delivers on energy transition | Company Announcement | Investegate",
+    "kind": "budget_signals",
+    "query": "E.ON investment plan 2026-2030 grid",
+    "published": null
+  },
+  {
+    "id": "S10",
+    "url": "https://www.investegate.co.uk/announcement/eqs/e-on-ag--0mpp/eqs-news-e-on-concludes-fiscal-year-with-str-/8752407",
+    "title": "EQS-News: E.ON concludes fiscal year with strong earnings and record investments in the energy transition | Company Announcement | Investegate",
+    "kind": "budget_signals",
+    "query": "E.ON annual report 2024 investments Energy Networks capex",
+    "published": null
+  },
+  {
+    "id": "S11",
+    "url": "https://app.boersengefluester.de/en/newswire/DE000ENAG999/eon-se/eon-continues-growth-path-in-2025-and-delivers-on-energy-transition-2281096",
+    "title": "boersengefluester.de · The Ultimate Swiss Knife · © boersengefluester.de · 2026",
+    "kind": "budget_signals",
+    "query": "E.ON investment plan 2026-2030 grid",
+    "published": null
+  },
+  {
+    "id": "S12",
+    "url": "https://app.boersengefluester.de/en/newswire/DE000ENAG999/eon-se/eon-concludes-fiscal-year-with-strong-earnings-and-record-investments-in-the-energy-transition-2091497",
+    "title": "boersengefluester.de · The Ultimate Swiss Knife · © boersengefluester.de · 2026",
+    "kind": "budget_signals",
+    "query": "E.ON annual report 2024 investments Energy Networks capex",
+    "published": null
+  },
+  {
+    "id": "S13",
+    "url": "https://news.eonenergy.com/news/how-drones-are-helping-secure-power-grids",
+    "title": "Innovation in flight: how drones are helping to secure power grids | E.ON News",
+    "kind": "technology_adoption",
+    "query": "E.ON drone BVLOS power line inspection Germany",
+    "published": null
+  },
+  {
+    "id": "S14",
+    "url": "https://www.marketscreener.com/quote/stock/E-ON-SE-3818998/news/E-ON-partners-up-with-eSmart-Systems-to-digitalize-the-inspection-of-overhead-lines-32393529/",
+    "title": "E ON : partners up with eSmart Systems to digitalize the inspection of overhead lines | MarketScreener",
+    "kind": "technology_adoption",
+    "query": "E.ON eSmart Systems overhead line inspection",
+    "published": null
+  },
+  {
+    "id": "S15",
+    "url": "https://cyber.felk.cvut.cz/news/collaboration-between-ctu-fee-e-on-and-eg-d-is-bringing-power-grid-inspection-into-the-era-of-autonomous-drones",
+    "title": "Collaboration between CTU FEE, E.ON, and EG.D is bringing power grid inspection into the era of autonomous drones ← Department of Cybernetics",
+    "kind": "technology_adoption",
+    "query": "E.ON autonomous drones BVLOS inspection",
+    "published": null
+  },
+  {
+    "id": "S16",
+    "url": "https://commercialuavnews.com/energy/flynex-performs-bvlos-flights-to-inspect-power-lines",
+    "title": "Flynex Performs BVLOS Flights to Inspect Power Lines for MITNETZ STROM | Commercial UAV News",
+    "kind": "technology_adoption",
+    "query": "E.ON BVLOS power line Germany Mitnetz",
+    "published": null
+  },
+  {
+    "id": "S17",
+    "url": "https://app.boersengefluester.de/en/newswire/DE000ENAG999/eon-se/eon-off-to-a-good-start-to-the-year-in-a-challenging-environment-2326600",
+    "title": "boersengefluester.de · The Ultimate Swiss Knife · © boersengefluester.de · 2026",
+    "kind": "budget_signals",
+    "query": "E.ON half year 2026 results investments Energy Networks",
+    "published": null
+  },
+  {
+    "id": "S18",
+    "url": "https://flytbase.com/partner",
+    "title": "Partner network | FlytBase",
+    "kind": "partner_directory",
+    "query": null,
+    "published": null
+  },
+  {
+    "id": "S19",
+    "url": "https://www.zfk.de/unternehmen/nachrichten/eon-prueft-mit-polaris-den-umbau-seiner-organisation",
+    "title": "Eon prüft mit \"Polaris\" den Umbau seiner Organisation",
+    "kind": "recent_news",
+    "query": "E.ON cost-saving programme Polaris October 2026",
+    "published": null
+  },
+  {
+    "id": "S20",
+    "url": "https://www.korial.com/customer-stories/e-on",
+    "title": "A Shared Robot Platform for E.ON | Korial",
+    "kind": "technology_adoption",
+    "query": "E.ON Bayernwerk substation robots Korial",
+    "published": null
+  },
+  {
+    "id": "S21",
+    "url": "https://www.unmannedairspace.info/latest-news-and-information/droniq-obtains-first-european-operating-licence-for-dji-drone-in-a-box-system/",
+    "title": "Droniq obtains first European operating licence for DJI drone-in-a-box system - Unmanned airspace",
+    "kind": "web",
+    "query": "Droniq DJI Dock operating licence Germany",
+    "published": null
+  },
+  {
+    "id": "S22",
+    "url": "https://mnd-assets.mynewsdesk.com/raw/upload/fl_attachment/0x1b0tkliqezyycxwpoxom",
+    "title": "https://mnd-assets.mynewsdesk.com/raw/upload/fl_attachment/0x1b0tkliqezyycxwpoxom",
+    "kind": "technology_adoption",
+    "query": "Bayernwerk Drohnen Netzbetrieb",
+    "published": null
+  },
+  {
+    "id": "S23",
+    "url": "https://ceenergynews.com/whos-in-charge/attila-kiss-takes-over-as-senior-vice-president-energy-networks-europe-at-e-on-se-in-january/",
+    "title": "Bot Verification",
+    "kind": "org_structure",
+    "query": "E.ON SE Energy Networks leadership",
+    "published": null
+  },
+  {
+    "id": "S24",
+    "url": "https://www.mynewsdesk.com/de/bayernwerk/pressreleases/digitalisierung-im-stromnetz-drohne-ersetzt-helikopter-3049586",
+    "title": "Digitalisierung im Stromnetz: Drohne ersetzt Helikopter | Bayernwerk AG",
+    "kind": "technology_adoption",
+    "query": "Bayernwerk Drohne ersetzt Helikopter",
+    "published": null
+  },
+  {
+    "id": "S25",
+    "url": "https://www.unmannedairspace.info/latest-news-and-information/droniq-teams-up-with-flytbase-on-dji-drone-operations-management/",
+    "title": "Droniq teams up with Flytbase on DJI drone operations management - Unmanned airspace",
+    "kind": "web",
+    "query": "Droniq FlytBase partnership",
+    "published": null
+  },
+  {
+    "id": "S26",
+    "url": "https://www.mynewsdesk.com/de/bayernwerk/pressreleases/bayernwerk-kontrolliert-hochspannungsleitungen-aus-dem-hubschrauber-3317988",
+    "title": "Bayernwerk kontrolliert Hochspannungsleitungen aus dem Hubschrauber | Bayernwerk AG",
+    "kind": "operations_context",
+    "query": "Bayernwerk Hochspannungsleitungen Hubschrauber Kontrolle",
+    "published": null
+  },
+  {
+    "id": "S27",
+    "url": "https://enterprise-insights.dji.com/de/automatisierte-perimeterschutz-in-solarparks-djidock2",
+    "title": "Automatisierter Perimeterschutz für Solarparks mit DJI DOCK2: Gegen Diebstahl und Vandalismus",
+    "kind": "web",
+    "query": "Solectric DJI Dock 2 dealer Germany",
+    "published": null
+  },
+  {
+    "id": "S28",
+    "url": "https://www.mynewsdesk.com/de/bayernwerk/pressreleases/bayernwerk-betont-notwendigkeit-fuer-neues-umspannwerk-im-raum-rottenburg-an-der-laaber-3419111",
+    "title": "Bayernwerk betont Notwendigkeit für neues Umspannwerk im Raum Rottenburg an der Laaber | Bayernwerk AG",
+    "kind": "operations_context",
+    "query": "Bayernwerk Umspannwerk",
+    "published": null
+  },
+  {
+    "id": "S29",
+    "url": "https://www.mynewsdesk.com/de/bayernwerk/pressreleases/rekordbudgets-fuer-das-stromnetz-der-zukunft-3412988",
+    "title": "Rekordbudgets für das Stromnetz der Zukunft | Bayernwerk AG",
+    "kind": "budget_signals",
+    "query": "Bayernwerk investiert 2025 Rekord Investitionen Umspannwerke",
+    "published": null
+  },
+  {
+    "id": "S30",
+    "url": "https://www.mynewsdesk.com/de/bayernwerk/pressreleases/ambitionierter-netzausbau-fuer-heimatenergie-3447669",
+    "title": "Ambitionierter Netzausbau für Heimatenergie | Bayernwerk AG",
+    "kind": "budget_signals",
+    "query": "Bayernwerk Jahrespressekonferenz 2026 Investitionen",
+    "published": null
+  },
+  {
+    "id": "S31",
+    "url": "https://www.innobu.com/de/artikel/ki-drohneninspektion-stromnetze-2026.html",
+    "title": "KI-Drohneninspektion von Stromnetzen mit BVLOS | innobu",
+    "kind": "operations_context",
+    "query": "Luftfahrt-Bundesamt BVLOS Betriebsgenehmigung Drohne Netzbetreiber",
+    "published": null
+  },
+  {
+    "id": "S32",
+    "url": "https://www.unmannedairspace.info/uncategorized/percepto-achieves-bvlos-approval-for-drone-operations-in-germany/",
+    "title": "Percepto achieves BVLOS approval for drone operations in Germany - Unmanned airspace",
+    "kind": "operations_context",
+    "query": "BVLOS approval drone-in-a-box Germany LBA",
+    "published": null
+  },
+  {
+    "id": "S33",
+    "url": "https://mnd-assets.mynewsdesk.com/raw/upload/fl_attachment/o6e69p4msd5o45qt8bn6pw",
+    "title": "https://mnd-assets.mynewsdesk.com/raw/upload/fl_attachment/o6e69p4msd5o45qt8bn6pw",
+    "kind": "investor_priorities",
+    "query": "Bayernwerk Jahrespressekonferenz April 2026 Westphal Investitionen",
+    "published": null
+  },
+  {
+    "id": "S34",
+    "url": "https://www.zfk.de/politik/deutschland/drohnen-abschuss-netzbetreiber-amprion-chef-kontra",
+    "title": "Drohnen-Abschuss durch Netzbetreiber: Amprion-Chef gibt Kontra",
+    "kind": "recent_news",
+    "query": "Drohnenabwehr kritische Infrastruktur Netzbetreiber 2026",
+    "published": null
+  },
+  {
+    "id": "S35",
+    "url": "https://www.investegate.co.uk/announcement/eqs/e-on-ag--0mpp/eqs-news-e-on-annual-general-meeting-again-a-/9535639",
+    "title": "EQS-News: E.ON Annual General Meeting again approves higher dividend | Company Announcement | Investegate",
+    "kind": "investor_priorities",
+    "query": "E.ON AGM 2026 Birnbaum priorities",
+    "published": null
+  },
+  {
+    "id": "S36",
+    "url": "https://www.mynewsdesk.com/de/bayernwerk/pressreleases/ki-schnueffelnase-inspiziert-das-umspannwerk-3284461",
+    "title": "KI-Schnüffelnase inspiziert das Umspannwerk | Bayernwerk AG",
+    "kind": "technology_adoption",
+    "query": "Bayernwerk Roboter Umspannwerk autonome Inspektion",
+    "published": null
+  },
+  {
+    "id": "S37",
+    "url": "https://www.reddit.com/r/drones/comments/1xdrcwz/need_advice_new_battery_not_charging_tips_or/",
+    "title": "Reddit r/drones: Need advice: new battery not charging; tips or tricks?",
+    "kind": "reddit",
+    "query": "drone in a box (r/drones)",
+    "published": "2026-10-23"
+  },
+  {
+    "id": "S38",
+    "url": "https://www.reddit.com/r/drones/comments/1x3yjfv/future_potential_drone_use_cases_and_emergence_of/",
+    "title": "Reddit r/drones: Future potential drone use cases and emergence of docks",
+    "kind": "reddit",
+    "query": "drone in a box (r/drones)",
+    "published": "2026-10-12"
+  },
+  {
+    "id": "S39",
+    "url": "https://www.reddit.com/r/drones/comments/1x1yjk2/fq777_fq21_fq21hdv_gps_drone_led_blinking_blue/",
+    "title": "Reddit r/drones: FQ777 FQ21 (FQ21HDV) GPS drone: LED blinking blue and green, props won't spin. Anyone have the manual?",
+    "kind": "reddit",
+    "query": "drone in a box (r/drones)",
+    "published": "2026-10-09"
+  },
+  {
+    "id": "S40",
+    "url": "https://www.reddit.com/r/drones/comments/1x1fw8s/i_solved_the_5_global_uav_deadlocks_lidar_failure/",
+    "title": "Reddit r/drones: I solved the 5 global UAV deadlocks (LiDAR failure, Eagle attacks, Battery drain) using Eco-Naturalistic Mimicry. Thoughts?",
+    "kind": "reddit",
+    "query": "drone in a box (r/drones)",
+    "published": "2026-10-09"
+  },
+  {
+    "id": "S41",
+    "url": "https://www.reddit.com/r/drones/comments/1wrbgyl/ai_was_supposed_to_change_everything_why_does_the/",
+    "title": "Reddit r/drones: AI was supposed to change everything. Why does the drone industry still feel the same?",
+    "kind": "reddit",
+    "query": "drone in a box (r/drones)",
+    "published": "2026-09-27"
+  },
+  {
+    "id": "S42",
+    "url": "https://www.reddit.com/r/drones/comments/1vtyfom/mavic_4_pro_suddenly_nosedived_into_a_lakehas/",
+    "title": "Reddit r/drones: Mavic 4 Pro suddenly nose-dived into a lake—has anyone experienced this or successfully filed a DJI/Best Buy claim?",
+    "kind": "reddit",
+    "query": "drone in a box (r/drones)",
+    "published": "2026-08-20"
+  },
+  {
+    "id": "S43",
+    "url": "https://www.zfk.de/digitalisierung/smart-city-energy/edis-testet-hochsensible-inspektionsroboter",
+    "title": "Edis testet Inspektionsroboter in Umspannwerk.",
+    "kind": "technology_adoption",
+    "query": "E.ON substation inspection robots E.DIS",
+    "published": null
+  },
+  {
+    "id": "S44",
+    "url": "https://www.zfk.de/politik/drohnen-kritis-deutschland-russland-studien",
+    "title": "Drohnen über Kritis-Anlagen: Studie zeigt Verwundbarkeit Europas",
+    "kind": "recent_news",
+    "query": "Drohnen kritische Infrastruktur Deutschland 2026",
+    "published": null
+  }
+]

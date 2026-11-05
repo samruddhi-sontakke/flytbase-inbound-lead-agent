@@ -1,46 +1,25 @@
-"""Stage 4: Case study and material matching.
+"""Stage 4: Case study and material matching. Deterministic part.
 
-1. DISCOVER - read the vendor's sitemap to list every case study (plus a site search as backup).
-2. READ     - download every case study page.
+1. DISCOVER (Python) - read the vendor's sitemap to list every case study; the subagent can add more URLs it
+                       found with WebSearch (site:flytbase.com).
+2. READ     (Python) - download every case study page.
 3. PRE-SCORE (Python, transparent) - keyword overlap with the lead, plus two flags:
        mentions_referrer      -> the case study names the company that referred the lead
        mentions_lead_company  -> the case study names the lead's OWN company (existing relationship!)
-4. RANK (LLM) - the shortlist is judged on industry, use case and operating context.
-Nothing about the lead or the referrer is hard-coded: names come from Stage 0.
+4. RANK (subagent `stage-4-case-study`) - judges the shortlist on industry, use case and operating context.
+Nothing about the lead or the referrer is hard-coded: names come from the Stage 1 intake.
 """
-import json
 import re
 
-from .. import config, llm, log, tools
-
-RANK_PROMPT = """You match an inbound lead to the vendor's most relevant customer case study.
-
-LEAD:
-{lead}
-
-CASE STUDY SHORTLIST (with automatic flags):
-{cases}
-
-Judge each on: industry match, use-case match, operating environment (terrain, climate, scale, 24/7),
-geography, and relationship signals (referrer named, or the lead's own company already a customer).
-Use only what the case study text says. Return JSON:
-{{
-  "ranking": [{{"url": str, "title": str, "fit_score": 0-100, "industry_match": str, "use_case_match": str, "context_match": str}}],
-  "primary": {{"url": str, "title": str, "source_id": str, "why_strongest_fit": "3-5 sentences", "key_proof_points": ["metric or fact quoted from the page"], "how_to_use_it": "how the BDR/AE should use this in outreach"}},
-  "secondary": {{"url": str, "title": str, "why": str}},
-  "referral_connection": {{"found": bool, "url": str|null, "explanation": "what the vendor's site shows about the referrer"}},
-  "existing_relationship": {{"found": bool, "url": str|null, "source_id": str|null, "explanation": "does the site show the lead's own company already works with the vendor? which operation, which partner, what results?"}},
-  "people_named": [{{"name": str, "title": str, "company": str, "source_id": str, "relevance": "why this person matters for this deal"}}]
-}}
-Copy SOURCE IDs exactly. people_named: only people whose names appear in the case study text of the
-lead's own company or of the referrer."""
+from .. import config, tools
 
 
 def _terms(lead):
     words = set()
-    for t in lead.get("search_keywords", []) + lead.get("use_cases", []) + [
-        lead["company"].get("industry") or "", lead["company"].get("sub_industry") or "",
-        lead["company"].get("country") or "", (lead.get("sites") or {}).get("location") or "",
+    co = lead.get("company") or {}
+    for t in (lead.get("search_keywords") or []) + (lead.get("use_cases") or []) + [
+        co.get("industry") or "", co.get("sub_industry") or "", co.get("country") or "",
+        (lead.get("sites") or {}).get("location") or "",
     ]:
         for w in re.findall(r"[a-zA-Z]{4,}", t or ""):
             words.add(w.lower())
@@ -48,42 +27,32 @@ def _terms(lead):
 
 
 def _names(text):
-    """Variants of a company name to search for, e.g. 'Anglo American plc' -> ['anglo american']."""
+    """Variants of a company name to search for, e.g. 'Sociedad X (SQM)' -> ['sociedad x (sqm)', 'sociedad x', 'sqm']."""
     if not text:
         return []
-    out = {text.lower().strip()}
-    out.add(re.sub(r"\(.*?\)", "", text).lower().strip())
+    out = {text.lower().strip(), re.sub(r"\(.*?\)", "", text).lower().strip()}
     for m in re.findall(r"\(([^)]+)\)", text):
         out.add(m.lower().strip())
     return [n for n in out if len(n) >= 3]
 
 
-def run(lead, sources):
-    log.stage(4, "Case study matching (searching flytbase.com)")
-    log.step("Reading the FlytBase sitemap for case studies")
+def discover(extra_urls=None):
     urls = [u for u in tools.sitemap_urls(config.VENDOR_SITE, section_filter=["case"]) if "/case-stud" in u]
-    if not urls:
-        log.warn("sitemap gave no case studies, falling back to site search")
-    # backup / extra discovery via site search, built from the lead
-    queries = [f"{x} case study" for x in (lead.get("referral_source"), lead["company"].get("industry")) if x]
-    for q in queries:
-        for r in tools.search(q, max_results=5, include_domains=["flytbase.com"], depth="basic"):
-            if "/case-stud" in r["url"] and not tools.LANG_PREFIX.match(r["url"]):
-                urls.append(r["url"])
-    urls = list(dict.fromkeys(urls))
-    log.ok(f"Found {len(urls)} case studies")
+    from_sitemap = len(urls)
+    for u in extra_urls or []:
+        if "flytbase.com" in u and "/case-stud" in u and not tools.LANG_PREFIX.match(u):
+            urls.append(u)
+    return list(dict.fromkeys(urls)), from_sitemap
 
-    log.step("Reading every case study page")
-    texts = tools.fetch_many(urls, max_chars=15000)
-    # cut the "related stories" footer so one case study's links don't count as a mention in another
-    texts = {u: t.split("Related customer stories")[0] for u, t in texts.items()}
 
+def prescore(lead, texts):
     terms = _terms(lead)
+    co = lead.get("company") or {}
     referrer = _names(lead.get("referral_source"))
-    own = _names(lead["company"].get("name")) + _names(lead["company"].get("short_name"))
+    own = _names(co.get("name")) + _names(co.get("short_name"))
     scored = []
     for u, t in texts.items():
-        low = t.lower()
+        low = (t or "").lower()
         hits = sorted(w for w in terms if w in low)
         flags = {
             "mentions_referrer": any(re.search(rf"\b{re.escape(n)}\b", low) for n in referrer),
@@ -94,21 +63,21 @@ def run(lead, sources):
     scored.sort(key=lambda x: x["pre_score"], reverse=True)
     shortlist = [s for s in scored if s["mentions_referrer"] or s["mentions_lead_company"]]
     shortlist += [s for s in scored if s not in shortlist][: max(0, 6 - len(shortlist))]
-    for s in shortlist:
-        log.step(f"shortlist: {s['title'][:70]} | score {s['pre_score']} | referrer={s['mentions_referrer']} own_company={s['mentions_lead_company']}")
+    return scored, shortlist, {"keyword_terms": sorted(terms), "referrer_names": referrer, "own_company_names": own}
 
-    for s in shortlist:
-        s["source_id"] = sources.add(s["url"], s["title"], texts[s["url"]], kind="case_study")
-    cases = "\n\n".join(
-        f"SOURCE ID: {s['source_id']}\nURL: {s['url']}\nTITLE: {s['title']}\nFLAGS: mentions_referrer={s['mentions_referrer']}, "
-        f"mentions_lead_company={s['mentions_lead_company']}\nTEXT: {texts[s['url']][:4000]}"
-        for s in shortlist
-    )
-    result = llm.ask(RANK_PROMPT.format(lead=json.dumps(lead, ensure_ascii=False), cases=cases),
-                     temperature=0.1, label="s4_case_study")
-    result["pre_scores"] = scored
-    result["case_studies_scanned"] = len(urls)
-    log.ok(f"Primary match: {result.get('primary', {}).get('title')}")
-    if result.get("existing_relationship", {}).get("found"):
-        log.ok("ALERT: the lead's own company already appears in a FlytBase case study")
-    return result
+
+def checklist(c):
+    primary = c.get("primary") or {}
+    ranking = c.get("ranking") or []
+    ref = c.get("referral_connection") or {}
+    return [
+        {"item": "Autonomously searched FlytBase's public website for case studies", "ok": (c.get("case_studies_scanned") or 0) > 0,
+         "detail": f"{c.get('case_studies_scanned')} case studies scanned"},
+        {"item": "Referral connection identified (no hard-coding)", "ok": bool(ref.get("explanation")),
+         "detail": f"found={ref.get('found')} {ref.get('url') or ''}"},
+        {"item": "Matched on industry, use case and operational context",
+         "ok": bool(ranking) and all(r.get("industry_match") and r.get("use_case_match") and r.get("context_match") for r in ranking[:3])},
+        {"item": "Explains why the case study is the strongest fit", "ok": bool(primary.get("why_strongest_fit")),
+         "detail": primary.get("title")},
+        {"item": "Primary match is a page the crawler actually read", "ok": bool(primary.get("url_verified"))},
+    ]

@@ -1,0 +1,55 @@
+{
+  "contact": {
+    "name": "Test Contact A",
+    "email": "ops.test@eon-example.com",
+    "title": "Head of Asset Inspection, Grid Operations",
+    "division": "Grid Operations",
+    "seniority": "Head/Director"
+  },
+  "company": {
+    "name": "E.ON SE",
+    "short_name": "E.ON",
+    "country": "Germany",
+    "region": "EMEA",
+    "email_domain": "eon-example.com",
+    "industry": "Energy / Utilities",
+    "sub_industry": "Electricity grid operations (high-voltage substations and power lines)"
+  },
+  "inbound_channel": "flytbase.com/contact",
+  "subject": "Drone-in-a-box for substation and line inspection",
+  "requested_solution": "Docked drones (drone-in-a-box) for routine thermal and visual inspection of substations and lines, ideally BVLOS",
+  "use_cases": [
+    "Routine thermal inspection of high-voltage substations",
+    "Routine visual inspection of high-voltage substations",
+    "Power line inspection",
+    "BVLOS docked drone operations"
+  ],
+  "sites": {
+    "count": 40,
+    "description": "~40 high-voltage substations inspected manually every month",
+    "location": "Bavaria, Germany",
+    "operating_hours": null
+  },
+  "pain_points": [
+    "~40 high-voltage substations are inspected manually every month",
+    "Manual inspection effort and cadence across a dispersed substation fleet"
+  ],
+  "referral_source": null,
+  "timeline_signals": [
+    "Evaluating vendors this quarter",
+    "Procurement wants a pilot proposal by January"
+  ],
+  "budget_signals": [
+    "Procurement is involved and wants a pilot proposal by January (no budget figure stated)"
+  ],
+  "search_keywords": [
+    "E.ON",
+    "substation inspection",
+    "power line inspection",
+    "drone-in-a-box",
+    "thermal inspection",
+    "BVLOS Germany",
+    "Bavaria grid operations",
+    "utilities drone docks"
+  ]
+}

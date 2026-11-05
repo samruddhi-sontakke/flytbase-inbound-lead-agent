@@ -1,0 +1,157 @@
+{
+  "one_line_summary": "E.ON's Head of Asset Inspection (Grid Operations) wants docked drones for routine thermal and visual inspection of ~40 HV substations in Bavaria, ideally BVLOS. Vendors are being evaluated this quarter and procurement wants a pilot proposal by January. ICP 74, priority 67 (P2), no warm intro, no existing FlytBase relationship. Run it as an AE-led co-sell with Droniq.",
+  "buyer_context": {
+    "who": "Test Contact A, Head of Asset Inspection, Grid Operations at E.ON SE, Germany (Head/Director seniority). Came in on their own through flytbase.com/contact, with no referral. They own the operational problem: ~40 high-voltage substations in Bavaria inspected by hand every month. Budget authority is not stated. Research suggests (as an inference, not a sourced fact) that the substations sit in the Bayernwerk Netz GmbH grid area, Bayernwerk being Bavaria's largest regional DSO and an E.ON subsidiary [S28][S26]. The role may therefore sit in Bayernwerk's high-voltage organisation and not at E.ON SE group level.",
+    "what_he_cares_about": [
+      "Replacing monthly manual rounds of ~40 HV substations with docked drones flying routine thermal and visual missions (from the email)",
+      "BVLOS operation, so a central team can run many sites without crews driving out (from the email)",
+      "Getting a credible pilot proposal to procurement by January while vendors are evaluated this quarter (from the email)",
+      "Pains E.ON's own subsidiaries have described: ageing assets, technicians who are hard to hire and keep, and drive time eating engineering hours [S7]. Bayernwerk substations were largely built between the 1950s and 1970s [S36]",
+      "Fit with what is already in place: an autonomous ground robot at a Bayernwerk substation since 2022 and the shared 'one grid, one robot platform' model on Korial [S36][S7]"
+    ],
+    "others_involved": [
+      {
+        "name_or_role": "Günther Mertel, Leiter der Hochspannung, Bayernwerk Netz GmbH [S28]",
+        "why": "Heads the high-voltage area that covers HV substations. Most likely technical approver or budget holder for the pilot (unconfirmed)."
+      },
+      {
+        "name_or_role": "Stephan Engelbrecht, Leiter Hochspannungsleitungen, Bayernwerk Netz GmbH [S29]",
+        "why": "Owns HV lines. Line inspection is in the lead's subject line, so he is the natural phase-2 owner."
+      },
+      {
+        "name_or_role": "Peter Ketterl, Leiter Technik Ostbayern, Bayernwerk Netz GmbH [S29][S30]",
+        "why": "Regional technical head who speaks publicly on grid security, stability and resilience. A likely voice for the resilience angle."
+      },
+      {
+        "name_or_role": "Michael Renghart, Bayernwerk (title not in source) [S36]",
+        "why": "Was Bayernwerk's public voice on the autonomous substation robot pilot. Could be an ally or the person who knows how substation automation was decided. Verification was partial: his name is confirmed, his title is not."
+      },
+      {
+        "name_or_role": "Thomas König, E.ON board member responsible for networks (as of Feb 2021) [S14]",
+        "why": "Publicly backed earlier AI and drone inspection partnerships at group level. The source is from 2021, so check his current role before using it."
+      },
+      {
+        "name_or_role": "Procurement (role named in the email, person unknown)",
+        "why": "Wants the pilot proposal by January and probably runs the tender format, vendor onboarding and contracting."
+      },
+      {
+        "name_or_role": "IT/OT security and aviation compliance (roles, not named)",
+        "why": "Critical-infrastructure drone concerns are high in Germany [S34][S44], and BVLOS needs an LBA authorisation [S31]. Expect reviews of data hosting, airspace and drone identification."
+      },
+      {
+        "name_or_role": "Droniq (FlytBase partner, Germany) [S25][S21]",
+        "why": "Recommended co-sell partner for BVLOS operating licences, UTM airspace integration, DJI Dock supply and German on-site support."
+      }
+    ]
+  },
+  "qualification_status": {
+    "framework": "MEDDPICC",
+    "scores": "ICP 74/100, completeness 50%, priority 67/100, P2 - Warm: respond within 24h, BDR-led discovery",
+    "knowns": [
+      "Identify Pain (known): ~40 HV substations in Bavaria inspected by hand every month",
+      "Use case: docked drones for routine thermal and visual inspection of substations and lines, ideally BVLOS",
+      "Timeline: vendors evaluated this quarter, pilot proposal due to procurement by January",
+      "Paper Process (partial): procurement is already engaged",
+      "Champion (partial): a senior operational owner reached out on their own",
+      "Competition (partial): an active multi-vendor evaluation is under way",
+      "No referral and no existing FlytBase relationship: none of the 24 case studies mention E.ON, and no flytbase.com page mentions E.ON [S1]"
+    ],
+    "unknowns": [
+      "Economic Buyer: who owns the budget and signs off the pilot and the rollout",
+      "Metrics: crew hours and cost per monthly round, and what the pilot must improve",
+      "Decision Criteria: hardware preference, data hosting / on-prem, integration with asset systems and the robot platform, pricing model",
+      "Decision Process: what happens after the January proposal, how many vendors are shortlisted, and the criteria for moving from pilot to rollout",
+      "Paper Process: formal tender or not, security, legal and vendor-onboarding reviews, contracting entity (E.ON SE or Bayernwerk), whether a local partner is required",
+      "Champion strength: will the contact sponsor the deal internally, and do they have influence with procurement and the budget owner",
+      "Competition: which vendors are named, given Percepto already holds a German docked BVLOS approval [S32]",
+      "Whether the ~40 substations belong to Bayernwerk Netz, and whether E.ON already has a DJI hardware vendor"
+    ]
+  },
+  "top_3_research_highlights": [
+    {
+      "finding": "Bayernwerk has run an autonomous inspection robot (Energy Robotics software) at one of its substations since January 2022. It reads gauges, finds overheating by thermography and spots fence holes. E.ON's subsidiaries E.DIS, Bayernwerk and Avacon then moved from separate robot pilots to one shared robot platform on Korial ('one grid, one robot platform').",
+      "source_ids": [
+        "S36",
+        "S7"
+      ],
+      "why_ae_should_care": "There is an incumbent for substation inspection, and E.ON has shown it prefers one platform across subsidiaries. Position FlytBase as the hardware-agnostic aerial layer that complements the ground robots and feeds the same data flows. Expect the objection 'we already have robots' and prepare for it.",
+      "source_ids_valid": [
+        "S36",
+        "S7"
+      ]
+    },
+    {
+      "finding": "BVLOS for grid inspection in Germany is in the specific category of EU 2019/947 and needs an LBA operating authorisation. Since 1 Jan 2026 applications must use SORA 2.5, and processing takes about two to four months. The LBA has already approved docked BVLOS, without on-site observers and around the clock, for a Percepto client in Germany.",
+      "source_ids": [
+        "S31",
+        "S32"
+      ],
+      "why_ae_should_care": "The approval timeline collides with a January pilot. Propose a compliant start (VLOS or remote-supervised) with the BVLOS application run in parallel through Droniq. The Percepto approval proves the regulatory path exists, and it also means a competitor with German docked BVLOS experience is probably in the evaluation.",
+      "source_ids_valid": [
+        "S31",
+        "S32"
+      ]
+    },
+    {
+      "finding": "Bayernwerk Netz is the largest regional DSO in Bavaria (156,000 km grid, about 7 million people supplied, wholly owned by Bayernwerk AG). It has dedicated high-voltage leaders: Günther Mertel (Leiter der Hochspannung), Stephan Engelbrecht (Leiter Hochspannungsleitungen) and Peter Ketterl (Leiter Technik Ostbayern). E.ON put EUR 7.0bn of its EUR 8.5bn 2025 investment into Energy Networks.",
+      "source_ids": [
+        "S28",
+        "S26",
+        "S29",
+        "S11"
+      ],
+      "why_ae_should_care": "The contact's substations are probably Bayernwerk's, so the economic buyer and contracting entity may sit at Bayernwerk Netz, not E.ON SE. Confirm this on the first call and map the HV leadership. Grid is where E.ON spends its money, but tie the pilot to efficiency and digitalisation, which the CFO stresses [S11].",
+      "source_ids_valid": [
+        "S28",
+        "S26",
+        "S29",
+        "S11"
+      ]
+    }
+  ],
+  "recommended_case_study": {
+    "title": "EnBW Case Study: Autonomous Drones for Gigawatt Solar Portfolio | FlytBase",
+    "url": "https://flytbase.com/case-studies/enbw-scaled-solar-pv-inspections-150-mw-to-1-gw-autonomous-drone-docks",
+    "why": "EnBW, one of Germany's largest energy companies, is E.ON's closest peer among FlytBase's published customers [S1]. It shows the operating model E.ON wants: DJI Dock 2 with FlytBase running routine thermal inspection across dispersed remote energy sites, under German weather conditions. Inspection went from annual to quarterly, six-hour round trips to remote sites were eliminated, and the project started as a two-dock proof of concept [S1]. That PoC is the template for the January pilot (1-2 docks at representative substations). Be upfront that EnBW's assets are solar PV, not substations: no FlytBase case study covers substation or line inspection. Use Axpo (DACH utility, permits and aviation safety) as a secondary reference for the BVLOS and regulatory discussion."
+  },
+  "gtm_motion": "AE-led with partner (co-sell). The FlytBase AE owns the E.ON/Bayernwerk account, procurement, commercial terms, security review and pilot scope. Droniq (Germany, Bronze Reseller and FlytBase partner [S25][S18]) handles BVLOS/specific-category approval, UTM airspace integration, DJI Dock supply and German on-site support [S21]. Solectric is the hardware backup [S27] and Drone Architect (Belgium) is optional BVLOS advisory [S18]. Confirm the Bronze partners' capacity with the FlytBase partner team before naming them in the proposal.",
+  "suggested_next_step": {
+    "action": "BDR sends the same-day reply (Email 1) and books a 30-minute discovery call, offering Tue 10 Nov 10:00 CET or Wed 11 Nov 15:00 CET, with the call in German if preferred. The AE joins and runs the call to close the highest-risk gaps: who the economic buyer is and which entity contracts (E.ON SE or Bayernwerk Netz), the tender or vendor-onboarding format, decision criteria, competing vendors, and how the 40 substations relate to the existing robot sites. Send the one-page pilot outline (1-2 docks, thermal and visual missions, a compliant start with the SORA 2.5 BVLOS application in parallel) before the call. After the call, the AE asks the FlytBase partner manager to bring Droniq in for the second meeting.",
+    "owner": "BDR (reply and booking, within 24h), then AE (discovery call, pilot scoping, partner loop-in)",
+    "by_when": "Reply today (Thu 5 Nov 2026). Discovery call by Wed 11 Nov 2026. Droniq looped in and the pilot proposal outline agreed before early December, ahead of procurement's January deadline.",
+    "rationale": "This is an inbound lead in a live competitive evaluation with a fixed January deadline, so speed matters most. Pain and timeline are clear, but the economic buyer is unknown and five other MEDDPICC elements are only partial, which caps completeness at 50%. A discovery call is the fastest way to raise it. The 2-4 month LBA approval [S31] means the BVLOS plan, and the partner who delivers it, must be agreed before the proposal is written, not after."
+  },
+  "watch_outs": [
+    "An incumbent robotics platform (Korial / Energy Robotics) is already at Bayernwerk and sister DSOs [S7][S36]. Position FlytBase as a complement and plan for integration, not replacement.",
+    "Competitor Percepto already holds a German docked BVLOS approval [S32], and E.ON has 270+ trained drone pilots plus eSmart Systems AI analytics [S13][S14]. FlytBase must show value beyond in-house manual drone teams.",
+    "E.ON's 'Polaris' efficiency programme. E.ON confirmed a simpler steering model; Manager Magazin reported a 20-25% cost-cut target from spring 2027, which E.ON did not comment on [S19]. Stakeholders may change and procurement may centralise, so build the pilot case on measured hours and cost.",
+    "BVLOS approval takes 2-4 months under SORA 2.5 [S31] and will not be ready for a pilot right after January. Do not promise BVLOS from day one.",
+    "Drone security worries at German critical infrastructure are high [S34][S44]. Expect security and IT/OT reviews of data hosting, airspace and identification of the operator's own drones.",
+    "Both German partners are Bronze tier, and no German system integrator is listed. Check capacity and integration ownership, and agree deal registration if both Droniq and Solectric are involved.",
+    "Do not cite the Bayernwerk EUR 12bn 2026-2030 programme, the Bayernwerk resilience project or the current Bayernwerk board names. Those claims were removed by the fact-check because their source (S33) was unreadable.",
+    "The EnBW reference is solar PV, not substations [S1]. Say so plainly to keep the claim honest."
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Buyer context: who he is, what he cares about, who else is involved",
+      "ok": true
+    },
+    {
+      "item": "Qualification status: framework score, knowns, unknowns",
+      "ok": true
+    },
+    {
+      "item": "Top 3 research highlights, each citing kept research",
+      "ok": true
+    },
+    {
+      "item": "Recommended case study and why",
+      "ok": true
+    },
+    {
+      "item": "Suggested next step with rationale",
+      "ok": true,
+      "detail": "BDR sends the same-day reply (Email 1) and books a 30-minute discovery call, offering Tue 10 Nov 10:00 CET or Wed 11 Nov 15:00 CET, with the call in German if preferred. The AE joins and runs the call to close the highest-risk gaps: who the economic buyer is and which entity contracts (E.ON SE or Bayernwerk Netz), the tender or vendor-onboarding format, decision criteria, competing vendors, and how the 40 substations relate to the existing robot sites. Send the one-page pilot outline (1-2 docks, thermal and visual missions, a compliant start with the SORA 2.5 BVLOS application in parallel) before the call. After the call, the AE asks the FlytBase partner manager to bring Droniq in for the second meeting."
+    }
+  ]
+}

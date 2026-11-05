@@ -1,0 +1,209 @@
+{
+  "framework_rationale": "MEDDPICC fits this lead because E.ON is a large enterprise utility buying an autonomous inspection program across ~40 high-voltage substations in Bavaria: a multi-site purchase where grid operations (the contact), procurement (already named in the email), safety, IT/OT security and likely aviation/BVLOS regulatory stakeholders all have a say, and where a regional integrator or reseller may shape the pilot. The email gives strong Pain and timeline signals but leaves the Economic Buyer, Decision Criteria, Paper Process details, Champion and Competition open, and MEDDPICC makes those gaps explicit so the first emails can target them. BANT would capture budget/authority/need/timing but is too shallow for a procurement-led, multi-stakeholder pilot; SPICED is designed for recurring SaaS expansion and impact framing rather than a formal enterprise vendor evaluation with a procurement deadline.",
+  "elements": [
+    {
+      "key": "M",
+      "name": "Metrics",
+      "status": "partial",
+      "evidence": "We inspect ~40 high-voltage substations in Bavaria manually every month.",
+      "missing": "Quantified target outcome: inspection hours/cost per substation today, crew size, defect detection rate, outage/incident cost, desired inspection frequency with drones.",
+      "discovery_question": "How many crew hours and how much cost does one monthly round of the 40 substations take today, and what would a successful pilot need to improve?"
+    },
+    {
+      "key": "E",
+      "name": "Economic Buyer",
+      "status": "unknown",
+      "evidence": null,
+      "missing": "Who owns the budget for the inspection program and signs off the pilot and rollout.",
+      "discovery_question": "Besides your team and procurement, who would own the budget and final approval for a pilot and a wider rollout?"
+    },
+    {
+      "key": "D1",
+      "name": "Decision Criteria",
+      "status": "partial",
+      "evidence": "Docked drones for routine thermal and visual inspection, ideally BVLOS.",
+      "missing": "Full technical and commercial criteria: dock/drone hardware preferences, BVLOS approval support, data/security and on-prem requirements, integration with asset management, pricing model.",
+      "discovery_question": "Beyond thermal, visual and BVLOS capability, what criteria will you use to compare vendors, for example hardware choice, data hosting, or integration with your asset management systems?"
+    },
+    {
+      "key": "D2",
+      "name": "Decision Process",
+      "status": "partial",
+      "evidence": "Evaluating vendors this quarter; procurement wants a pilot proposal by January.",
+      "missing": "Steps after the pilot proposal, who evaluates, how many vendors are shortlisted, pilot success criteria and decision date for rollout.",
+      "discovery_question": "What happens after the pilot proposal goes to procurement in January: who reviews it, and how will you decide whether to move from pilot to rollout?"
+    },
+    {
+      "key": "P",
+      "name": "Paper Process",
+      "status": "partial",
+      "evidence": "Procurement wants a pilot proposal by January.",
+      "missing": "Procurement format (RFP/tender), vendor onboarding, IT/OT security and legal review, contracting entity, whether a partner/reseller is required.",
+      "discovery_question": "Does procurement run this as a formal tender, and are there security, legal or vendor-onboarding reviews we should prepare for in parallel?"
+    },
+    {
+      "key": "I",
+      "name": "Identify Pain",
+      "status": "known",
+      "evidence": "We inspect ~40 high-voltage substations in Bavaria manually every month. Looking at docked drones for routine thermal and visual inspection.",
+      "missing": "Consequence of the pain: safety exposure of crews in HV environments, missed defects, outages, staffing constraints.",
+      "discovery_question": "What is the biggest cost of doing these inspections manually today: crew time, safety exposure in the substations, or defects caught too late?"
+    },
+    {
+      "key": "C1",
+      "name": "Champion",
+      "status": "partial",
+      "evidence": "Contact is Head of Asset Inspection, Grid Operations, and reached out proactively via flytbase.com/contact.",
+      "missing": "Whether the contact will actively sponsor FlytBase internally and has influence with the economic buyer and procurement.",
+      "discovery_question": "Would you be the one leading the pilot internally, and who else should we bring into the conversation early?"
+    },
+    {
+      "key": "C2",
+      "name": "Competition",
+      "status": "partial",
+      "evidence": "Evaluating vendors this quarter.",
+      "missing": "Which other vendors are being evaluated, and whether in-house or status-quo manual inspection is a real alternative.",
+      "discovery_question": "Which other drone-in-a-box or inspection vendors are you looking at, and what has stood out so far?"
+    }
+  ],
+  "fit_ratings": {
+    "industry_fit": {
+      "rating": 5,
+      "reason": "Energy utility grid operations: 'high-voltage substations' and 'line inspection' are core heavy-industry outdoor assets."
+    },
+    "site_scale": {
+      "rating": 4,
+      "reason": "'~40 high-voltage substations in Bavaria' is a large multi-site footprint, though limited to one region."
+    },
+    "continuous_operations": {
+      "rating": 3,
+      "reason": "Grid assets need recurring checks ('manually every month', 'routine thermal and visual inspection'), but 24/7 operations are not stated."
+    },
+    "pain_severity": {
+      "rating": 4,
+      "reason": "Monthly manual inspection of ~40 HV substations is a clear cost and safety burden that docked drones directly remove; consequences are not quantified."
+    },
+    "buyer_authority": {
+      "rating": 4,
+      "reason": "'Head of Asset Inspection, Grid Operations' owns the operational problem; budget authority is not stated."
+    },
+    "warm_introduction": {
+      "rating": 0,
+      "reason": "No referral or existing relationship mentioned; inbound via flytbase.com/contact."
+    },
+    "timing_and_budget": {
+      "rating": 4,
+      "reason": "'Evaluating vendors this quarter; procurement wants a pilot proposal by January' is a concrete timeline with procurement engaged; no budget figure."
+    }
+  },
+  "risks": [
+    "Economic buyer and budget are not identified; pilot could stall without budget owner sponsorship",
+    "Competitive vendor evaluation already underway this quarter",
+    "BVLOS approval in Germany (EU/LBA regulation) may slow or limit the pilot",
+    "Tight timeline: pilot proposal due by January",
+    "Procurement-led process may require tender format, security and IT/OT reviews, or a local partner",
+    "Large utility with many stakeholders can lengthen pilot-to-rollout cycle"
+  ],
+  "summary": "Strong ICP fit: a German energy utility's Head of Asset Inspection wants docked drones for thermal/visual inspection of ~40 HV substations, with an active vendor evaluation and a January pilot proposal deadline. Pain, use case and timeline are clear; economic buyer, decision criteria detail, paper process, champion strength and competitors remain to be uncovered. No warm introduction, so priority rests on fit and urgency.",
+  "framework": "MEDDPICC",
+  "fit_weights": {
+    "industry_fit": 20,
+    "site_scale": 15,
+    "continuous_operations": 10,
+    "pain_severity": 15,
+    "buyer_authority": 15,
+    "warm_introduction": 10,
+    "timing_and_budget": 15
+  },
+  "scores": {
+    "icp_fit_score": 74,
+    "meddpicc_completeness": 50,
+    "priority_score": 67,
+    "priority_tier": "P2 - Warm: respond within 24h, BDR-led discovery",
+    "formula": "priority = 0.7 x ICP fit + 0.3 x MEDDPICC completeness; tier set by ICP fit (>=75 P1, >=55 P2)",
+    "calculation": [
+      "industry_fit 5/5 x 20 = 20.0",
+      "site_scale 4/5 x 15 = 12.0",
+      "continuous_operations 3/5 x 10 = 6.0",
+      "pain_severity 4/5 x 15 = 12.0",
+      "buyer_authority 4/5 x 15 = 12.0",
+      "warm_introduction 0/5 x 10 = 0.0",
+      "timing_and_budget 4/5 x 15 = 12.0",
+      "ICP fit = 74.0",
+      "MEDDPICC completeness = 50.0%",
+      "priority = 0.7 x 74.0 + 0.3 x 50.0 = 67"
+    ]
+  },
+  "known_information": [
+    "Identify Pain"
+  ],
+  "missing_information": [
+    {
+      "element": "Metrics",
+      "status": "partial",
+      "missing": "Quantified target outcome: inspection hours/cost per substation today, crew size, defect detection rate, outage/incident cost, desired inspection frequency with drones.",
+      "discovery_question": "How many crew hours and how much cost does one monthly round of the 40 substations take today, and what would a successful pilot need to improve?"
+    },
+    {
+      "element": "Economic Buyer",
+      "status": "unknown",
+      "missing": "Who owns the budget for the inspection program and signs off the pilot and rollout.",
+      "discovery_question": "Besides your team and procurement, who would own the budget and final approval for a pilot and a wider rollout?"
+    },
+    {
+      "element": "Decision Criteria",
+      "status": "partial",
+      "missing": "Full technical and commercial criteria: dock/drone hardware preferences, BVLOS approval support, data/security and on-prem requirements, integration with asset management, pricing model.",
+      "discovery_question": "Beyond thermal, visual and BVLOS capability, what criteria will you use to compare vendors, for example hardware choice, data hosting, or integration with your asset management systems?"
+    },
+    {
+      "element": "Decision Process",
+      "status": "partial",
+      "missing": "Steps after the pilot proposal, who evaluates, how many vendors are shortlisted, pilot success criteria and decision date for rollout.",
+      "discovery_question": "What happens after the pilot proposal goes to procurement in January: who reviews it, and how will you decide whether to move from pilot to rollout?"
+    },
+    {
+      "element": "Paper Process",
+      "status": "partial",
+      "missing": "Procurement format (RFP/tender), vendor onboarding, IT/OT security and legal review, contracting entity, whether a partner/reseller is required.",
+      "discovery_question": "Does procurement run this as a formal tender, and are there security, legal or vendor-onboarding reviews we should prepare for in parallel?"
+    },
+    {
+      "element": "Champion",
+      "status": "partial",
+      "missing": "Whether the contact will actively sponsor FlytBase internally and has influence with the economic buyer and procurement.",
+      "discovery_question": "Would you be the one leading the pilot internally, and who else should we bring into the conversation early?"
+    },
+    {
+      "element": "Competition",
+      "status": "partial",
+      "missing": "Which other vendors are being evaluated, and whether in-house or status-quo manual inspection is a real alternative.",
+      "discovery_question": "Which other drone-in-a-box or inspection vendors are you looking at, and what has stood out so far?"
+    }
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Framework stated and explained",
+      "ok": true
+    },
+    {
+      "item": "Known information extracted from the email",
+      "ok": true,
+      "detail": "Identify Pain"
+    },
+    {
+      "item": "Missing information required for full qualification",
+      "ok": true,
+      "detail": "Metrics, Economic Buyer, Decision Criteria, Decision Process, Paper Process, Champion, Competition"
+    },
+    {
+      "item": "Fit assessment (every ICP factor rated with a reason)",
+      "ok": true
+    },
+    {
+      "item": "Priority score with reasoning",
+      "ok": true,
+      "detail": "67/100, P2 - Warm: respond within 24h, BDR-led discovery"
+    }
+  ]
+}

@@ -1,11 +1,9 @@
-"""Settings and API keys.
+"""Settings.
 
-Keys are read (in this order) from:
-  1. environment variables GEMINI_API_KEY / TAVILY_API_KEY
-  2. a file called keys.txt or .env in the project folder, with lines like:
-        GEMINI=your-key
-        TAVILY=your-key
-keys.txt and .env are listed in .gitignore, so they never get uploaded to GitHub.
+The AI agent is Claude Code itself (see .claude/skills and .claude/agents), so there are no LLM API keys here.
+The only secret is the MongoDB connection string, read from an environment variable or from `.env`
+(git-ignored), with lines like:
+    mongodb=mongodb+srv://...
 """
 import os
 from pathlib import Path
@@ -16,7 +14,7 @@ OUTPUT_DIR = ROOT / "outputs"
 
 def _read_key_files():
     found = {}
-    for name in ("keys.txt", "keys.txt.txt", ".env"):
+    for name in ("keys.txt", ".env"):
         f = ROOT / name
         if not f.exists():
             continue
@@ -40,36 +38,17 @@ def _get(*names):
     return ""
 
 
-GEMINI_KEY = _get("GEMINI_API_KEY", "GEMINI", "GOOGLE_API_KEY")
-TAVILY_KEY = _get("TAVILY_API_KEY", "TAVILY")
-
-# Models are tried in order; if one is unavailable on the free tier, the next is used.
-_override = _get("GEMINI_MODEL")
-MODELS = ([_override] if _override else []) + [
-    "gemini-flash-lite-latest",
-    "gemini-3.1-flash-lite",
-    "gemini-3.5-flash-lite",
-    "gemini-2.5-flash-lite",
-    "gemini-3.5-flash",
-    "gemini-flash-latest",
-    "gemini-2.5-flash",
-]
-MODELS = list(dict.fromkeys(MODELS))  # remove duplicates, keep order
-
 # Company website the case-study and partner stages crawl.
 VENDOR_SITE = "https://flytbase.com"
 VENDOR_NAME = "FlytBase"
 BDR_NAME = "Samruddhi Sontakke"  # signs the emails
 
-# How much research to do (each Tavily search = 1-2 free credits).
-RESEARCH_RESULTS_PER_QUERY = 5
-MAX_RESEARCH_QUERIES = 12
+# Reddit archive used for practitioner / community signals (no key needed).
+ARCTIC_SHIFT_API = "https://arctic-shift.photon-reddit.com/api"
+
+# A lead claimed by the agent is considered abandoned after this many minutes (lease lock).
+LEASE_MINUTES = 45
 
 
 def check_keys():
-    missing = []
-    if not GEMINI_KEY:
-        missing.append("GEMINI")
-    if not TAVILY_KEY:
-        missing.append("TAVILY")
-    return missing
+    return [] if _get("MONGODB", "MONGODB_URI", "MONGO_URI") else ["MONGODB"]

@@ -1,96 +1,68 @@
-"""Inbound Lead Desk - internal web app around the six-stage pipeline.
+"""Inbound Lead Desk - internal web app over the agent's MongoDB data.
 
     py -m app.server            # http://127.0.0.1:8000  (local machine only)
 
-* Each inbound email becomes one lead document in MongoDB.
-* A single background worker runs the pipeline (agent/pipeline.py) one lead at a time,
-  because the free-tier Gemini wrapper keeps per-process rate-limit state.
-* Live progress comes from the same log messages the command line prints.
-* Earlier command-line runs in outputs/ are imported on start-up, so nothing is lost.
+* The AI agent is Claude Code (see .claude/skills/process-inbox). On a session cron it reads unread Gmail,
+  turns inbound leads into lead documents, runs the six stages with subagents and writes every result here
+  through the leaddesk MCP server (agent/store.py).
+* This app never calls an AI model and never sends email. Leads pasted here are only queued; the agent's next
+  tick picks them up. Live progress is the `events` list the agent appends to.
 """
 import contextlib
 import datetime
 import json
 import os
-import queue
 import re
-import threading
-import traceback
 from pathlib import Path
 
-from bson import ObjectId
 from fastapi import Body, FastAPI, HTTPException
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from agent import config, log, pipeline
-from app import db
+from agent import config, store
+from app import crm, db
 
 STATIC = Path(__file__).parent / "static"
-STAGE_KEYS = {0: "lead", 1: "qualification", 2: "research", 3: "emails", 4: "case_study", 5: "partner", 6: "handoff"}
-RUN_ORDER = ["lead", "qualification", "research", "case_study", "partner", "emails", "handoff"]
-CRM_STATUSES = ["new", "working", "meeting_booked", "handed_off", "nurture", "disqualified"]
+# Deal stages (app/crm.py). The first desk values (working, handed_off, disqualified) are still accepted and mapped.
+CRM_STATUSES = crm.STAGES + list(crm.LEGACY_STAGE)
+LIVE = {"archived": {"$ne": True}}
+# Background auto-assign: every N seconds, finished and unassigned leads are routed (app/crm.py). CRM_AUTO_ASSIGN=0 turns it off.
+# The demo CRM is off unless LEADDESK_CRM=1: no auto-assign thread, no CRM events in activity, hidden from /api/docs.
+CRM_ON = os.environ.get("LEADDESK_CRM") == "1"
+ASSIGNER = crm.AutoAssigner(interval=int(os.environ.get("CRM_AUTO_ASSIGN_SECONDS", "20")))
+
 
 @contextlib.asynccontextmanager
 async def lifespan(_app):
     startup()
+    if os.environ.get("CRM_AUTO_ASSIGN", "1") != "0":
+        if CRM_ON:
+            ASSIGNER.start()
     yield
+    ASSIGNER.stop()
 
 
 app = FastAPI(title="FlytBase Inbound Lead Desk", docs_url="/api/docs", redoc_url=None, lifespan=lifespan)
-jobs = queue.Queue()
-state = {"current": None}
 
 
 # ---------------------------------------------------------------- helpers
-
-def summarize(result):
-    """Flat fields for the lead list, taken from whatever stages have finished."""
-    result = result or {}
-    lead = result.get("lead") or {}
-    c, co = lead.get("contact") or {}, lead.get("company") or {}
-    scores = (result.get("qualification") or {}).get("scores") or {}
-    partner = result.get("partner") or {}
-    handoff = result.get("handoff") or {}
-    tier_label = scores.get("priority_tier") or ""
-    m = re.match(r"\s*(P\d)", tier_label)
-    return {
-        "name": c.get("name"), "email": c.get("email"), "title": c.get("title"), "division": c.get("division"),
-        "seniority": c.get("seniority"),
-        "company": co.get("short_name") or co.get("name"), "company_full": co.get("name"),
-        "country": co.get("country"), "region": co.get("region"), "industry": co.get("industry"),
-        "sub_industry": co.get("sub_industry"), "subject": lead.get("subject"), "referral": lead.get("referral_source"),
-        "icp": scores.get("icp_fit_score"), "completeness": scores.get("meddpicc_completeness"),
-        "priority": scores.get("priority_score"), "tier": m.group(1) if m else None, "tier_label": tier_label,
-        "motion": partner.get("motion"),
-        "partners": [p.get("name") for p in partner.get("recommended_partners") or [] if p.get("name")],
-        "one_line": handoff.get("one_line_summary"),
-    }
-
-
-def guess_contact(email_text):
-    """Quick name/company for the list while intake is still running (no AI)."""
-    out = {}
-    m = re.search(r"From:\s*([^(<\n]+)", email_text)
-    if m:
-        out["name"] = m.group(1).strip()
-    m = re.search(r"Company:\s*([^\n,]+)", email_text)
-    if m:
-        out["company"] = m.group(1).strip()
-    m = re.search(r"Subject:\s*([^\n]+)", email_text)
-    if m:
-        out["subject"] = m.group(1).strip()
-    return out
-
 
 def public(doc, full=False):
     if not doc:
         return None
     doc = dict(doc)
+    doc.pop("work", None)
+    doc.pop("drafts", None)
     if not full:
         for k in ("result", "sources", "events", "email_text"):
             doc.pop(k, None)
+    c = dict(doc.get("crm") or {})
+    if not full:
+        c.pop("assignment", None)
+        doc["crm"] = c
+    doc["sla"] = crm.sla_state(c)
+    doc["deal_stage"] = crm.stage_of(c.get("status"))
     return jsonable_encoder(doc)
 
 
@@ -107,107 +79,41 @@ def run_dir_of(doc):
     return config.ROOT / doc["run_dir"]
 
 
-# ---------------------------------------------------------------- worker
-
-def process(lead_id):
-    doc = db.leads().find_one({"_id": lead_id})
-    if not doc:
-        return
-    run_dir = pipeline.new_run_dir()
-    rel = run_dir.relative_to(config.ROOT).as_posix()
-    db.leads().update_one({"_id": lead_id}, {"$set": {
-        "status": "running", "run_dir": rel, "started_at": db.now(), "stage": None, "stages_done": [],
-        "events": [], "error": None}})
-    state["current"] = lead_id
-
-    def on_log(kind, msg, seconds):
-        upd = {"$push": {"events": {"t": seconds, "kind": kind, "msg": msg}}}
-        if kind == "stage":
-            num = int(msg.split("|", 1)[0])
-            upd["$set"] = {"stage": STAGE_KEYS.get(num)}
-        db.leads().update_one({"_id": lead_id}, upd)
-
-    def on_stage_done(key, value):
-        sets = {f"result.{key}": value}
-        partial = (db.leads().find_one({"_id": lead_id}, {"result": 1}) or {}).get("result") or {}
-        partial[key] = value
-        sets["summary"] = {**doc.get("summary", {}), **{k: v for k, v in summarize(partial).items() if v}}
-        db.leads().update_one({"_id": lead_id}, {"$set": sets, "$addToSet": {"stages_done": key}})
-
-    log.listeners.append(on_log)
-    try:
-        result, sources = pipeline.run(doc["email_text"], run_dir, on_stage_done=on_stage_done)
-        db.leads().update_one({"_id": lead_id}, {"$set": {
-            "status": "done", "finished_at": db.now(), "result": result, "meta": result["meta"],
-            "sources": sources.public_list(), "summary": summarize(result), "stage": None}})
-    except Exception as e:
-        traceback.print_exc()
-        db.leads().update_one({"_id": lead_id}, {"$set": {
-            "status": "failed", "finished_at": db.now(), "error": str(e)[:600]},
-            "$push": {"events": {"t": None, "kind": "warn", "msg": f"Stopped: {str(e)[:300]}"}}})
-    finally:
-        log.listeners.remove(on_log)
-        state["current"] = None
-
-
-def worker():
-    while True:
-        lead_id = jobs.get()
-        try:
-            process(lead_id)
-        except Exception:
-            traceback.print_exc()
-
-
-def import_old_runs():
-    """Bring command-line runs from outputs/ into MongoDB (once each)."""
-    count = 0
-    for d in sorted(config.OUTPUT_DIR.glob("run_*")):
-        if not (d / "6_handoff.json").exists() or db.leads().find_one({"_id": d.name}, {"_id": 1}):
-            continue
-        result = {}
-        for key, name in pipeline.STAGE_FILES:
-            f = d / f"{name}.json"
-            result[key] = json.loads(f.read_text(encoding="utf-8")) if f.exists() else None
-        sources = json.loads((d / "sources.json").read_text(encoding="utf-8")) if (d / "sources.json").exists() else []
-        calls = sum(1 for _ in open(d / "trace.jsonl", encoding="utf-8")) if (d / "trace.jsonl").exists() else None
-        try:
-            created = datetime.datetime.strptime(d.name, "run_%Y-%m-%d_%H-%M-%S").astimezone(datetime.timezone.utc)
-        except ValueError:
-            created = db.now()
-        text_file = d / "input.txt" if (d / "input.txt").exists() else config.ROOT / "input" / "lead_sqm.txt"
-        email_text = text_file.read_text(encoding="utf-8") if text_file.exists() else ""
-        result["meta"] = {"started": created.astimezone().strftime("%Y-%m-%d %H:%M"), "llm_calls": calls,
-                          "seconds": None, "input_file": "command line"}
-        db.leads().insert_one({
-            "_id": d.name, "created_at": created, "finished_at": created, "status": "done", "imported": True,
-            "email_text": email_text, "run_dir": d.relative_to(config.ROOT).as_posix(), "result": result,
-            "meta": result["meta"], "sources": sources, "summary": summarize(result),
-            "stages_done": RUN_ORDER, "events": [], "crm": {"status": "new", "owner": "", "notes": []}})
-        count += 1
-    return count
-
-
 def startup():
     db.get_db()
-    db.leads().update_many({"status": "running"}, {"$set": {
-        "status": "failed", "error": "Interrupted: the app was restarted while this lead was running."}})
-    for d in db.leads().find({"status": "queued"}, {"_id": 1}).sort("created_at", 1):
-        jobs.put(d["_id"])
-    n = import_old_runs()
-    if n:
-        print(f"Imported {n} earlier run(s) from outputs/")
-    threading.Thread(target=worker, daemon=True).start()
+    # The Gemini-era runs (v0) are kept on disk in outputs/legacy_gemini/ but hidden from the desk.
+    # Any lead without a `source` field predates the agent (v0); it stays in MongoDB but leaves the desk.
+    db.leads().update_many({"source": {"$exists": False}, "archived": {"$ne": True}}, {"$set": {"archived": True}})
+    crm.ensure()  # indexes, demo team and default routing rules (only when missing)
 
 
 # ---------------------------------------------------------------- API
 
+def _iso(v):
+    return v.isoformat() if isinstance(v, datetime.datetime) else v
+
+
 @app.get("/api/health")
 def health():
     ok, info = db.ping()
-    return {"mongo": ok, "database": info if ok else None, "mongo_error": None if ok else info,
-            "missing_keys": config.check_keys(), "models": config.MODELS[:3],
-            "running": state["current"], "queued": jobs.qsize()}
+    out = {"mongo": ok, "database": info if ok else None, "mongo_error": None if ok else info, "missing_keys": config.check_keys()}
+    if ok:
+        st = store.agent_state()
+        q = store.queue_status()
+        out.update({
+            "agent": "Claude Code (session cron, /process-inbox)",
+            "last_tick": _iso(st.get("last_tick")), "last_inbox_sweep": _iso(st.get("last_inbox_sweep")),
+            "last_inbox_note": st.get("last_inbox_sweep_note"), "ticks": st.get("count_tick", 0),
+            "running": next((x["lead_id"] for x in q if x["status"] == "running"), None),
+            "queued": sum(1 for x in q if x["status"] == "queued"),
+            "inbox_seen": db.get_db().inbox_log.count_documents({}),
+        })
+    return out
+
+
+@app.get("/api/inbox")
+def inbox():
+    return jsonable_encoder(store.inbox_list())
 
 
 @app.get("/api/sample")
@@ -218,7 +124,7 @@ def sample():
 
 @app.get("/api/leads")
 def list_leads():
-    docs = db.leads().find({}, {"result": 0, "sources": 0, "events": 0, "email_text": 0}).sort("created_at", -1)
+    docs = db.leads().find(LIVE, {"result": 0, "sources": 0, "events": 0, "email_text": 0, "drafts": 0, "work": 0}).sort("created_at", -1)
     return [public(d) for d in docs]
 
 
@@ -229,16 +135,9 @@ def create_lead(body: dict = Body(...)):
         raise HTTPException(400, "Paste the full inbound email (at least a few lines).")
     if len(text) > 20000:
         raise HTTPException(400, "That email is too long (20,000 characters max).")
-    missing = config.check_keys()
-    if missing:
-        raise HTTPException(400, f"Missing API key(s) in .env: {', '.join(missing)}")
-    lead_id = str(ObjectId())
-    db.leads().insert_one({
-        "_id": lead_id, "created_at": db.now(), "status": "queued", "email_text": text,
-        "summary": guess_contact(text), "stages_done": [], "events": [], "result": {},
-        "crm": {"status": "new", "owner": "", "notes": []}})
-    jobs.put(lead_id)
-    return {"id": lead_id, "position": jobs.qsize()}
+    lead_id = store.create_lead(text, source=body.get("source") or "web")
+    position = db.leads().count_documents({"status": "queued"})
+    return {"id": lead_id, "position": position}
 
 
 @app.get("/api/leads/{lead_id}")
@@ -265,13 +164,15 @@ def update_lead(lead_id: str, body: dict = Body(...)):
     if "status" in body:
         if body["status"] not in CRM_STATUSES:
             raise HTTPException(400, "Unknown status")
-        sets["crm.status"] = body["status"]
     if "owner" in body:
         sets["crm.owner"] = str(body["owner"])[:80]
-    if not sets:
+    if not sets and "status" not in body:
         raise HTTPException(400, "Nothing to update")
-    sets["crm.updated_at"] = db.now()
-    db.leads().update_one({"_id": lead_id}, {"$set": sets})
+    if "status" in body:  # the deal stage: logged in the CRM audit trail
+        crm.set_stage(lead_id, crm.stage_of(body["status"]), actor=str(body.get("actor") or "web")[:80])
+    if sets:
+        sets["crm.updated_at"] = db.now()
+        db.leads().update_one({"_id": lead_id}, {"$set": sets})
     return public(get_lead(lead_id))
 
 
@@ -289,7 +190,7 @@ def add_note(lead_id: str, body: dict = Body(...)):
 @app.post("/api/leads/{lead_id}/rerun")
 def rerun(lead_id: str):
     doc = get_lead(lead_id)
-    return create_lead({"email_text": doc.get("email_text") or ""})
+    return create_lead({"email_text": doc.get("email_text") or "", "source": doc.get("source") or "web"})
 
 
 @app.get("/api/leads/{lead_id}/trace")
@@ -327,26 +228,196 @@ def report_md(lead_id: str):
 @app.get("/api/activity")
 def activity():
     items = []
-    docs = db.leads().find({}, {"summary": 1, "created_at": 1, "finished_at": 1, "status": 1, "crm": 1, "meta": 1,
+    docs = db.leads().find(LIVE, {"summary": 1, "source": 1, "created_at": 1, "finished_at": 1, "status": 1, "crm": 1, "meta": 1,
                                 "imported": 1, "error": 1}).sort("created_at", -1).limit(100)
     for d in docs:
         s = d.get("summary") or {}
         who = f"{s.get('name') or 'Unknown'} · {s.get('company') or ''}".strip(" ·")
-        items.append({"at": d["created_at"], "kind": "imported" if d.get("imported") else "received", "lead": d["_id"],
-                      "title": who, "note": s.get("subject") or ""})
-        if d.get("finished_at") and not d.get("imported"):
+        items.append({"at": d["created_at"], "kind": "received", "lead": d["_id"],
+                      "title": who, "note": f"via {d.get('source') or 'web'} · {s.get('subject') or ''}"})
+        if d.get("finished_at"):
             if d["status"] == "done":
                 m = d.get("meta") or {}
                 items.append({"at": d["finished_at"], "kind": "qualified", "lead": d["_id"], "title": who,
                               "note": f"{s.get('tier') or ''} · priority {s.get('priority')} · {m.get('seconds')}s, "
-                                      f"{m.get('llm_calls')} AI calls".strip(" ·")})
+                                      f"{m.get('llm_calls')} subagent calls".strip(" ·")})
             elif d["status"] == "failed":
                 items.append({"at": d["finished_at"], "kind": "failed", "lead": d["_id"], "title": who,
                               "note": d.get("error") or ""})
         for n in (d.get("crm") or {}).get("notes") or []:
             items.append({"at": n["at"], "kind": "note", "lead": d["_id"], "title": who, "note": n["text"]})
+    names = {d["_id"]: d.get("summary") or {} for d in db.leads().find(LIVE, {"summary": 1})}
+    for a in (crm.activity(limit=150) if CRM_ON else []):
+        if a.get("lead_id") and a["lead_id"] not in names:
+            continue
+        s = names.get(a.get("lead_id")) or {}
+        title = f"{s.get('name') or 'Unknown'} · {s.get('company') or ''}".strip(" ·") if a.get("lead_id") else "CRM"
+        items.append({"at": a["at"], "kind": "crm", "lead": a.get("lead_id"), "title": title,
+                      "note": f"{a['kind'].replace('_', ' ')} · {a['text']}"})
     items.sort(key=lambda i: i["at"], reverse=True)
     return jsonable_encoder(items[:150])
+
+
+# ---------------------------------------------------------------- CRM (app/crm.py): demo team, routing, tasks, deals
+
+def _member(mid):
+    m = db.get_db().team.find_one({"_id": mid})
+    if not m:
+        raise HTTPException(404, "No team member with that id")
+    return m
+
+
+def _actor(body):
+    return str((body or {}).get("actor") or "web")[:80]
+
+
+@app.get("/api/crm/team")
+def crm_team():
+    load = crm.loads()
+    out = []
+    for m in crm.team():
+        cap = max(1, int(m.get("capacity") or 1))
+        out.append({**m, "open_leads": load.get(m["_id"], 0), "utilisation": round(load.get(m["_id"], 0) / cap, 3)})
+    return jsonable_encoder(out)
+
+
+@app.post("/api/crm/team")
+def crm_team_create(body: dict = Body(...)):
+    fields, problems = crm.clean_member(body)
+    if problems:
+        raise HTTPException(400, "; ".join(problems))
+    return jsonable_encoder(crm.create_member(fields, actor=_actor(body)))
+
+
+@app.patch("/api/crm/team/{mid}")
+def crm_team_update(mid: str, body: dict = Body(...)):
+    _member(mid)
+    fields, problems = crm.clean_member(body, partial=True)
+    if problems:
+        raise HTTPException(400, "; ".join(problems))
+    if not fields:
+        raise HTTPException(400, "Nothing to update")
+    return jsonable_encoder(crm.update_member(mid, fields, actor=_actor(body)))
+
+
+@app.get("/api/crm/routing")
+def crm_routing():
+    alive = ASSIGNER._thread is not None and ASSIGNER._thread.is_alive()
+    return jsonable_encoder({**crm.routing_config(), "regions": crm.REGIONS, "stages": crm.STAGES,
+                             "auto_assigner": {"running": alive, "interval_seconds": ASSIGNER.interval,
+                                               "last_run": ASSIGNER.last_run, "last_error": ASSIGNER.last_error}})
+
+
+@app.put("/api/crm/routing")
+def crm_routing_put(body: dict = Body(...)):
+    clean, problems = crm.validate_routing(body, {m["_id"] for m in crm.team()})
+    if problems:
+        raise HTTPException(400, "; ".join(problems))
+    if not clean:
+        raise HTTPException(400, "Nothing to update")
+    return jsonable_encoder(crm.save_routing(clean, actor=_actor(body)))
+
+
+@app.post("/api/crm/routing/explain")
+def crm_explain(body: dict = Body(default={})):
+    """How a lead (lead_id) or a hypothetical one (region, tier, industry) would be routed right now. Writes nothing."""
+    if body.get("lead_id"):
+        doc = get_lead(body["lead_id"])
+        summary, exclude = doc.get("summary") or {}, doc["_id"]
+    else:
+        summary, exclude = {k: body.get(k) for k in ("region", "tier", "industry", "sub_industry")}, None
+    return jsonable_encoder(crm.route(summary, crm.team(), crm.loads(exclude_lead=exclude), crm.routing_config()))
+
+
+@app.post("/api/crm/auto-assign")
+def crm_auto_assign():
+    return jsonable_encoder({"assigned": ASSIGNER.run_once(), "last_error": ASSIGNER.last_error})
+
+
+@app.get("/api/crm/leads/{lead_id}")
+def crm_lead(lead_id: str):
+    get_lead(lead_id)
+    return jsonable_encoder(crm.lead_view(lead_id))
+
+
+@app.post("/api/crm/leads/{lead_id}/assign")
+def crm_assign(lead_id: str, body: dict = Body(default={})):
+    """No owner_id/ae_id: run the routing rules again. With them: hand-pick (a reason is required)."""
+    get_lead(lead_id)
+    owner_id, ae_id = body.get("owner_id") or None, body.get("ae_id")
+    reason = (body.get("reason") or "").strip()
+    if (owner_id or ae_id is not None) and len(reason) < 3:
+        raise HTTPException(400, "Say why you are reassigning (it goes in the audit trail).")
+    try:
+        r = crm.assign(lead_id, actor=_actor(body), owner_id=owner_id, ae_id=ae_id, reason=reason or None)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    return jsonable_encoder(r)
+
+
+@app.get("/api/crm/tasks")
+def crm_tasks(owner: str = "", status: str = "open", lead_id: str = ""):
+    return jsonable_encoder(crm.tasks(owner_id=owner or None, status=status, lead_id=lead_id or None))
+
+
+@app.post("/api/crm/tasks")
+def crm_task_add(body: dict = Body(...)):
+    title = (body.get("title") or "").strip()
+    get_lead(body.get("lead_id"))
+    if not title:
+        raise HTTPException(400, "A task needs a title")
+    try:
+        hours = float(body.get("due_in_hours") or 24)
+    except (TypeError, ValueError):
+        raise HTTPException(400, "due_in_hours must be a number")
+    due = db.now() + datetime.timedelta(hours=hours)
+    return jsonable_encoder(crm.add_task(body["lead_id"], title, body.get("owner_id"), due, actor=_actor(body)))
+
+
+@app.post("/api/crm/tasks/{task_id}/complete")
+def crm_task_done(task_id: str, body: dict = Body(default={})):
+    t = crm.complete_task(task_id, actor=_actor(body), note=str(body.get("note") or ""))
+    if not t:
+        raise HTTPException(404, "No open task with that id")
+    return jsonable_encoder(t)
+
+
+@app.get("/api/crm/activity")
+def crm_activity(lead_id: str = "", limit: int = 200):
+    return jsonable_encoder(crm.activity(lead_id or None, limit=max(1, min(limit, 500))))
+
+
+@app.get("/api/crm/pipeline")
+def crm_pipeline():
+    return jsonable_encoder(crm.pipeline())
+
+
+@app.patch("/api/crm/deals/{lead_id}")
+def crm_deal(lead_id: str, body: dict = Body(...)):
+    get_lead(lead_id)
+    try:
+        r = crm.set_stage(lead_id, body.get("stage"), actor=_actor(body), why=str(body.get("why") or "")[:200])
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    return jsonable_encoder(r)
+
+
+@app.get("/api/crm/accounts")
+def crm_accounts():
+    return jsonable_encoder(crm.accounts())
+
+
+@app.get("/api/crm/accounts/{key}")
+def crm_account(key: str):
+    a = crm.account(key)
+    if not a:
+        raise HTTPException(404, "No account with that key")
+    return jsonable_encoder(a)
+
+
+@app.get("/api/crm/dashboard")
+def crm_dashboard():
+    return jsonable_encoder(crm.dashboard())
 
 
 @app.exception_handler(RuntimeError)
@@ -358,6 +429,11 @@ def runtime_error(_, exc):
 def index():
     return FileResponse(STATIC / "index.html")
 
+
+if not CRM_ON:
+    for _r in app.routes:
+        if getattr(_r, "path", "").startswith("/api/crm"):
+            _r.include_in_schema = False
 
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
 

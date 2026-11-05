@@ -1,4 +1,4 @@
-"""MongoDB access. One document per lead in the `leads` collection.
+"""MongoDB access. Collections: leads, sources, inbox_log, agent_state (see agent/store.py).
 
 Connection string comes from .env (MONGODB=..., MONGODB_URI=... or MONGO_URI=...).
 Database name: the one in the URI if present, else MONGODB_DB, else "flytbase_leads".
@@ -33,6 +33,12 @@ def get_db():
             _db = _client[config._get("MONGODB_DB") or "flytbase_leads"]
         _db.leads.create_index([("created_at", DESCENDING)])
         _db.leads.create_index("status")
+        # one lead per Gmail message, even if two agent ticks overlap
+        _db.leads.create_index("gmail.message_id", unique=True,
+                               partialFilterExpression={"gmail.message_id": {"$type": "string"}})
+        _db.sources.create_index([("lead_id", 1), ("id", 1)], unique=True)
+        _db.sources.create_index([("lead_id", 1), ("url", 1)], unique=True)
+        _db.inbox_log.create_index([("checked_at", DESCENDING)])
     return _db
 
 

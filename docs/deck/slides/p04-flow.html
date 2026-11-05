@@ -1,0 +1,32 @@
+<section id="p04-flow" data-transition="fade" style="background:#FBFBFA;color:#141414;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#C4501F">one agent tick</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15">Dependency-aware, not one long chain</h2>
+</div>
+<div style="display:flex;gap:12px;align-items:center">
+<div style="width:250px;display:flex;flex-direction:column;gap:6px;background:#FFFFFF;border:1px solid #E4E6E9;border-radius:12px;padding:20px"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#C4501F">sweep</p><p style="font-size:24px">Every unread mail: Python markers, then the agent’s verdict</p></div>
+<p style="font-size:36px;color:#A3A7AD">→</p>
+<div style="width:180px;display:flex;flex-direction:column;gap:6px;background:#FFFFFF;border:1px solid #E4E6E9;border-radius:12px;padding:20px"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#C4501F">01</p><p style="font-size:24px">Qualify</p></div>
+<p style="font-size:36px;color:#A3A7AD">→</p>
+<div style="width:220px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#FFFFFF;border:1px solid #E4E6E9;border-radius:12px;padding:20px"><p style="font-size:24px"><span style="font-family:'IBM Plex Mono', 'Courier New', monospace;color:#C4501F">02</span> Research</p></div>
+<div style="background:#FFFFFF;border:1px solid #E4E6E9;border-radius:12px;padding:20px"><p style="font-size:24px"><span style="font-family:'IBM Plex Mono', 'Courier New', monospace;color:#C4501F">04</span> Case study</p></div>
+</div>
+<p style="font-size:36px;color:#A3A7AD">→</p>
+<div style="width:200px;display:flex;flex-direction:column;gap:6px;background:#FBEEE8;border:1px solid #F0CDBD;border-radius:12px;padding:20px"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#9C3E17">check</p><p style="font-size:24px">Fact-checker</p></div>
+<p style="font-size:36px;color:#A3A7AD">→</p>
+<div style="width:220px;display:flex;flex-direction:column;gap:12px">
+<div style="background:#FFFFFF;border:1px solid #E4E6E9;border-radius:12px;padding:20px"><p style="font-size:24px"><span style="font-family:'IBM Plex Mono', 'Courier New', monospace;color:#C4501F">03</span> Emails</p></div>
+<div style="background:#FFFFFF;border:1px solid #E4E6E9;border-radius:12px;padding:20px"><p style="font-size:24px"><span style="font-family:'IBM Plex Mono', 'Courier New', monospace;color:#C4501F">05</span> Partner</p></div>
+</div>
+<p style="font-size:36px;color:#A3A7AD">→</p>
+<div style="width:180px;display:flex;flex-direction:column;gap:6px;background:#141414;border-radius:12px;padding:20px"><p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#E8A27F">06</p><p style="font-size:24px;color:#FBFBFA">Handoff</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #141414;padding:20px 0 0 0"><h3 style="font-size:30px;font-weight:600">Parallel where possible</h3><p style="font-size:24px;line-height:1.4;color:#4A4D52">Research and case study both need only Stage 1, so they run at once. Partner starts as soon as the case study is in.</p></div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #141414;padding:20px 0 0 0"><h3 style="font-size:30px;font-weight:600">Saved through Python</h3><p style="font-size:24px;line-height:1.4;color:#4A4D52">Each stage calls save_stage: validated, scored, checked against the PDF, stored in MongoDB and a run folder.</p></div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #141414;padding:20px 0 0 0"><h3 style="font-size:30px;font-weight:600">One lead at a time</h3><p style="font-size:24px;line-height:1.4;color:#4A4D52">A lease lock in MongoDB, Gmail message IDs deduplicated, and every subagent call written to a trace.</p></div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#6B6E74">Inbound Lead Desk · 4 / 15</p>
+<aside>[2:10 – 2:50] This is one tick of the agent. First it sweeps every unread email. Python scores each one for contact-form markers, and the agent decides whether it's a lead and writes down why. Then the stages run in dependency order. Stage 1 first. Research and case-study matching both need only Stage 1, so they run in parallel. The fact-checker runs on the research. Emails and partner identification run next, then the handoff. I did this on purpose: making every stage wait for the one before would only slow it down. Every stage saves through Python, which validates it, computes scores, checks it against the PDF, and stores it in MongoDB and in a run folder. There's a lock so only one lead runs at a time, and every subagent call is written to a trace.</aside>
+</section>

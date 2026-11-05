@@ -13,6 +13,7 @@ except Exception:
 
 _start = time.time()
 listeners = []  # callables: fn(kind, message, seconds)
+OUT = sys.stdout  # the MCP server sets this to sys.stderr (stdout carries the MCP protocol)
 
 
 def reset_clock():
@@ -33,20 +34,20 @@ def _t():
 
 
 def stage(num, title):
-    print(f"\n{'=' * 64}\n  STAGE {num}: {title}\n{'=' * 64}", flush=True)
+    print(f"\n{'=' * 64}\n  STAGE {num}: {title}\n{'=' * 64}", file=OUT, flush=True)
     _emit("stage", f"{num}|{title}")
 
 
 def step(msg):
-    print(f"{_t()}  -> {msg}", flush=True)
+    print(f"{_t()}  -> {msg}", file=OUT, flush=True)
     _emit("step", msg)
 
 
 def ok(msg):
-    print(f"{_t()}  OK {msg}", flush=True)
+    print(f"{_t()}  OK {msg}", file=OUT, flush=True)
     _emit("ok", msg)
 
 
 def warn(msg):
-    print(f"{_t()}  !! {msg}", flush=True)
+    print(f"{_t()}  !! {msg}", file=OUT, flush=True)
     _emit("warn", msg)

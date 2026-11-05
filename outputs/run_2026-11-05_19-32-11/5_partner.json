@@ -1,0 +1,71 @@
+{
+  "motion": "AE-led with partner (co-sell)",
+  "justification": {
+    "region": "LATAM, Chile (Atacama Desert, northern Chile). Spanish-speaking, three remote 24/7 lithium sites that need in-country hardware installation, dock maintenance and field support FlytBase cannot provide remotely. FlytBase's partner page lists in-country and regional partners (S16).",
+    "deal_complexity": "High. Enterprise mining account, 3 large-scale 24/7 sites, a buying committee that will include operations, digital innovation, IT/OT (Azure integration per S1), safety and procurement, budget only at the Q3 conversation stage. P1 lead (ICP fit 91). This needs a FlytBase AE owning the enterprise relationship, multi-site commercial structure and the expansion story, with a local integrator doing deployment.",
+    "partner_availability": "Strong. Adentu is a Chile-based integrator that already delivered FlytBase at SQM (S1, S18). FlytBase's partner page lists Dronestore Chile (Gold System Integrator, Chile) and UAVLatam (Bronze System Integrator, Argentina), plus Drone Nerds LATAM (Gold Reseller, Colombia) (S16). UAVLatam also delivered the referrer's Anglo American Quellaveco deployment (S2).",
+    "existing_account_relationship": "Yes. FlytBase case study S1: SQM 'partnered with Adentu and FlytBase' across its 678 km² operation in northern Chile, run by SQM's digital innovation team (Rodrigo Toler). The inbound is from a different division (Northern Operations, lithium), so this is an expansion inside an existing account. The FlytBase account owner for SQM should be checked before outreach."
+  },
+  "recommended_partners": [
+    {
+      "name": "Adentu",
+      "type": "System Integrator",
+      "country": "Chile",
+      "source_id": "S1",
+      "evidence": "S1: 'That need led them to Adentu, a Chile-based integrator specializing in drone autonomy, and FlytBase' and 'Adentu's engineers started small: one DJI Dock, one zone, one use case.' S18: Adentu 'provides drone services for inspections, thermal imaging... for sectors including electrical, mining...' and is 'based in Santiago, Chile.'",
+      "role_in_deal": "First choice. Already delivered FlytBase docks for SQM in the Atacama, knows SQM's sites, people (Rodrigo Toler), Azure data pipeline and vendor onboarding. Lead deployment, dock install, on-site support and local Spanish-language delivery for the 3 lithium sites; reuse existing SQM vendor status to shorten the paper process. Contact named in S1: José Pablo Mujica (Commercial Manager). Note: Adentu does not appear in the S16 partner list, so the AE should confirm its current FlytBase partner status.",
+      "verified_in_sources": true
+    },
+    {
+      "name": "Dronestore Chile",
+      "type": "System Integrator",
+      "country": "Chile",
+      "source_id": "S16",
+      "evidence": "S16 FlytBase partner network: 'Dronestore Chile Gold System Integrator Solution Provider Chile'",
+      "role_in_deal": "In-country backup. Gold-tier FlytBase System Integrator in Chile; can cover hardware supply, dock deployment and support if Adentu lacks capacity for three simultaneous 24/7 sites, or if SQM procurement requires a competitive or listed partner.",
+      "verified_in_sources": true
+    },
+    {
+      "name": "UAVLatam",
+      "type": "System Integrator",
+      "country": "Argentina",
+      "source_id": "S16",
+      "evidence": "S16: 'UAVLatam Bronze System Integrator Solution Provider Argentina'. S2: Anglo American deployed drone-in-a-box at Quellaveco 'through a strategic partnership with UAV LATAM' (quote from Kimberly Rojas Ruiz, UAV LATAM).",
+      "role_in_deal": "Regional mining reference and secondary option. Delivered the referrer's (Anglo American) FlytBase mining deployment in Peru; useful to validate the referral, share mining dock lessons (elevated dock placement, comms in difficult terrain) and act as a reference call.",
+      "verified_in_sources": true
+    }
+  ],
+  "partner_type_needed": "A Chile-based, Spanish-speaking System Integrator with mining experience and DJI Dock / FlytBase deployment track record, able to install and maintain docks at remote Atacama sites 24/7 (heat, dust, wind), handle connectivity and integrate with SQM's IT (Azure), and preferably already an approved SQM vendor.",
+  "roles": {
+    "flytbase_ae": "Owns the SQM relationship and deal: aligns with the existing SQM account owner, runs discovery with Rodrigo Castillo (Economic Buyer, decision criteria, paper process), builds the multi-site business case for the Q3 budget conversation, structures commercials and licensing, and brings in the SQM digital innovation team as an internal reference.",
+    "partner": "Adentu (or Dronestore Chile as backup): site surveys at the 3 lithium sites, solution design, dock hardware supply and installation, pilot execution, on-site maintenance and local support, Spanish-language training for field teams.",
+    "bdr": "Sends the first response the same day (P1), books discovery with the AE, confirms Adentu's current partner status and the SQM account owner internally, and arranges the intro to Adentu and optionally a UAVLatam/Anglo American reference."
+  },
+  "risks": [
+    "Adentu is not listed on FlytBase's public partner page (S16); its current partner status and capacity for 3 additional 24/7 sites must be confirmed.",
+    "Channel conflict: SQM is an existing account with Adentu; involving Dronestore Chile or another partner without aligning could damage the relationship.",
+    "The existing deployment sits with SQM's digital innovation team (iodine/nitrate), not Northern Operations lithium; internal politics or a separate budget may apply.",
+    "Remote Atacama sites need connectivity, power and dust/heat-rated docks; partner field-support SLAs for 24/7 operation must be explicit.",
+    "UAVLatam is Argentina-based and Bronze tier; better suited as a reference than as primary delivery in Chile."
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Direct AE or partner-led motion for the region decided",
+      "ok": true,
+      "detail": "AE-led with partner (co-sell)"
+    },
+    {
+      "item": "Justified by region, deal complexity and partner availability",
+      "ok": true
+    },
+    {
+      "item": "If partner-led: specific partner type and rationale",
+      "ok": true,
+      "detail": "Adentu (System Integrator), Dronestore Chile (System Integrator), UAVLatam (System Integrator)"
+    },
+    {
+      "item": "Every named partner appears in a stored source",
+      "ok": true
+    }
+  ]
+}

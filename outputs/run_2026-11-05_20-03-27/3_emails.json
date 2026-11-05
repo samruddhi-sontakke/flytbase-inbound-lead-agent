@@ -1,0 +1,172 @@
+{
+  "sequence_strategy": "Email 1 answers the inbound the same day. It plays back the exact ask (about 40 HV substations in Bavaria, monthly manual rounds, thermal and visual, ideally BVLOS, pilot proposal due to procurement by January) and gives one German energy peer proof point (EnBW). It asks only about decision criteria and what happens after the January proposal. Each later email goes after different MEDDPICC gaps (Metrics and Paper Process, then Competition and Champion, then Economic Buyer) and brings something new from the fact-checked research: drive time and technician scarcity, the LBA SORA 2.5 timeline and how to plan the pilot around it, prior German docked BVLOS approvals, and E.ON's preference for one shared platform. The emails get shorter each time, and the last one is a polite close-the-loop tied to the January deadline.",
+  "tone_adaptation": {
+    "seniority": "The contact is a Head of Asset Inspection in Grid Operations: a senior technical leader running a live vendor evaluation. The emails are short, plain and specific. They put operations and crew safety first, never ask more than two questions, and offer things that help them build the January proposal (a pilot outline, a regulatory timeline) instead of pushing for a demo.",
+    "industry": "This is an electricity grid operator, so the content is framed around HV substation safety, ageing assets, thermal anomaly detection, weather-independent inspection cadence, critical-infrastructure security and German aviation regulation (EU 2019/947, LBA, SORA 2.5). It positions FlytBase as an autonomy and remote-operations layer that works alongside E.ON's existing ground robots, drone pilots and AI analytics, not as a replacement for them.",
+    "stated_context": "The emails reuse the buyer's own facts (about 40 substations, monthly manual rounds, Bavaria, thermal and visual, BVLOS, vendor evaluation this quarter, procurement wants a pilot proposal by January). The sequence is built around helping them hit that January deadline realistically, including running the BVLOS approval in parallel. The buyer is in Germany, so every email offers to continue in German. Call times are given in CET."
+  },
+  "emails": [
+    {
+      "step": 1,
+      "send_when": "Within 1 hour of the inbound (same day, Thu 5 Nov 2026)",
+      "goal": "Acknowledge the exact request, show we understand their substation and BVLOS context and the January deadline, give one German energy proof point, and book a 30-minute call.",
+      "meddpicc_gaps_targeted": [
+        "Decision Criteria",
+        "Decision Process"
+      ],
+      "research_used": [
+        "S28",
+        "S36",
+        "S7",
+        "S31"
+      ],
+      "subject": "Docked drones for your ~40 Bavarian substations: input for the January pilot proposal",
+      "body": "Hello,\n\nThank you for reaching out through flytbase.com. As I understand it, your team inspects about 40 high-voltage substations in Bavaria by hand every month. You want docked drones to take over the routine thermal and visual rounds, ideally BVLOS, and procurement wants a pilot proposal by January. You came to us directly through our contact form rather than through a referral, so I have done some homework first.\n\nTwo things stood out. If your substations are in the Bayernwerk Netz area, Bayernwerk has run an autonomous ground robot at one of its substations since January 2022, reading gauges and finding hotspots by thermography. E.ON's grid subsidiaries have also moved from separate robot pilots to one shared platform. Docked drones fit alongside that model: they add the aerial view across many sites, run from one central location.\n\nThe closest proof point we have is EnBW, another large German energy company. They used DJI Dock 2 with FlytBase to move routine thermal inspection of their solar portfolio from annual to quarterly and cut out six-hour round trips to remote sites. It started as a two-dock proof of concept. Their assets are solar, not substations, but the operating model and the German conditions are the same.\n\nOn timing: BVLOS in Germany needs an LBA operating authorisation under SORA 2.5, which currently takes about two to four months. A January proposal can still work if the pilot starts in a compliant mode while the BVLOS application runs in parallel. I'm happy to sketch what that could look like.\n\nTwo questions to make the call useful:\n1. Beyond thermal, visual and BVLOS, what will you compare vendors on, for example hardware choice, data hosting or integration with your asset systems?\n2. Once the proposal reaches procurement in January, how will the decision from pilot to rollout be made?\n\nWould a 30-minute call on Tuesday 10 November at 10:00 CET or Wednesday 11 November at 15:00 CET work? We can also hold the call and all later correspondence in German if you prefer.\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "This is an inbound request in an active vendor evaluation with a fixed January deadline, so speed and relevance matter most. Replying the same day with their own numbers, specifics from E.ON's own substation automation and a realistic BVLOS timeline shows we understood the request and can help them meet the deadline.",
+      "why_next": "If there is no reply, Email 2 moves from understanding the context to quantifying it. It brings the drive-time and technician-scarcity pain E.ON's subsidiaries have described and offers a pilot outline the contact can reuse internally, which opens Metrics and Paper Process.",
+      "success_signal": "The contact accepts a slot or proposes another, or answers either question (shares vendor criteria or describes the post-January process).",
+      "research_used_valid": [
+        "S28",
+        "S36",
+        "S7",
+        "S31"
+      ],
+      "gaps_valid": [
+        "Decision Criteria",
+        "Decision Process"
+      ]
+    },
+    {
+      "step": 2,
+      "send_when": "Day 3 (Mon 9 Nov) if no reply to Email 1",
+      "goal": "Help them build the business case: quantify today's manual round and find out how procurement will run the pilot. Offer a one-page pilot outline as a resource.",
+      "meddpicc_gaps_targeted": [
+        "Metrics",
+        "Paper Process"
+      ],
+      "research_used": [
+        "S7",
+        "S36",
+        "S26",
+        "S17",
+        "S31"
+      ],
+      "subject": "A one-page pilot outline for the substation rounds",
+      "body": "Hello,\n\nA short follow-up with something you can use for the January proposal.\n\nE.ON's grid subsidiaries have described the same pressure your monthly rounds create: inspection needs rise as assets age, experienced technicians are harder to staff and keep, and drive time to sites eats engineering hours. Bayernwerk has said many of its substations were built between the 1950s and 1970s. Weather is the other limit. Bayernwerk's helicopter line inspections depend on clear visibility, and E.ON's Q1 2026 grid work slipped because of a very cold January. A dock on site flies on schedule and can fly again on demand after a storm, without anyone driving out.\n\nI can send a one-page pilot outline covering 1-2 docks at representative substations, the thermal and visual missions, a compliant start while the SORA 2.5 BVLOS application runs (about two to four months), and the before-and-after numbers to measure. For BVLOS approval and on-site support in Germany we would bring in Droniq, our German partner that has done DJI Dock operating licences and airspace integration.\n\nTo make the numbers yours rather than generic:\n1. Roughly how many crew hours does one monthly round of the 40 substations take today?\n2. Will procurement run the pilot as a formal tender, and should we prepare for security or vendor-onboarding reviews in parallel?\n\nHappy to switch to German at any point.\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "The contact has to put a pilot in front of procurement by January. A ready-made outline and a request for their baseline numbers help them do that, and they surface Metrics and the paper process early enough to plan security and onboarding reviews.",
+      "why_next": "Email 3 deals with the competitive evaluation directly. It uses public proof that docked BVLOS has already been approved in Germany and that E.ON already has drone skills, then asks who else is in the evaluation and who should be involved.",
+      "success_signal": "They ask for the outline, share baseline crew hours or cost, or describe the tender or onboarding steps.",
+      "research_used_valid": [
+        "S7",
+        "S36",
+        "S26",
+        "S17",
+        "S31"
+      ],
+      "gaps_valid": [
+        "Metrics",
+        "Paper Process"
+      ]
+    },
+    {
+      "step": 3,
+      "send_when": "Day 7 (Fri 13 Nov) if still no reply",
+      "goal": "Show where FlytBase fits next to E.ON's existing drone teams, analytics and other docked BVLOS vendors, and find out who else is being evaluated and who should be involved.",
+      "meddpicc_gaps_targeted": [
+        "Competition",
+        "Champion"
+      ],
+      "research_used": [
+        "S32",
+        "S13",
+        "S14",
+        "S7"
+      ],
+      "subject": "Docked BVLOS in Germany has been approved before",
+      "body": "Hello,\n\nOne more point that may help your vendor comparison. The LBA has already approved fully automated drone-in-a-box BVLOS flights in Germany for another operator, so the regulatory path exists. What usually separates vendors is what sits around the dock.\n\nE.ON already has a lot in place: more than 270 trained drone pilots in Germany, AI image analysis from eSmart Systems on its lines, and one shared platform for its substation robots. FlytBase's role would be the hardware-agnostic layer that lets a central team run many docks and feeds results into the tools you already use, so nothing you have built gets replaced.\n\nTwo quick questions:\n1. Which other vendors are you looking at, and what has stood out so far?\n2. Besides you, who should be involved early, for example IT/OT security or the high-voltage team?\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "The contact is evaluating vendors this quarter, and a competitor already holds a German docked BVLOS approval. Raising that openly, and setting FlytBase apart through integration with E.ON's existing investments, gives a reason to talk about competitors and stakeholders.",
+      "why_next": "If there is still no reply, Email 4 closes the loop politely. It asks only who owns the budget and approval, so the thread stays useful even if the contact is not the right person to continue.",
+      "success_signal": "They name competitors or evaluation criteria, or name or copy in other stakeholders (security, the HV team, procurement).",
+      "research_used_valid": [
+        "S32",
+        "S13",
+        "S14",
+        "S7"
+      ],
+      "gaps_valid": [
+        "Competition",
+        "Champion"
+      ]
+    },
+    {
+      "step": 4,
+      "send_when": "Day 12 (Wed 18 Nov) if no reply to Emails 1-3",
+      "goal": "Close the loop respectfully, keep the January proposal open, and find the budget owner.",
+      "meddpicc_gaps_targeted": [
+        "Economic Buyer"
+      ],
+      "research_used": [
+        "S11"
+      ],
+      "subject": "Close the loop on the substation pilot",
+      "body": "Hello,\n\nI don't want to crowd your inbox during an evaluation, so this is my last note for now.\n\nE.ON has said its growth rests on efficiency and consistent digitalisation, with strict discipline on investment. If it helps, we can build the January pilot proposal around measured crew hours and inspection frequency so it holds up in that review.\n\nIf someone else owns the budget or the final sign-off for the pilot, I'd be glad to be pointed to them. If the timing is simply wrong, reply \"later\" and I'll check back in early December, before the proposal is due.\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "Three useful messages without a reply means it's time to stop following up. A short, no-pressure close tied to their own deadline makes replying easy and asks for the one gap a non-responsive contact can still fill: who owns the budget.",
+      "why_next": "This ends the active sequence. Any reply moves to a branch below. With no reply, the lead goes to a nurture check-in in early December, ahead of the January proposal date.",
+      "success_signal": "A one-line reply naming the budget owner, a 'later', or a meeting request.",
+      "research_used_valid": [
+        "S11"
+      ],
+      "gaps_valid": [
+        "Economic Buyer"
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "if_reply": "Positive reply: agrees to a call or asks for the pilot outline",
+      "next_action": "Confirm the slot with a calendar invite in CET. Send the one-page pilot outline beforehand. Brief the AE on the Stage 6 handoff and alert the FlytBase partner manager so Droniq can join the second meeting once scope is outlined.",
+      "draft_reply": "Hello,\n\nThank you, [day/time] CET is confirmed and I'll send an invite shortly. Before then I'll share a one-page pilot outline (1-2 docks at representative substations, thermal and visual missions, a compliant start with the SORA 2.5 BVLOS application in parallel), so we can spend the call on your substations rather than on slides. Our Account Executive will join to cover scope and the January proposal. If there's anyone else you'd like included, for example from the high-voltage team or IT/OT security, feel free to forward the invite.\n\nWe can hold the call in German if you prefer.\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "\"Not now / budget not until later\": the budget or approval comes after the January proposal, or the evaluation is on hold",
+      "next_action": "Accept the timing. Offer the pilot outline and the BVLOS approval timeline as material they can use when the budget opens, since the LBA authorisation takes two to four months and can start early. Set a check-in for the date they name and mark the lead nurture.",
+      "draft_reply": "Hello,\n\nUnderstood, thank you for telling me. One thing that may still be worth doing now: the LBA BVLOS authorisation under SORA 2.5 currently takes about two to four months, so groundwork done before the budget is released can shorten the pilot start later. I'll send the one-page pilot outline so it's on file for when the proposal goes ahead, and I'll check back on [date you suggest]. If anything changes sooner, just reply here.\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "Referral to someone else: for example \"please talk to our procurement / high-voltage lead / innovation team\"",
+      "next_action": "Thank the contact and ask for a short intro, keeping them copied as champion. Write a short, context-rich note to the new person that mentions the original request. Record the new stakeholder against Economic Buyer or Decision Process in the CRM.",
+      "draft_reply": "Hello,\n\nThank you, that's very helpful. Would you be willing to introduce us by email, or should I contact [name] directly and mention your request? I'll keep you copied so nothing on the January pilot proposal gets lost.\n\nFor [name], a short summary: your team is looking at docked drones for routine thermal and visual inspection of about 40 HV substations in Bavaria, ideally BVLOS, with a pilot proposal due by January. We would bring a German energy reference (EnBW, a two-dock proof of concept), a pilot outline and German BVLOS approval support through our partner Droniq.\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "No reply after Email 4",
+      "next_action": "Stop the active sequence. Set a nurture task for early December (before the January deadline) with one new relevant item, for example a utility or BVLOS update. Try one other channel (a LinkedIn connection note from the BDR) without repeating the emails. Mark the lead 'no response' in the Lead Desk.",
+      "draft_reply": "Hello,\n\nA brief check-in as your January pilot proposal gets closer. If docked inspection of the Bavarian substations is still on the table, I can send the one-page pilot outline and the current SORA 2.5 BVLOS timeline. If the project has moved on, a one-word reply is fine and I'll close my file.\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "Objection: \"we already have substation robots / a robot platform\"",
+      "next_action": "Position docks as a complement to the ground robots. Ask how the robot sites relate to the 40 substations in scope and whether results need to land in the same platform.",
+      "draft_reply": "Hello,\n\nThat makes sense, and it's a good starting point. Ground robots cover close-range checks inside a substation. Docked drones add the overhead thermal and visual view and can cover many sites from one central team without a robot at each location. How do the robot sites relate to the 40 substations you're considering, and would drone results need to feed into the same platform? That tells us how to scope a pilot that adds coverage without duplicating what you already have.\n\nBest regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    }
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Reflects Stage 2 research (each email cites kept research)",
+      "ok": true,
+      "detail": "email 1: S28, S36, S7, S31; email 2: S7, S36, S26, S17, S31; email 3: S32, S13, S14, S7; email 4: S11"
+    },
+    {
+      "item": "Aims to discover the Stage 1 unknowns",
+      "ok": true,
+      "detail": "email 1: Decision Criteria, Decision Process; email 2: Metrics, Paper Process; email 3: Competition, Champion; email 4: Economic Buyer"
+    },
+    {
+      "item": "Tone adapted to seniority, industry and stated context",
+      "ok": true
+    },
+    {
+      "item": "Clear progression logic (why this email, then this email)",
+      "ok": true,
+      "detail": "4 emails, 5 reply branches"
+    }
+  ]
+}

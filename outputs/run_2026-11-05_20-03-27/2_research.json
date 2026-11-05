@@ -1,0 +1,654 @@
+{
+  "company_snapshot": [
+    {
+      "claim": "In fiscal year 2025 E.ON reported adjusted Group EBITDA of EUR 9.8 billion and total investments of EUR 8.5 billion, of which EUR 7.0 billion went to Energy Networks.",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "Grid operations is where E.ON's money goes, so an inspection pilot for grid assets competes for budget in the company's best-funded division.",
+      "verification": "supported",
+      "verification_note": "S11: 'Adjusted Group EBITDA of €9.8 billion'; 'Total investments of €8.5 billion, including €7.0 billion in Energy Networks'"
+    },
+    {
+      "claim": "According to E.ON's FY2025 results release (25 Feb 2026), around 70 percent of onshore wind capacity and almost 50 percent of solar capacity in Germany feed into E.ON's grids, and E.ON has connected its two-millionth renewable plant in Germany (about 110 GW installed).",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "More connected generation means more substation load and more assets to watch. That supports moving routine inspection onto a schedule that does not depend on crews.",
+      "verification": "supported",
+      "verification_note": "S11 (25.02.2026): 'around 70 percent of onshore wind capacity and almost 50 percent of solar capacity in Germany now feed into E.ON's grids'; 'two-millionth renewable energy generation plant ... around 110 gigawatts'"
+    },
+    {
+      "claim": "Bayernwerk Netz GmbH describes itself as the largest regional distribution network operator in Bavaria, with a 156,000 km power grid, about seven million people supplied, more than 20 sites, headquarters in Regensburg, and 100 percent ownership by Bayernwerk AG.",
+      "source_ids": [
+        "S28",
+        "S26"
+      ],
+      "so_what": "The lead's ~40 high-voltage substations in Bavaria almost certainly sit in Bayernwerk Netz's area, so the pilot should be framed around Bayernwerk's operating organisation as well as E.ON SE.",
+      "verification": "supported",
+      "verification_note": "S28/S26 profile: 'größte regionale Verteilnetzbetreiber in Bayern', 'Stromnetz umfasst 156.000 Kilometer', 'rund sieben Millionen Menschen', 'mehr als 20 Standorten', 'Sitz ... Regensburg', '100-prozentige Tochter der Bayernwerk AG'"
+    },
+    {
+      "claim": "E.DIS, Bayernwerk and Avacon are described as E.ON grid subsidiaries that each piloted substation inspection robots.",
+      "source_ids": [
+        "S7"
+      ],
+      "so_what": "Inspection decisions start in the regional subsidiaries. A Bayernwerk pilot could later spread to sister DSOs.",
+      "verification": "supported",
+      "verification_note": "S7: 'Three subsidiaries - E.DIS, Bayernwerk, and Avacon'; 'Each subsidiary started piloting individual robots'"
+    },
+    {
+      "claim": "Bayernwerk's high-voltage network covers about 9,000 km, according to a Bayernwerk Netz press release of 19 April 2024.",
+      "source_ids": [
+        "S26"
+      ],
+      "so_what": "The asset base goes well beyond the 40 substations, which gives a later phase room to add line corridors.",
+      "verification": "supported",
+      "verification_note": "S26 (19. April 2024): 'Das gesamte Hochspannungsnetz des Bayernwerks umfasst rund 9.000 Kilometer'"
+    }
+  ],
+  "org_structure": {
+    "findings": [
+      {
+        "claim": "In a November 2020 Bayernwerk press release Dr. Egon Leo Westphal was described as Bayernwerk's technical board member (Technikvorstand) and was quoted supporting drones to make overhead-line inspection more efficient.",
+        "source_ids": [
+          "S24"
+        ],
+        "so_what": "Bayernwerk's current CEO has gone on record backing drone inspection, which helps when escalating the pilot.",
+        "verification": "supported",
+        "verification_note": "S24 (9. November 2020): 'erklärte Dr. Egon Leo Westphal, Technikvorstand beim Bayernwerk' — 'Die Drohnentechnologie kann erheblich zur effizienteren Gestaltung des Inspektionsprozesses für Freileitungen beitragen'"
+      },
+      {
+        "claim": "Bayernwerk Netz has dedicated high-voltage leadership roles: Günther Mertel was quoted as 'Leiter der Hochspannung' in November 2025, and Stephan Engelbrecht as 'Leiter Hochspannungsleitungen' and Peter Ketterl as 'Leiter Technik Ostbayern' in October 2025.",
+        "source_ids": [
+          "S28",
+          "S29"
+        ],
+        "so_what": "The high-voltage unit owns substations and lines, so it is the most likely home of the economic buyer or technical approver for an HV substation pilot.",
+        "verification": "supported",
+        "verification_note": "S28 (30 Nov 2025): 'Günther Mertel, Leiter der Hochspannung'; S29 (29 Oct 2025): 'Peter Ketterl, Leiter Technik Ostbayern, Stephan Engelbrecht, Leiter Hochspannungsleitungen'"
+      },
+      {
+        "claim": "Bayernwerk Netz organises its network through regional customer centres. The Schwandorf customer centre alone serves about 267,000 people over a 10,337 km grid connected by 21 substations and switching stations.",
+        "source_ids": [
+          "S29"
+        ],
+        "so_what": "Substations are spread across regional units, so a dock rollout needs remote, central operation instead of local pilots at each site.",
+        "verification": "supported",
+        "verification_note": "S29: 'Das Kundencenter Schwandorf ... versorgt etwa 267.000 Menschen'; '10.337 Kilometer langes Stromnetz'; '21 Umspannwerke und Schaltstationen'"
+      },
+      {
+        "claim": "In February 2021 E.ON named Thomas König as the board member responsible for networks when it announced an AI-based overhead-line inspection partnership with eSmart Systems.",
+        "source_ids": [
+          "S14"
+        ],
+        "so_what": "Group-level network leadership has publicly sponsored inspection digitalisation and start-up partnerships before. This source is from 2021, so his current role needs checking.",
+        "verification": "supported",
+        "verification_note": "S14 (09 Feb 2021): 'Thomas König, responsible for networks on the E.ON Board of Management' in the eSmart Systems partnership release"
+      },
+      {
+        "claim": "E.ON's subsidiaries first piloted individual inspection robots, each with its own interface and data model, and then converged on a single shared robot platform ('one grid, one robot platform').",
+        "source_ids": [
+          "S7"
+        ],
+        "so_what": "E.ON has shown it prefers one hardware-agnostic platform across subsidiaries. That matches a fleet and orchestration software pitch.",
+        "verification": "supported",
+        "verification_note": "S7: 'each OEM ... brought its own interface and data model'; then 'converged on ... one grid, one robot platform'"
+      }
+    ],
+    "relevant_stakeholders": [
+      {
+        "name": "Günther Mertel",
+        "title": "Leiter der Hochspannung, Bayernwerk Netz GmbH",
+        "why_relevant": "Head of the high-voltage area, which covers HV substations. Likely technical approver or budget holder for the contact's pilot.",
+        "source_ids": [
+          "S28"
+        ],
+        "verification": "supported",
+        "verification_note": "S28: 'Günther Mertel, Leiter der Hochspannung' (Bayernwerk Netz GmbH release)"
+      },
+      {
+        "name": "Stephan Engelbrecht",
+        "title": "Leiter Hochspannungsleitungen, Bayernwerk Netz GmbH",
+        "why_relevant": "Owns HV lines, the natural phase-2 scope after substations (line inspection is in the lead's subject).",
+        "source_ids": [
+          "S29"
+        ],
+        "verification": "supported",
+        "verification_note": "S29: 'Stephan Engelbrecht, Leiter Hochspannungsleitungen' (Bayernwerk Netz GmbH)"
+      },
+      {
+        "name": "Peter Ketterl",
+        "title": "Leiter Technik Ostbayern, Bayernwerk Netz GmbH",
+        "why_relevant": "Regional technical head who speaks publicly on grid security, stability and resilience.",
+        "source_ids": [
+          "S29",
+          "S30"
+        ],
+        "verification": "supported",
+        "verification_note": "S29/S30: 'Peter Ketterl, Leiter Technik Ostbayern' (Bayernwerk Netz)"
+      },
+      {
+        "name": "Michael Renghart",
+        "title": "Bayernwerk (title not stated in source)",
+        "why_relevant": "Quoted as the Bayernwerk voice on the autonomous substation inspection robot pilot. Possible internal ally or knowledge holder on substation automation.",
+        "source_ids": [
+          "S36"
+        ],
+        "verification": "partial",
+        "verification_note": "S36: 'Michael Renghart vom Bayernwerk' — name and affiliation present, no title in text"
+      },
+      {
+        "name": "Thomas König",
+        "title": "E.ON Board of Management member responsible for networks (as of Feb 2021)",
+        "why_relevant": "Group-level sponsor of earlier drone and AI inspection partnerships. His current role needs verifying.",
+        "source_ids": [
+          "S14"
+        ],
+        "verification": "supported",
+        "verification_note": "S14 (Feb 2021): 'Thomas König, responsible for networks on the E.ON Board of Management'"
+      }
+    ],
+    "likely_reporting_line": "INFERENCE (not sourced): the contact signs as 'Head of Asset Inspection, Grid Operations' at E.ON SE, but ~40 HV substations in Bavaria fall in the Bayernwerk Netz GmbH grid area (S28). The role probably sits in Bayernwerk Netz's high-voltage organisation (the 'Leiter der Hochspannung' area, S28) or in an asset management/technical function under it. That function reports up to the Bayernwerk AG management board (CEO Westphal, CFO Groher, S33), which in turn reports into E.ON's Energy Networks division. Procurement, which the email names, is probably a Bayernwerk or E.ON procurement function separate from the contact's line. The economic buyer is likely the head of the high-voltage area or a Bayernwerk board member, not the contact."
+  },
+  "budget_signals": [
+    {
+      "claim": "In February 2026 E.ON raised its investment plan to around EUR 48 billion for 2026-2030 (previously EUR 43 billion for 2024-2028), with about EUR 40 billion earmarked for Energy Networks, assuming an adequate regulatory framework.",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "so_what": "Grid capex is growing for years to come. An inspection programme that protects or extends those assets fits the spending direction.",
+      "verification": "supported",
+      "verification_note": "S11: 'Increase from €43 billion for 2024 to 2028 to €48 billion for 2026 to 2030, assuming an adequate regulatory framework'; 'approximately €40 billion is earmarked for the Energy Networks business'"
+    },
+    {
+      "claim": "E.ON's Energy Networks investments rose from about EUR 5.8 billion in 2024 to EUR 7.0 billion in 2025, a 20 percent increase, mainly for new grid connections and modernising network infrastructure.",
+      "source_ids": [
+        "S12",
+        "S11"
+      ],
+      "so_what": "Modernisation is an explicit spending category, so autonomous inspection can be positioned as part of modernisation and digitalisation.",
+      "verification": "supported",
+      "verification_note": "S11: 'investments to €7.0 billion, an increase of 20 percent ... (2024: €5.8 billion) ... primarily went towards adding new grid connections and modernizing network infrastructure'; S12 confirms ~€5.8bn for 2024"
+    },
+    {
+      "claim": "In Q1 2026 E.ON's Energy Networks investments were EUR 1.1 billion, 9 percent below the prior year because very cold weather in January postponed network work. E.ON said it remains committed to its full-year investment plan.",
+      "source_ids": [
+        "S17"
+      ],
+      "so_what": "Weather limits crews. A docked drone that inspects when crews cannot travel supports the reliability case.",
+      "verification": "supported",
+      "verification_note": "S17: 'Investments in Energy Networks totaled €1.1 billion, which was 9 percent below the prior-year figure ... Very cold weather in Germany in January'; 'remains committed to its full-year investment plan'"
+    },
+    {
+      "claim": "Bayernwerk Netz budgeted EUR 280 million for grid work in the Oberpfalz alone in 2026, 27 percent more than the EUR 220 million of 2025.",
+      "source_ids": [
+        "S30"
+      ],
+      "so_what": "Regional budgets are rising fast. That supports a pilot in one region with a path to others.",
+      "verification": "supported",
+      "verification_note": "S30 (13. Mai 2026): 'mit 220 Millionen Euro budgetiert. Das Budget für 2026 liegt mit 280 Millionen Euro allein in der Oberpfalz um 27 Prozent höher'"
+    },
+    {
+      "claim": "Bayernwerk Netz said it would spend more than EUR 100,000 in 2024 on helicopter safety inspection of its high-voltage lines, covering about 1,200 km in three weeks.",
+      "source_ids": [
+        "S26"
+      ],
+      "so_what": "This is a concrete, publicly stated spend on manned aerial inspection that drones could partly replace. Useful for a line-inspection ROI comparison.",
+      "verification": "supported",
+      "verification_note": "S26: 'mit dem Hubschrauber 2024 mehr als 100.000 Euro'; 'innerhalb von drei Wochen insgesamt über rund 1.200 Kilometer des Hochspannungsnetzes'"
+    }
+  ],
+  "recent_news": [
+    {
+      "claim": "In October 2026 E.ON confirmed it is working on a simpler steering model between headquarters and operating units under an efficiency programme called 'Polaris'. Manager Magazin reported a 20-25 percent cost-reduction target starting in spring 2027, which E.ON did not comment on.",
+      "source_ids": [
+        "S19"
+      ],
+      "so_what": "Cost pressure and possible reorganisation are coming. Frame the pilot around measurable cost and hours saved, and expect stakeholders to change.",
+      "verification": "supported",
+      "verification_note": "S19 (21.10.2026): 'einfacheren Steuerungsmodell ... zwischen Headquarter und operativen Einheiten'; 'Effizienzprogramm \"Polaris\"'; Manager Magazin: 'Frühjahr 2027', 'Kostenreduktion von 20 bis 25 Prozent'; 'Eon kommentierte die Zahlen nicht'"
+    },
+    {
+      "claim": "In September 2026 a series of sabotage attacks on the German power grid, aimed at large-scale outages, led to federal-state talks on how critical infrastructure operators can protect themselves. Bavarian premier Söder proposed plant security guards (Werksicherheitswachten) that could defend against drones.",
+      "source_ids": [
+        "S34"
+      ],
+      "so_what": "Physical security of substations is now a political priority in Bavaria. Remote visual checks of fences and yards add a security benefit, but the company's own drones must be clearly distinguished from hostile ones.",
+      "verification": "partial",
+      "verification_note": "S34 (11.09.2026) states sabotage attacks 'zielten mutmaßlich auf die Verursachung großflächiger Stromausfälle' and Söder's 'Werksicherheitswachten' that 'könnten ... Drohnen abwehren', and that Bund-Länder talks are under way; but it does not say the sabotage attacks 'led to' those talks (talks are framed around drone defence)"
+    },
+    {
+      "claim": "An IISS study published in July 2026 analysed 144 drone incidents in Europe between August 2024 and February 2026. Germany had the most reported sightings (58), and about 26 percent of sightings were linked to critical infrastructure.",
+      "source_ids": [
+        "S44"
+      ],
+      "so_what": "Grid operators are wary of drones near substations, so a pilot must address airspace coordination, identification and data security from day one.",
+      "verification": "supported",
+      "verification_note": "S44: IISS study 'im Juli 2026 veröffentlichten'; '144 ausgewählten Drohnenvorfällen zwischen August 2024 und Februar 2026'; 'Rund 26 Prozent ... kritischer Infrastruktur'; 'Deutschland ... 58 gemeldeten Sichtungen die höchste Zahl'"
+    },
+    {
+      "claim": "In November 2025 Bayernwerk Netz said a planned new substation near Rottenburg an der Laaber, linking TenneT's 380-kV network with Bayernwerk's 110-kV network, must be built on time by 2033.",
+      "source_ids": [
+        "S28"
+      ],
+      "so_what": "Bayernwerk keeps adding HV substations, so the inspection workload grows unless it is automated.",
+      "verification": "supported",
+      "verification_note": "S28 (30. November 2025): Umspannwerk im Raum Rottenburg an der Laaber linking '380-kV-Übertragungsnetz der TenneT und dem 110-kV-Verteilnetz'; 'fristgerechte Realisierung bis 2033 von größter Bedeutung'"
+    },
+    {
+      "claim": "In May 2026 Bayernwerk Netz said that, besides grid expansion and digitalisation, security, stability and resilience of the energy system are moving further into focus.",
+      "source_ids": [
+        "S30"
+      ],
+      "so_what": "Resilience is the operator's own word for its priority. Pitch docked drones as resilience infrastructure as well as a cost tool.",
+      "verification": "supported",
+      "verification_note": "S30 (13. Mai 2026): 'Neben dem weiteren Ausbau und der Digitalisierung der Netze rücken Sicherheit, Stabilität und Resilienz des Energiesystems noch stärker in den Mittelpunkt'"
+    }
+  ],
+  "investor_priorities": [
+    {
+      "claim": "In the FY2025 results release, CEO Leonhard Birnbaum said E.ON is accelerating network expansion and consistently digitalising the energy system, and that investments must earn a fair return to be financed sustainably.",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "Digitalising grid operations is an investor-facing priority. The pilot should show return, not just novelty.",
+      "verification": "supported",
+      "verification_note": "S11 Birnbaum: 'We are accelerating the expansion of our networks, consistently digitalizing the energy system'; 'essential for our investments to generate a fair return so that we are able to finance them sustainably'"
+    },
+    {
+      "claim": "E.ON's FY2025 release says security of supply and resilience are becoming more demanding, driven by system volatility and 'a heightened threat landscape for critical infrastructure'.",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "Resilience and critical-infrastructure protection are part of the group's investor message, which strengthens the case for continuous remote monitoring of substations.",
+      "verification": "supported",
+      "verification_note": "S11: 'maintaining security of supply and resilience is becoming more demanding, driven by both the increasing volatility of the energy system and a heightened threat landscape for critical infrastructure'"
+    },
+    {
+      "claim": "In February 2025 E.ON kept its 2024-2028 investment programme unchanged, citing a lack of visibility on Germany's regulatory framework, and Birnbaum said E.ON requires a return on network investments that is competitive internationally.",
+      "source_ids": [
+        "S12"
+      ],
+      "so_what": "Regulated returns limit capex appetite. Opex-saving tools that need little capital may get approved more easily than large capex items.",
+      "verification": "supported",
+      "verification_note": "S12 (26.02.2025): 'Due to a lack of visibility regarding Germany's future regulatory framework, investments for 2024 to 2028 will generally remain at the previous level'; Birnbaum: 'a return on our network investments that's competitive by international standards'"
+    },
+    {
+      "claim": "CFO Nadia Jakobi said in February 2026 that growth through 2030 rests on operating performance, efficiency and consistent digitalisation, with strict discipline in all investment decisions.",
+      "source_ids": [
+        "S11"
+      ],
+      "so_what": "Lead with efficiency metrics (crew hours, travel, inspection frequency per euro) to match the CFO's message.",
+      "verification": "supported",
+      "verification_note": "S11 (Feb 2026) Nadia Jakobi: 'Our growth through 2030 ... driven by their operating performance, efficiency, and consistent digitalization. We will also maintain strict discipline in all investment decisions'"
+    }
+  ],
+  "operations_context": [
+    {
+      "claim": "Bayernwerk Netz inspects its high-voltage lines from the air every two years as routine, with a technician viewing every line from above at least every four years. Helicopter flights depend on the weather because inspectors need clear visibility.",
+      "source_ids": [
+        "S26"
+      ],
+      "so_what": "Today's inspection is periodic and weather-dependent. Docked drones offer higher frequency and flights on demand.",
+      "verification": "supported",
+      "verification_note": "S26: 'Routine, dass wir unsere Hochspannungsleitungen alle zwei Jahre auch aus der Luft überprüfen'; 'Spätestens alle vier Jahre wirft ein Techniker von oben einen Blick'; 'abhängig vom Wetter, denn für die Inspektion benötigen sie klare Sicht'"
+    },
+    {
+      "claim": "A Bayernwerk representative said in November 2023 that Bayernwerk's substations were largely built between the 1950s and 1970s.",
+      "source_ids": [
+        "S36",
+        "S7"
+      ],
+      "so_what": "Ageing substations need closer condition monitoring, especially thermal checks for overheating, which suits routine thermal drone flights.",
+      "verification": "supported",
+      "verification_note": "S36 (8. November 2023): 'Wir haben Umspannwerke, die größtenteils zwischen den 1950er und 1970er Jahren erbaut wurden', erläutert Michael Renghart vom Bayernwerk"
+    },
+    {
+      "claim": "E.ON's subsidiaries faced substation inspection requirements that increased as assets aged, while experienced technicians became harder to staff and retain, and drive time to sites consumed engineering hours.",
+      "source_ids": [
+        "S7"
+      ],
+      "so_what": "Labour shortage and travel time are pains E.ON has already named, and both are central to a drone-in-a-box ROI case.",
+      "verification": "supported",
+      "verification_note": "S7: 'As the asset base aged ... inspection requirements intensified just as experienced technicians became harder to staff and retain'; 'the drive time alone was eating hours that engineers could not get back'"
+    },
+    {
+      "claim": "In Germany, BVLOS flights for grid inspection fall under the specific category of EU Regulation 2019/947 and require an operational authorisation from the Luftfahrt-Bundesamt. Since 1 January 2026 new applications must use SORA 2.5, with processing times of about two to four months.",
+      "source_ids": [
+        "S31"
+      ],
+      "so_what": "An approval of two to four months collides with a pilot proposal due in January. FlytBase should propose starting with VLOS or remote-supervised operation while the BVLOS application runs in parallel.",
+      "verification": "supported",
+      "verification_note": "S31: 'specific category der EU-Drohnenverordnung 2019/947 und brauchen eine Betriebsgenehmigung des Luftfahrt-Bundesamts, seit dem 1. Januar 2026 auf Basis der Methodik SORA 2.5, mit einer Bearbeitungszeit von rund zwei bis vier Monaten'"
+    },
+    {
+      "claim": "The Luftfahrt-Bundesamt has approved BVLOS operations for a Percepto client in Germany using drone-in-a-box technology, allowing fully automated flights without visual observers on site, around the clock.",
+      "source_ids": [
+        "S32"
+      ],
+      "so_what": "Docked BVLOS approval in Germany has been granted before, so the regulatory path exists. It also shows a competitor is already active in this market.",
+      "verification": "supported",
+      "verification_note": "S32: BVLOS approval 'sanctioned by the Luftfahrt-Bundesamt' for a Percepto client in Germany, 'drone-in-a-box', 'fully automated ... without the need for visual observers on-site, around the clock'"
+    }
+  ],
+  "technology_adoption": [
+    {
+      "claim": "Since January 2022 Bayernwerk has run an autonomous inspection robot at one of its substations using Energy Robotics software. The AI reads analogue gauges such as oil levels, detects overheating by thermography and spots holes in the fence.",
+      "source_ids": [
+        "S36"
+      ],
+      "so_what": "Bayernwerk already accepts autonomous, AI-analysed substation inspection. Drones add aerial views and cover more sites, so they complement this robot rather than compete with it.",
+      "verification": "supported",
+      "verification_note": "S36: 'Seit Januar 2022 ist der Roboter in einem Umspannwerk von Bayernwerk im Einsatz'; Energy Robotics software; KI 'analoge Anzeigen, beispielsweise von Ölständen', 'Überhitzungen mittels Thermographie', 'Erkennen von Zaunlöchern'"
+    },
+    {
+      "claim": "E.DIS, Bayernwerk and Avacon converged on a single shared platform from Korial to run autonomous mobile robots in substations.",
+      "source_ids": [
+        "S7"
+      ],
+      "so_what": "There is a robotics platform incumbent. FlytBase must show it can integrate with existing robot and inspection data flows or work alongside them.",
+      "verification": "supported",
+      "verification_note": "S7: 'E.DIS, Bayernwerk, and Avacon converged on the same operational model: one grid, one robot platform ... on the Korial platform'"
+    },
+    {
+      "claim": "In an October 2024 article, E.ON said that in Germany more than 270 pilots are trained to operate 100 drones, and that in Sweden switching from helicopters to drones let it detect ten times more faults.",
+      "source_ids": [
+        "S13"
+      ],
+      "so_what": "E.ON already has drone skills in-house. The gap is automation and scale (docks, remote operations), not basic drone adoption.",
+      "verification": "supported",
+      "verification_note": "S13 (16 Oct 2024): 'in Germany ... more than 270 pilots are skilled to operate 100 drones'; Sweden: 'detect ten times more faults'"
+    },
+    {
+      "claim": "In November 2020 Bayernwerk announced its NEXT.LineInspect project to have drones increasingly take over overhead-line monitoring from helicopters, with AI comparing images to the target condition, and started staff drone training with start-up U-ROB.",
+      "source_ids": [
+        "S24"
+      ],
+      "so_what": "Bayernwerk planned to move from helicopters to drones years ago. Docked drones are the next step toward autonomous operation.",
+      "verification": "supported",
+      "verification_note": "S24 (9. November 2020): 'Künftig sollen vermehrt Drohnen die Strecke abfliegen, künstliche Intelligenz (KI) gleicht das aktuelle Bild dann mit dem Soll-Zustand ab'; NEXT.LineInspect; Schulung by 'Start-up U-ROB'"
+    },
+    {
+      "claim": "In 2021 E.ON deployed eSmart Systems' AI software to analyse drone images across E.DIS, MITNETZ STROM and Westnetz (about 45,000 km of lines), and in 2020 MITNETZ STROM flew a fully automated BVLOS line-inspection test with FlyNex.",
+      "source_ids": [
+        "S14",
+        "S16"
+      ],
+      "so_what": "E.ON's German DSOs have experience with BVLOS and AI image analysis, so FlytBase should integrate with existing analytics rather than replace them.",
+      "verification": "supported",
+      "verification_note": "S14 (Feb 2021): Grid Vision deployment 'commenced in January' across 'E.DIS, MITNETZ STROM and Westnetz, totaling approx. 45 000 kilometers'; S16 (May 2020): FlyNex 'performed a fully automated beyond visual line of sight (BVLOS) flight' for MITNETZ"
+    },
+    {
+      "claim": "In November 2025 CTU Prague, E.ON Group Innovation and EG.D tested HIVE technology for autonomous power-line inspection with cooperating drones, including BVLOS flights and automatic 3D LiDAR scanning.",
+      "source_ids": [
+        "S15"
+      ],
+      "so_what": "E.ON Group Innovation is actively testing autonomous multi-drone BVLOS operations, which could make it an internal ally.",
+      "verification": "supported",
+      "verification_note": "S15 (5 Nov 2025): FEL CTU 'in collaboration with E.ON Group Innovation and EG.D, has successfully tested HIVE technology ... cooperating drones'; 'BVLOS ... automatic 3D LiDAR scanning'"
+    }
+  ],
+  "positioning_recommendation": {
+    "summary": "Position FlytBase as the hardware-agnostic autonomy and remote-operations layer for docked drones at Bayernwerk's HV substations, the aerial counterpart to the 'one grid, one robot platform' model E.ON's subsidiaries already chose for ground robots. Lead with a tightly scoped pilot on a few of the ~40 Bavarian substations: routine thermal and visual missions flown remotely from a central location, with outputs fed into existing analytics and asset systems, and a parallel LBA SORA 2.5 application for BVLOS. Frame the value in E.ON's own language: efficiency and digitalisation (Polaris cost pressure, the CFO's investment discipline) plus resilience and critical-infrastructure protection (Bayernwerk's resilience project). Present the pilot as an affordable step within Bayernwerk's EUR 12 billion 2026-2030 programme.",
+    "angles": [
+      "Platform consolidation: E.ON subsidiaries moved from scattered single-vendor robot pilots to one shared platform [S7]. Offer the same for aerial inspection, with one orchestration layer across docks, sites and subsidiaries.",
+      "Complement, don't compete, with ground robots: Bayernwerk's substation robot already does thermography and gauge reading [S36]. Docks add aerial thermal views of yards, busbars and lines, cover many sites at once, and do not need a robot at each substation.",
+      "Ageing assets and scarce technicians: substations built 1950s-1970s and hard-to-staff inspection crews [S36][S7]. Remote-operated docks cut drive time and let fewer engineers cover more sites.",
+      "Weather-proof cadence: Q1 2026 grid work slipped because of cold weather [S17] and helicopter inspection depends on visibility [S26]. Docked drones fly on schedule and on demand after storms.",
+      "Resilience: Bayernwerk's resilience project and the 2026 sabotage and drone-incident debate [S33][S34][S44]. Offer remote perimeter and fence checks and rapid post-incident assessment, framed as the operator's authorised and identifiable fleet.",
+      "Regulatory realism: BVLOS needs an LBA SORA 2.5 authorisation with a two to four month timeline [S31], and the LBA has approved docked BVLOS before [S32]. Propose a January pilot plan that starts compliantly and moves to BVLOS when approved.",
+      "German utility proof: reference FlytBase's EnBW autonomous drone-dock case study [S1] as a peer German energy deployment."
+    ],
+    "risks_or_objections": [
+      "An incumbent robotics platform (Korial/Energy Robotics) is already at Bayernwerk and sister DSOs. Bayernwerk may see substation inspection as covered or ask for integration.",
+      "Polaris efficiency programme and possible reorganisation from spring 2027 could change stakeholders, freeze discretionary spend or centralise procurement.",
+      "Heightened drone security concerns at critical infrastructure may make security and IT/OT teams wary of permanent drones at substations. Expect requirements on data hosting, airspace and identification.",
+      "The LBA SORA 2.5 BVLOS approval (two to four months) may not fit a pilot that starts right after the January proposal.",
+      "E.ON already has 270+ trained drone pilots and established AI analytics partners (eSmart Systems). FlytBase must show value beyond what in-house manual drone teams provide.",
+      "A competitor with prior German docked BVLOS approval (Percepto) is active in this market."
+    ]
+  },
+  "not_found": [
+    "A total public count of Bayernwerk Netz high-voltage substations, and confirmation that the contact's ~40 substations are Bayernwerk's (only regional counts such as 21 in Schwandorf were found).",
+    "Any public page naming an 'Asset Inspection, Grid Operations' unit at E.ON SE or Bayernwerk, or the contact's reporting line.",
+    "The current E.ON SE board member responsible for Energy Networks from a 2025/2026 source (the E.ON board page could not be read; the latest stored source is from 2021).",
+    "E.ON 2025 annual report PDF and CEO letter text (not readable). Investor priorities rely on the official results releases instead.",
+    "LinkedIn profiles for Bayernwerk or E.ON operations, digital/innovation and procurement leaders (Chrome tools not available; job-ad pages were blocked).",
+    "Procurement leadership or tender process for inspection technology at Bayernwerk or E.ON.",
+    "Any existing drone-in-a-box deployment or LBA BVLOS authorisation held by Bayernwerk or E.ON in Germany.",
+    "Inspection-specific opex figures (crew cost per substation round) at Bayernwerk. The only spend figure found is the >EUR 100,000 helicopter line inspection in 2024.",
+    "Useful Reddit practitioner discussion on German substation drone inspection (searches timed out or returned unrelated posts)."
+  ],
+  "queries_run": [
+    {
+      "category": "budget_signals",
+      "query": "E.ON annual report 2024 investments Energy Networks capex",
+      "kept_sources": [
+        "S12"
+      ]
+    },
+    {
+      "category": "budget_signals",
+      "query": "E.ON investment plan 2025-2028 / 2026-2030 grid",
+      "kept_sources": [
+        "S11"
+      ]
+    },
+    {
+      "category": "budget_signals",
+      "query": "E.ON half year 2026 results investments Energy Networks",
+      "kept_sources": [
+        "S17"
+      ]
+    },
+    {
+      "category": "budget_signals",
+      "query": "Bayernwerk investiert 2025 Rekord Investitionen Umspannwerke",
+      "kept_sources": [
+        "S29",
+        "S30"
+      ]
+    },
+    {
+      "category": "investor_priorities",
+      "query": "Bayernwerk Jahrespressekonferenz April 2026 Westphal Investitionen",
+      "kept_sources": [
+        "S33"
+      ]
+    },
+    {
+      "category": "investor_priorities",
+      "query": "E.ON annual report 2025 letter to shareholders Birnbaum regulation",
+      "kept_sources": [
+        "S11"
+      ]
+    },
+    {
+      "category": "org_structure",
+      "query": "E.ON SE Management Board members Energy Networks responsibility 2025",
+      "kept_sources": [
+        "S14"
+      ]
+    },
+    {
+      "category": "org_structure",
+      "query": "Bayernwerk Netz GmbH Geschäftsführung Netzbetrieb Umspannwerke Anzahl",
+      "kept_sources": [
+        "S28"
+      ]
+    },
+    {
+      "category": "org_structure",
+      "query": "Bayernwerk Vorstand 2026 Vorstandsvorsitzender Technikvorstand",
+      "kept_sources": [
+        "S33",
+        "S24"
+      ]
+    },
+    {
+      "category": "org_structure",
+      "query": "Bayernwerk Leiter Umspannwerke / Leiter Hochspannung / Asset Management",
+      "kept_sources": [
+        "S29"
+      ]
+    },
+    {
+      "category": "technology_adoption",
+      "query": "Bayernwerk Drohne Inspektion Umspannwerk Freileitung",
+      "kept_sources": [
+        "S7",
+        "S8"
+      ]
+    },
+    {
+      "category": "technology_adoption",
+      "query": "E.ON drone BVLOS power line inspection Germany Avacon E.DIS Westnetz",
+      "kept_sources": [
+        "S13",
+        "S14",
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "category": "technology_adoption",
+      "query": "Bayernwerk Drohnen Netzbetrieb Drohnenpiloten",
+      "kept_sources": [
+        "S24"
+      ]
+    },
+    {
+      "category": "technology_adoption",
+      "query": "Bayernwerk Roboter Umspannwerk autonome Inspektion",
+      "kept_sources": [
+        "S36",
+        "S43"
+      ]
+    },
+    {
+      "category": "operations_context",
+      "query": "Bayernwerk Hochspannungsleitungen Hubschrauber Kontrolle",
+      "kept_sources": [
+        "S26"
+      ]
+    },
+    {
+      "category": "operations_context",
+      "query": "Luftfahrt-Bundesamt BVLOS Betriebsgenehmigung Drohne Netzbetreiber 2025",
+      "kept_sources": [
+        "S31",
+        "S32"
+      ]
+    },
+    {
+      "category": "recent_news",
+      "query": "E.ON cost-saving programme Polaris Manager Magazin October 2026",
+      "kept_sources": [
+        "S19"
+      ]
+    },
+    {
+      "category": "recent_news",
+      "query": "Drohnenabwehr kritische Infrastruktur Umspannwerke Netzbetreiber 2026",
+      "kept_sources": [
+        "S34",
+        "S44"
+      ]
+    },
+    {
+      "category": "operations_context",
+      "query": "Reddit: drone in a box / substation drone inspection / BVLOS Germany LBA (r/drones, r/UAVmapping)",
+      "kept_sources": []
+    }
+  ],
+  "removed_by_fact_check": [
+    {
+      "claim": "At its April 2026 annual press conference Bayernwerk said it will spend around EUR 12 billion on the Bavarian energy transition from 2026 to 2030, with almost EUR 2.2 billion in 2026 and close to EUR 2.5 billion in each of 2029 and 2030.",
+      "source_ids": [
+        "S33"
+      ],
+      "so_what": "Bayernwerk has a large, growing budget of its own, so a pilot of a few docks is small next to annual spending.",
+      "verification": "unsupported",
+      "verification_note": "Only source S33 is a raw .docx binary (PK zip header, deflated content); full stored text searched, no readable text for '12 Milliarden', '2,2', '2,5' or the press conference"
+    },
+    {
+      "claim": "Bayernwerk's management board said in April 2026 that it is pursuing a central resilience project covering climate risks and possible physical attacks, working with security authorities, the Bundeswehr and emergency services.",
+      "source_ids": [
+        "S33"
+      ],
+      "so_what": "Remote, on-demand situational awareness at substations (for example after storms or incidents) maps directly to Bayernwerk's resilience project.",
+      "verification": "unsupported",
+      "verification_note": "Only source S33 is an unreadable .docx binary; no readable text on a resilience project, Bundeswehr or security authorities"
+    },
+    {
+      "claim": "At its April 2026 annual press conference the Bayernwerk AG management board consisted of Dr. Egon Leo Westphal (chair), Dr. Daniela Groher (CFO) and Albert Zettl (HR and market board member).",
+      "source_ids": [
+        "S33"
+      ],
+      "so_what": "These are the executives above the Bavarian grid operator. Budget for a scaled rollout would likely need their sign-off.",
+      "verification": "unsupported",
+      "verification_note": "Only source S33 is an unreadable .docx binary; no readable names or board roles in stored text"
+    },
+    {
+      "claim": "Dr. Egon Leo Westphal is Chair of the management board (Vorstandsvorsitzender), Bayernwerk AG",
+      "source_ids": [
+        "S33",
+        "S24"
+      ],
+      "verification": "unsupported",
+      "verification_note": "S33 unreadable binary; S24 names Westphal only as 'Technikvorstand' (2020), not 'Vorstandsvorsitzender'. Title not shown in stored text"
+    },
+    {
+      "claim": "Dr. Daniela Groher is CFO (Finanzvorständin), Bayernwerk AG",
+      "source_ids": [
+        "S33"
+      ],
+      "verification": "unsupported",
+      "verification_note": "Only source S33 is an unreadable .docx binary; name and title not in stored text"
+    },
+    {
+      "claim": "Albert Zettl is HR and market board member (Personal- und Marktvorstand), Bayernwerk AG",
+      "source_ids": [
+        "S33"
+      ],
+      "verification": "unsupported",
+      "verification_note": "Only source S33 is an unreadable .docx binary; name and title not in stored text"
+    }
+  ],
+  "fact_check": {
+    "claims_checked": 46,
+    "removed": 6,
+    "partial": 2
+  },
+  "sources_registered": 44,
+  "pdf_checklist": [
+    {
+      "item": "Organizational structure and reporting lines",
+      "ok": true,
+      "detail": "INFERENCE (not sourced): the contact signs as 'Head of Asset Inspection, Grid Operations' at E.ON SE, but ~40 HV substations in Bavaria fall in the Bayernwerk Netz GmbH grid area (S28). The role probably sits in Bayernwerk Netz's high-voltage organisation (the 'Leiter der Hochspannung' area, S28) or in an asset management/technical function under it. That function reports up to the Bayernwerk AG management board (CEO Westphal, CFO Groher, S33), which in turn reports into E.ON's Energy Networks division. Procurement, which the email names, is probably a Bayernwerk or E.ON procurement function separate from the contact's line. The economic buyer is likely the head of the high-voltage area or a Bayernwerk board member, not the contact."
+    },
+    {
+      "item": "Budget signals from public filings (capex, opex, technology)",
+      "ok": true
+    },
+    {
+      "item": "Recent news, press releases, strategic announcements",
+      "ok": true
+    },
+    {
+      "item": "Stakeholder or investor letters revealing priorities",
+      "ok": true
+    },
+    {
+      "item": "Synthesized FlytBase positioning recommendation",
+      "ok": true
+    },
+    {
+      "item": "All research real: every kept claim cites a stored source and passed the fact-check",
+      "ok": true,
+      "detail": "46 claims checked, 6 removed"
+    }
+  ]
+}

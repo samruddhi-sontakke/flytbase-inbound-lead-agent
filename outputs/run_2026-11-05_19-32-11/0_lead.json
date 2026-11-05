@@ -1,0 +1,53 @@
+{
+  "contact": {
+    "name": "Rodrigo Castillo",
+    "email": "r.castillo@sqm.cl",
+    "title": "Head of Operations, Northern Operations Division",
+    "division": "Northern Operations Division",
+    "seniority": "Head/Director"
+  },
+  "company": {
+    "name": "Sociedad Quimica y Minera de Chile (SQM)",
+    "short_name": "SQM",
+    "country": "Chile",
+    "region": "LATAM",
+    "email_domain": "sqm.cl",
+    "industry": "Mining",
+    "sub_industry": "Lithium extraction"
+  },
+  "inbound_channel": "flytbase.com/contact",
+  "subject": "Autonomous inspection for our Atacama lithium sites",
+  "requested_solution": "Drone-based (autonomous) inspection for lithium extraction sites",
+  "use_cases": [
+    "Autonomous drone-based site inspection",
+    "Replacing contracted inspection crews"
+  ],
+  "sites": {
+    "count": 3,
+    "description": "Large-scale lithium extraction sites",
+    "location": "Atacama Desert, Chile",
+    "operating_hours": "24/7"
+  },
+  "pain_points": [
+    "Contracted inspection crews are expensive",
+    "Contracted inspection work is hazardous"
+  ],
+  "referral_source": "Anglo American",
+  "timeline_signals": [
+    "Internal budget conversation scheduled for Q3"
+  ],
+  "budget_signals": [
+    "Internal budget conversation scheduled for Q3"
+  ],
+  "search_keywords": [
+    "SQM",
+    "lithium mining",
+    "Atacama Desert",
+    "drone inspection",
+    "autonomous drones",
+    "Chile mining",
+    "24/7 operations",
+    "salar brine extraction",
+    "Anglo American"
+  ]
+}

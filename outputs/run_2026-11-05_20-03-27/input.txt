@@ -1,0 +1,6 @@
+Source: flytbase.com/contact
+From: Test Contact A (ops.test@eon-example.com)
+Title: Head of Asset Inspection, Grid Operations
+Company: E.ON SE, Germany
+Subject: Drone-in-a-box for substation and line inspection
+Context: We inspect ~40 high-voltage substations in Bavaria manually every month. Looking at docked drones for routine thermal and visual inspection, ideally BVLOS. Evaluating vendors this quarter; procurement wants a pilot proposal by January.

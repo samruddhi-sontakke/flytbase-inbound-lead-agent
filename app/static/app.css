@@ -112,18 +112,18 @@ select.field{height:36px;padding:0 8px;font-size:13px;width:auto}
 .p-P1{background:var(--accent-soft);color:var(--accent-ink)}
 .p-P2{background:var(--blue-soft);color:var(--blue)}
 .p-P3,.p-none{background:var(--sunk);color:var(--muted)}
-.s-known,.s-done,.s-supported,.s-handed_off,.s-meeting_booked{background:var(--green-soft);color:var(--green)}
-.s-partial,.s-working,.s-queued{background:var(--amber-soft);color:var(--amber)}
+.s-known,.s-done,.s-supported,.s-handed_off,.s-meeting_booked,.s-handed_to_ae,.s-won{background:var(--green-soft);color:var(--green)}
+.s-partial,.s-working,.s-queued,.s-contacted,.s-discovery{background:var(--amber-soft);color:var(--amber)}
 .s-unknown,.s-new,.s-nurture{background:var(--sunk);color:var(--ink2)}
 .s-running{background:var(--accent-soft);color:var(--accent-ink)}
-.s-failed,.s-unsupported,.s-disqualified{background:var(--red-soft);color:var(--red)}
+.s-failed,.s-unsupported,.s-disqualified,.s-lost{background:var(--red-soft);color:var(--red)}
 .cite{display:inline-flex;align-items:center;height:18px;padding:0 5px;margin:0 1px;border-radius:3px;background:var(--sunk);border:1px solid var(--line);font-family:var(--mono);font-size:10.5px;color:var(--ink2);text-decoration:none;vertical-align:1px}
 .cite:hover{border-color:var(--accent);color:var(--accent)}
 
 /* table rows (expandable) */
 .tbl{border:1px solid var(--line);border-radius:8px;overflow-x:auto}
-.tbl-in{min-width:760px}
-.thead,.erow{display:grid;grid-template-columns:24px minmax(0,2fr) minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr) minmax(0,.9fr);gap:16px;align-items:center;padding:0 16px}
+.tbl-in{min-width:900px}
+.thead,.erow{display:grid;grid-template-columns:24px minmax(0,2fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.3fr) minmax(0,1fr) minmax(0,.8fr);gap:16px;align-items:center;padding:0 16px}
 .thead{height:40px;border-bottom:1px solid var(--line);background:var(--side);font-family:var(--mono);font-size:11px;color:var(--muted)}
 .erow{width:100%;min-height:56px;border:0;border-bottom:1px solid var(--line2);background:transparent;text-align:left;font-size:13px}
 .erow:hover{background:var(--hover)}
@@ -199,6 +199,52 @@ pre.code{margin:0;padding:12px;background:var(--side);border:1px solid var(--lin
 .note{padding:12px 0;border-bottom:1px solid var(--line2);display:flex;flex-direction:column;gap:4px}
 .note:last-child{border-bottom:0}
 
+/* crm: pipeline board, accounts, tasks, team & routing */
+.navsep{margin:10px 0 4px;padding:0 10px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(232px,1fr);gap:12px;overflow-x:auto;padding-bottom:8px;align-items:start}
+.kcol{background:var(--side);border:1px solid var(--line);border-radius:8px;min-height:260px;display:flex;flex-direction:column;min-width:0}
+.kcol.is-over{border-color:var(--accent);background:var(--accent-soft)}
+.khead{height:40px;padding:0 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--ink2)}
+.kcards{padding:8px;display:flex;flex-direction:column;gap:8px;flex-grow:1}
+.kcard{background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;cursor:grab;min-width:0}
+.kcard:hover{border-color:var(--line3);box-shadow:0 1px 2px rgba(20,20,20,.06)}
+.kcard.is-drag{opacity:.45}
+.kcard select.field{height:28px;font-size:12px;width:100%}
+.crmcard{border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;flex-direction:column}
+.crmcard .body{padding:14px 16px;display:flex;flex-direction:column;gap:10px;font-size:13px}
+.who{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:center}
+.who .r{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.reason{font-size:12px;color:var(--ink2);background:var(--side);border:1px solid var(--line2);border-radius:6px;padding:10px 12px;line-height:1.55}
+.task{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:start;padding:12px 16px;border-bottom:1px solid var(--line2);font-size:13px}
+.task:last-child{border-bottom:0}
+.task.is-done .ttl{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line3)}
+.tick{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line3);background:#fff;display:flex;align-items:center;justify-content:center;padding:0;color:transparent}
+.tick:hover{border-color:var(--green);color:var(--green)}
+.tick.on{border-color:var(--green);background:var(--green-soft);color:var(--green);cursor:default}
+.due{font-family:var(--mono);font-size:12px;color:var(--ink2);white-space:nowrap}
+.due.late{color:var(--red)}
+.loadbar{height:6px;border-radius:3px;background:var(--line2);overflow:hidden;min-width:60px}
+.loadbar>span{display:block;height:100%;background:var(--ink)}
+.loadbar>span.hi{background:var(--accent)}
+.ttbl{width:100%;border-collapse:collapse;font-size:13px}
+.ttbl th{height:40px;padding:0 12px;text-align:left;font-family:var(--mono);font-size:11px;font-weight:400;color:var(--muted);background:var(--side);border-bottom:1px solid var(--line);white-space:nowrap}
+.ttbl td{padding:10px 12px;border-bottom:1px solid var(--line2);vertical-align:middle}
+.ttbl tr:last-child td{border-bottom:0}
+.ttbl input.field{height:32px;font-size:13px;width:76px;padding:0 8px}
+.rules{display:grid;grid-template-columns:140px minmax(0,1fr);gap:14px 16px;align-items:start;font-size:13px}
+.rules>.k{color:var(--muted);padding-top:4px}
+.checks{display:flex;flex-wrap:wrap;gap:6px}
+.checks label{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:1px solid var(--line);border-radius:6px;background:#fff;font-size:12px;cursor:pointer}
+.checks label:has(input:checked){border-color:var(--ink);background:var(--sunk)}
+.checks input{accent-color:var(--ink);margin:0}
+.slain{display:flex;flex-wrap:wrap;gap:8px}
+.slain label{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;color:var(--ink2)}
+.slain input{width:72px;height:32px;font-size:13px;padding:0 8px}
+.acct{border-bottom:1px solid var(--line2)}
+.acct:last-child{border-bottom:0}
+.acctrow{display:grid;grid-template-columns:24px minmax(0,2fr) minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) auto;gap:16px;align-items:center;width:100%;min-height:56px;padding:0 16px;border:0;background:transparent;text-align:left;font-size:13px}
+.acctrow:hover{background:var(--hover)}
+
 /* palette, toast */
 .pal{position:fixed;inset:0;z-index:20;display:flex;justify-content:center;align-items:flex-start;padding:96px 16px 16px}
 .scrim{position:absolute;inset:0;border:0;background:rgba(20,20,20,.22);animation:fade 160ms ease-out both}
@@ -237,4 +283,13 @@ pre.code{margin:0;padding:12px;background:var(--side);border:1px solid var(--lin
   .timeline>li{grid-template-columns:88px 20px minmax(0,1fr)}
   .meter{grid-template-columns:minmax(0,1fr) 44px}
   .meter .pips{grid-column:1/-1;grid-row:2}
+  .rules{grid-template-columns:minmax(0,1fr)}
+  .rules>.k{padding-top:0}
+  .acctrow{grid-template-columns:24px minmax(0,1fr) auto}
+  .acctrow .hide-sm{display:none}
+  .navsep{display:none}
 }
+
+/* demo CRM hidden (SHOW_CRM=false in app.js): drop the owner column */
+body.nocrm .crmcol{display:none}
+body.nocrm .thead,body.nocrm .erow{grid-template-columns:24px minmax(0,2fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,1fr) minmax(0,.8fr)}

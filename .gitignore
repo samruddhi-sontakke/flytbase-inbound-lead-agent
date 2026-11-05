@@ -3,3 +3,12 @@ keys.txt.txt
 .env
 __pycache__/
 *.pyc
+
+# local-only agent notes and tooling (not part of the submission)
+CLAUDE.md
+install.cmd
+.claude/launch.json
+.claude/scheduled_tasks.lock
+.claude/settings.local.json
+# raw screenshots (the cropped slide images in docs/screens/slides are kept)
+docs/screens/*.png

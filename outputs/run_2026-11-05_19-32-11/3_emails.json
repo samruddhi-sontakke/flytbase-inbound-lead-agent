@@ -1,0 +1,289 @@
+{
+  "sequence_strategy": "Email 1 answers Mr. Castillo's request in his own terms (three 24/7 Atacama lithium sites, costly and hazardous contracted crews, Anglo American referral, Q3 budget conversation) and uses SQM's own FlytBase and Adentu deployment as the single proof point, then asks about Metrics and the Economic Buyer and offers two Santiago-time slots. If he goes quiet, each follow-up adds one new useful item aimed at a different gap: Email 2 gives the IT and connectivity precedent and turns the call into a Decision Criteria session, Email 3 gives the referrer's own peer deployment plus a forwardable summary so he can carry the case internally (Champion, Decision Process), and Email 4 closes the loop, offers to hold until the Q3 budget conversation and asks about the vendor onboarding path (Paper Process). The asks get smaller as the sequence goes on, and every email stands on its own in the same thread.",
+  "tone_adaptation": {
+    "seniority": "He is Head of Operations for a division, so the tone is formal, brief and peer-level ('Dear Mr. Castillo', no first name, no pressure). It leads with outcomes and crew safety and keeps specifications out of the body.",
+    "industry": "Mining and lithium extraction: the content is about crew safety, scheduled coverage of remote sites, uptime and a cost case. Acronyms are spelled out and there are no drone specs. Proof comes from mining deployments only: SQM's own 678 km² operation in northern Chile (S1) and Anglo American's Quellaveco mine (S32).",
+    "stated_context": "Each email mirrors what he told us: three large 24/7 sites in the Atacama, contracted crews that are expensive and hazardous, the Anglo American referral (named in Email 1 and used as the peer case in Email 3) and the Q3 budget conversation (the pilot scope and cost case are framed for it, and Email 4 offers to hold until then). He is in Chile, so times are in America/Santiago and Email 1 offers to continue in Spanish."
+  },
+  "emails": [
+    {
+      "step": 1,
+      "send_when": "Same business hour as the inbound (Thursday 5 November 2026, Santiago business hours), in reply to his original thread",
+      "goal": "Confirm we understood his request, show SQM's own verified precedent and book a 30-minute discovery call",
+      "meddpicc_gaps_targeted": [
+        "Metrics",
+        "Economic Buyer"
+      ],
+      "research_used": [
+        "S1"
+      ],
+      "subject": "Re: Autonomous inspection for our Atacama lithium sites",
+      "body": "Dear Mr. Castillo,\n\nThank you for your note and the Anglo American referral. You need drone-based inspection for three large 24/7 lithium extraction sites in the Atacama, because contracted crews are expensive and hazardous, ahead of a Q3 budget conversation.\n\nThe aim: fewer people on hazardous rounds, more frequent scheduled coverage, and a cost case ready for Q3.\n\nYour company already has a reference point: SQM's digital innovation team runs docked drones with Adentu and FlytBase across a 678 km² operation in northern Chile, and the published case study reports inspection time cut from days to hours with more than 95 percent mission reliability.\n\nA pilot could start with one dock at one site.\n\nTwo questions to prepare:\n1. Which three sites do you have in mind, and how often do crews inspect them today?\n2. Who else will take part in the Q3 budget conversation?\n\nWould a 30-minute call on Tuesday 10 November at 10:00 or Wednesday 11 November at 15:00 (Santiago time) suit you? You are welcome to bring a safety or IT colleague.\n\nCon gusto podemos continuar en español.\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "He asked us directly and is a P1 lead (ICP fit 91), so the reply must go out within the hour. Mirroring his own words earns agreement, and SQM's own deployment (S1) is the most relevant proof that exists: same company, same desert, same type of inspection. The two questions cover the biggest scoping and budget gaps without turning the reply into a form.",
+      "why_next": "If he does not reply, Email 2 answers a likely IT and connectivity concern with a new fact from the same deployment and turns the call into a Decision Criteria session, a different gap from Email 1.",
+      "success_signal": "He accepts one of the two slots or names the three sites and the people in the Q3 budget conversation.",
+      "research_used_valid": [
+        "S1"
+      ],
+      "gaps_valid": [
+        "Metrics",
+        "Economic Buyer"
+      ]
+    },
+    {
+      "step": 2,
+      "send_when": "+2 business days, Tuesday 10 November 2026 around 12:00 Santiago time (after the first proposed slot passes), same thread",
+      "goal": "Add the IT and connectivity precedent and restate the call with a new time, framed around his success criteria",
+      "meddpicc_gaps_targeted": [
+        "Decision Criteria"
+      ],
+      "research_used": [
+        "S1"
+      ],
+      "subject": "Re: Autonomous inspection for our Atacama lithium sites",
+      "body": "Dear Mr. Castillo,\n\nOne detail that may help your IT colleagues: in SQM's existing deployment, the docked drones send RGB and thermal imagery to SQM's Azure environment, with connectivity over Starlink. Data handling at a remote desert site already has a working precedent inside SQM.\n\nIf useful, a 20-minute call on Thursday 12 November at 11:00 Santiago time could list what a pilot would need to prove at your sites, such as dust and heat tolerance, remote operation and integration with your systems. Would that time work?\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "Large mining buyers usually stall on IT and security questions. Giving the integration precedent early removes one likely objection and adds something new he would miss without this email. It keeps the same call ask with a fresh time.",
+      "why_next": "Email 3 changes angle to the referrer's own deployment and gives a forwardable summary, so he can bring in safety, IT and finance without us.",
+      "success_signal": "He replies with criteria (heat, dust, connectivity, integration) or accepts the call.",
+      "research_used_valid": [
+        "S1"
+      ],
+      "gaps_valid": [
+        "Decision Criteria"
+      ]
+    },
+    {
+      "step": 3,
+      "send_when": "About +7 business days, Wednesday 18 November 2026, 10:00-12:00 Santiago time, same thread",
+      "goal": "Give peer proof from the referrer and a summary he can paste internally, then ask a smaller yes/no",
+      "meddpicc_gaps_targeted": [
+        "Champion",
+        "Decision Process"
+      ],
+      "research_used": [
+        "S32",
+        "S2",
+        "S1"
+      ],
+      "subject": "Re: Autonomous inspection for our Atacama lithium sites",
+      "body": "Dear Mr. Castillo,\n\nSince Anglo American referred you, their case may help: at Quellaveco in Peru they run a FlytBase drone-in-a-box with regional partner UAV Latam, flying scheduled inspections without on-site pilots.\n\nA summary you can forward internally:\n- Problem: costly, hazardous contracted inspection at three 24/7 sites\n- Approach: docked drones on scheduled, remotely run missions\n- Safety: fewer people on hazardous rounds\n- IT: imagery already reaches SQM's Azure environment\n- Next step: a one-site pilot scoped before the Q3 budget conversation\n\nIs a short call next week still useful, with your safety or IT colleagues if you wish?\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "After two touches without a reply, the likely blocker is that he needs to bring colleagues in. A peer deployment from the company that referred him, plus a five-line summary, gives him something to forward and coaches him as a champion. The ask shrinks to a yes/no.",
+      "why_next": "If he is still silent, Email 4 closes the loop politely, ties the next contact to his own Q3 timeline and asks about the vendor onboarding path.",
+      "success_signal": "He forwards the summary, copies a colleague, or says yes to a call.",
+      "research_used_valid": [
+        "S32",
+        "S2",
+        "S1"
+      ],
+      "gaps_valid": [
+        "Champion",
+        "Decision Process"
+      ]
+    },
+    {
+      "step": 4,
+      "send_when": "About +14 business days, Wednesday 25 November 2026, 10:00-12:00 Santiago time, same thread",
+      "goal": "Close the loop without pressure, offer to hold until his stated timeline and learn the paper process",
+      "meddpicc_gaps_targeted": [
+        "Paper Process"
+      ],
+      "research_used": [
+        "S15"
+      ],
+      "subject": "Re: Autonomous inspection for our Atacama lithium sites",
+      "body": "Dear Mr. Castillo,\n\nI will close the loop here so this does not crowd your inbox. I am glad to hold this until your Q3 budget conversation and come back with a one-site pilot scope and cost case for it.\n\nShould I check back ahead of that date, or is a colleague in supply chain better placed to explain how a new vendor is onboarded?\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase",
+      "why_this_email_now": "Three touches without a reply means it is time to stop. A respectful close tied to his own Q3 timeline keeps the relationship warm and avoids guilt. The question targets the last open gap, the paper process, and uses the supply chain function that research shows in the lithium operations' leadership team (S15).",
+      "why_next": "End of the active sequence. With no reply, the lead moves to value nurture every 4-6 weeks (case study, then implementation approach, then objections, then scoped pilot), with one refreshed touch before his Q3 budget conversation.",
+      "success_signal": "He names a date to reconnect or refers us to a procurement or supply chain contact.",
+      "research_used_valid": [
+        "S15"
+      ],
+      "gaps_valid": [
+        "Paper Process"
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "if_reply": "Positive: he accepts a slot or proposes a time",
+      "next_action": "Answer within the business hour, send the invitation, invite the AE and, after checking with the SQM account owner, Adentu. Pause the sequence.",
+      "draft_reply": "Dear Mr. Castillo,\n\nThank you. I will send the invitation for the time you chose, together with our Account Executive. If you agree, we can also invite Adentu, the Chilean integrator behind SQM's current FlytBase deployment.\n\nTo make the call useful, it would help to know the three sites beforehand. We will bring a one-site pilot outline you can take into the Q3 budget conversation.\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "Not until Q3 / budget not approved yet",
+      "next_action": "Thank him, offer one small step (a pilot scope or business-case brief for finance), log the date as a CRM task and stop the sequence until then.",
+      "draft_reply": "Dear Mr. Castillo,\n\nThank you, that timing makes sense. So you are ready for the Q3 conversation, we can prepare a short brief with a one-site pilot scope and the cost and payback figures SQM's existing deployment reported, at no commitment.\n\nWould it help if I sent that brief two weeks before the budget meeting? If you share the date, I will diarise it.\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "Referral to a colleague (for example the maintenance and automation, IT or supply chain team)",
+      "next_action": "Thank him, write to the named person citing his referral, copy him only if appropriate, and log both contacts.",
+      "draft_reply": "Dear Mr. Castillo,\n\nThank you for pointing me to your colleague. I will write to them today, mention that you suggested it, and share the same context on the three sites and the Q3 budget conversation. I will keep you copied unless you prefer otherwise.\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "Objection: IT/security review, permits for remote flights, or 'we already have a drone vendor'",
+      "next_action": "Acknowledge why it matters, give the approach and one proof point, and ask one follow-up question. Bring in the AE for the technical detail.",
+      "draft_reply": "Dear Mr. Castillo,\n\nThat is a fair concern, and the right moment to raise it. In SQM's existing deployment, imagery from the docked drones goes to SQM's own Azure environment, so data stays inside your systems, and the work is delivered locally with Adentu in Chile. Permits and security review would be part of the pilot scope from the start.\n\nWhich review would come first on your side, so we can prepare the right documents?\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "Out of office auto-reply",
+      "next_action": "Pause the sequence until the day after his return date, note any stand-in named in the auto-reply, and resend the most recent email then. Do not contact the stand-in unless the auto-reply invites it.",
+      "draft_reply": "Dear Mr. Castillo,\n\nWelcome back. Picking up your request about drone inspection for the three Atacama lithium sites: would a 30-minute call on one of the next two Tuesdays or Wednesdays, at 10:00 or 15:00 Santiago time, suit you?\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "No reply after Email 4",
+      "next_action": "Mark the lead as a ghost, not dead. Move to value nurture every 4-6 weeks, and set a CRM task for one refreshed touch about a month before his Q3 budget conversation.",
+      "draft_reply": "Dear Mr. Castillo,\n\nWith your Q3 budget conversation approaching, here is the one-site pilot outline mentioned earlier, based on how SQM's existing docked-drone deployment started: one dock, one zone, one use case. If a 20-minute call to adapt it to your three sites would help, I can suggest two times in Santiago time.\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "Polite non-commitment (for example 'lo vamos a ver')",
+      "next_action": "Log it as not yet, not as interest. Confirm in writing what happens next and who owns it.",
+      "draft_reply": "Dear Mr. Castillo,\n\nThank you. To confirm next steps: I will hold until you have reviewed it internally and check back on a date that suits you. If a colleague should receive the summary in the meantime, I am happy to send it.\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    },
+    {
+      "if_reply": "No / unsubscribe / hostile",
+      "next_action": "Stop on every channel immediately, do not argue, and record the opt-out in the CRM.",
+      "draft_reply": "Dear Mr. Castillo,\n\nUnderstood, thank you for letting me know. I will not contact you further about this.\n\nKind regards,\nSamruddhi Sontakke\nBusiness Development, FlytBase"
+    }
+  ],
+  "bdr_notes": [
+    "[NEED: confirm which Q3 he means. Today is November 2026, so calendar Q3 2026 has passed. He probably means a fiscal or 2027 Q3, but ask on the call before quoting dates.]",
+    "[NEED: confirm which three sites. Public sources describe two main lithium sites (Salar de Atacama and the Carmen plant, S8), and since 27 December 2025 the Salar lithium operations run under Novandino (S7), so the contracting entity may be Novandino rather than SQM S.A.]",
+    "[NEED: check with the FlytBase account owner whether SQM is an active customer, and whether Adentu is still a current partner, before naming Adentu in a call invite. Adentu is not on the public partner page.]",
+    "[NEED: ask him on the call whether he knows Rodrigo Toler (Deputy Manager of Digital Innovation, S1) as an internal reference.]",
+    "Do not quote the iodine yield figure from the SQM case study. The body says two percent and the headline says 4x, so it is unreconciled. The emails use only 'days to hours' and 'more than 95 percent mission reliability'.",
+    "The February 2026 Dirección del Trabajo suspension (S30, S31) is kept out of the emails on purpose. It is useful context for the AE but could read as pointing at a compliance failure."
+  ],
+  "playbook_checks": [
+    {
+      "check": "1. Email 1 mirrors the exact request and names the referral and timeline",
+      "passed": true,
+      "note": "Three large 24/7 Atacama lithium sites, expensive and hazardous contracted crews, Anglo American referral, Q3 budget conversation."
+    },
+    {
+      "check": "2. Email 1 has one proof point with an S# source and no feature list",
+      "passed": true,
+      "note": "SQM's own FlytBase/Adentu deployment (S1): days to hours, more than 95 percent mission reliability. No yield figure."
+    },
+    {
+      "check": "3. Email 1 has at most 2 discovery questions mapped to Stage 1 gaps",
+      "passed": true,
+      "note": "Q1 Metrics (sites and inspection frequency), Q2 Economic Buyer (who joins the Q3 budget conversation)."
+    },
+    {
+      "check": "4. Email 1 has one CTA with two specific times in the buyer's time zone",
+      "passed": true,
+      "note": "Tuesday 10 November 10:00 or Wednesday 11 November 15:00, Santiago time; offer to bring a safety or IT colleague."
+    },
+    {
+      "check": "5. Email 1 is at most 200 words and every follow-up is shorter",
+      "passed": true,
+      "note": "Email 1 trimmed after the first lint run (212 words). Follow-ups are 72 to 109 words."
+    },
+    {
+      "check": "6. Each follow-up adds one new item, targets a different gap, has one ask and at most one link",
+      "passed": true,
+      "note": "E2 Azure/Starlink precedent (Decision Criteria), E3 Quellaveco peer case plus forwardable summary (Champion, Decision Process), E4 close the loop (Paper Process). No links."
+    },
+    {
+      "check": "7. Last email closes the loop and offers to hold until the stated timeline",
+      "passed": true,
+      "note": "Holds until the Q3 budget conversation."
+    },
+    {
+      "check": "8. No banned phrases, buzzwords, placeholders, em dashes or fake Fwd:",
+      "passed": true,
+      "note": "Gaps are only in bdr_notes as [NEED: ...]."
+    },
+    {
+      "check": "9. You/your outnumbers we/our in Email 1, at most 2 sentences start with I or We",
+      "passed": true,
+      "note": "you 7 vs we 0; no sentence in Email 1 starts with I or We."
+    },
+    {
+      "check": "10. Subject describes the content in 8 words or fewer, sentence case, no '!'",
+      "passed": true,
+      "note": "A real Re: on his own subject (7 words), kept for the whole thread."
+    },
+    {
+      "check": "11. Each email is signed by the named BDR",
+      "passed": true,
+      "note": "Samruddhi Sontakke, Business Development, FlytBase. No direct email or phone is in the data, so the BDR's mail client signature adds them."
+    },
+    {
+      "check": "12. Read aloud, could it be shorter, sentences over 20 words reread",
+      "passed": true,
+      "note": "Email 1 trimmed (mirror and outcome lines shortened). The one remaining long sentence is the sourced proof point, kept intact for accuracy."
+    }
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Reflects Stage 2 research (each email cites kept research)",
+      "ok": true,
+      "detail": "email 1: S1; email 2: S1; email 3: S32, S2, S1; email 4: S15"
+    },
+    {
+      "item": "Aims to discover the Stage 1 unknowns",
+      "ok": true,
+      "detail": "email 1: Metrics, Economic Buyer; email 2: Decision Criteria; email 3: Champion, Decision Process; email 4: Paper Process"
+    },
+    {
+      "item": "Tone adapted to seniority, industry and stated context",
+      "ok": true
+    },
+    {
+      "item": "Clear progression logic (why this email, then this email)",
+      "ok": true,
+      "detail": "4 emails, 8 reply branches"
+    },
+    {
+      "item": "Playbook: Email 1 fits one phone screen (<= 200 words)",
+      "ok": true,
+      "detail": "192 words"
+    },
+    {
+      "item": "Playbook: Email 1 asks at most 2 questions plus the CTA (<= 3 '?')",
+      "ok": true,
+      "detail": "3 question marks"
+    },
+    {
+      "item": "Playbook: Email 1 CTA offers two specific time options",
+      "ok": true,
+      "detail": "10:00, 15:00"
+    },
+    {
+      "item": "Playbook: Email 1 is about the buyer (you/your >= we/our, <= 2 sentences start with I/We)",
+      "ok": true,
+      "detail": "you 7 vs we 0; 0 I/We sentence starts"
+    },
+    {
+      "item": "Playbook: every follow-up is shorter than Email 1 and <= 120 words",
+      "ok": true,
+      "detail": "email 2: 95 words; email 3: 109 words; email 4: 72 words"
+    },
+    {
+      "item": "Playbook: one ask, at most 1 link per email",
+      "ok": true,
+      "detail": "email 1: 0; email 2: 0; email 3: 0; email 4: 0"
+    },
+    {
+      "item": "Playbook: no banned phrases, buzzwords, AI tells or placeholders",
+      "ok": true,
+      "detail": "clean"
+    },
+    {
+      "item": "Playbook: subjects describe the content (<= 8 words, no '!', emoji or fake Fwd:)",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "item": "Playbook: every email signed by the named BDR",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "item": "Playbook: final email closes the loop respectfully",
+      "ok": true,
+      "detail": "close the loop, check back, hold this, better placed"
+    }
+  ]
+}

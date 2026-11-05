@@ -1,0 +1,600 @@
+{
+  "search_log": [
+    "WebSearch 'site:flytbase.com substation inspection case study': no flytbase.com results (only third-party vendors such as Skydio, Energy Robotics and Raptor Maps).",
+    "WebSearch 'site:flytbase.com E.ON': no flytbase.com results, so no public sign that E.ON is already a FlytBase customer.",
+    "WebSearch 'site:flytbase.com utilities power grid drone dock case study Germany BVLOS': only a FlytBase webinars page and third-party coverage of a FlytBase-Skyqraft grid partnership; no case-study URL to add as an extra.",
+    "No referrer to search for: Stage 1 referral_source is null (inbound via flytbase.com/contact).",
+    "case_study_candidates crawled the flytbase.com sitemap: 24 case studies scanned, 6 shortlisted (S1-S6), none mention E.ON. No FlytBase case study covers substation or transmission-line inspection specifically; the closest are energy-utility docked-drone deployments (EnBW in Germany, TNB, Axpo)."
+  ],
+  "ranking": [
+    {
+      "url": "https://flytbase.com/case-studies/enbw-scaled-solar-pv-inspections-150-mw-to-1-gw-autonomous-drone-docks",
+      "title": "EnBW Case Study: Autonomous Drones for Gigawatt Solar Portfolio | FlytBase",
+      "fit_score": 82,
+      "industry_match": "Strong: EnBW is 'one of Germany's largest energy companies', a direct peer of E.ON in German energy.",
+      "use_case_match": "Partial-strong: routine thermal inspection with autonomous drone docks (DJI Dock 2 + FlytBase), but of solar PV assets, not substations or lines.",
+      "context_match": "Strong: Germany (Baden-Württemberg, next to Bavaria); covers German weather, grid curtailment, remote dispersed sites, a two-dock proof of concept, and a cadence change from annual to quarterly."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/axpo-hydropower-plant-monitoring-autonomous-drones",
+      "title": "Hydropower Monitoring with Autonomous Drones | FlytBase",
+      "fit_score": 64,
+      "industry_match": "Strong: Axpo Group is Switzerland's largest sustainable energy producer (utility).",
+      "use_case_match": "Partial: routine visual inspection of remote energy infrastructure with DJI Dock 2; the page says Axpo plans to expand to nuclear and grid infrastructure.",
+      "context_match": "Good: DACH region, Alpine winter conditions, and integration into health and safety, permits and aviation safety (FLARM), which bears on E.ON's BVLOS ambition."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/tnb-warehouse-asset-monitoring-autonomous-drones-malaysia",
+      "title": "How TNB Reduced Warehouse Inventory Verification Time by 90x with Autonomous Drones In Malaysia | FlytBase",
+      "fit_score": 58,
+      "industry_match": "Strong: TNB is Malaysia's primary energy supplier, running transmission and distribution lines.",
+      "use_case_match": "Weak-partial: warehouse asset monitoring today; the page says TNB 'is planning deployment at substations for regular inspections'.",
+      "context_match": "Weak: Malaysia, one 43-hectare site, delivered through partner Aerodyne."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/sensorem-autonomous-docked-drones-deployment-australia",
+      "title": "How Sensorem Deployed 20+ Autonomous Drones Across Remote Australian Industrial Sites | FlytBase",
+      "fit_score": 50,
+      "industry_match": "Weak: an industrial-site monitoring integrator, not a utility.",
+      "use_case_match": "Partial: asset inspection with a 20-dock network, more than 11,000 BVLOS missions and a central remote operations center.",
+      "context_match": "Moderate: shows multi-site scale, 24/7 operation and BVLOS one-to-many management, which matters for ~40 dispersed substations; geography (Western Australia) does not match."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+      "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone | FlytBase | FlytBase",
+      "fit_score": 40,
+      "industry_match": "Weak: mining.",
+      "use_case_match": "Partial: routine daily RGB and thermal dock inspections with ranked findings, more than 95 percent mission reliability.",
+      "context_match": "Weak: Chile, a single large open site; useful mainly as a pilot-to-routine story."
+    },
+    {
+      "url": "https://flytbase.com/case-studies/aerial-fences-automating-ranch-security-oversight-drones-flytbase",
+      "title": "How Aerial Fences is Automating Ranch Security and Oversight using Autonomous Drones | FlytBase | FlytBase",
+      "fit_score": 20,
+      "industry_match": "None: agriculture / ranch security.",
+      "use_case_match": "Weak: fence-line patrols with thermal.",
+      "context_match": "None: a single US ranch under Part 107."
+    }
+  ],
+  "primary": {
+    "url": "https://flytbase.com/case-studies/enbw-scaled-solar-pv-inspections-150-mw-to-1-gw-autonomous-drone-docks",
+    "title": "EnBW Case Study: Autonomous Drones for Gigawatt Solar Portfolio | FlytBase",
+    "source_id": "S1",
+    "why_strongest_fit": "EnBW is one of Germany's largest energy companies, so it is the closest peer to E.ON among FlytBase's published customers. The site has no substation or line case study, but EnBW shows the same operating model E.ON is asking for: docked drones (DJI Dock 2 on FlytBase) running routine thermal inspection across dispersed remote energy assets in place of people travelling to site. It deals with the Germany-specific obstacles E.ON's Bavarian team will meet, namely unpredictable weather that makes thermal flight windows hard to schedule, grid curtailment, and terrain with line-of-sight problems. It also started as a two-dock proof of concept, which matches the pilot proposal E.ON's procurement wants by January.",
+    "key_proof_points": [
+      "Solar portfolio grew 'from 150 MW to 1 GW in just four years'",
+      "Increased inspection frequency 'from annual to quarterly monitoring'",
+      "'Eliminated six-hour round trips to remote sites'",
+      "'The proof-of-concept deployment with two operational docks is paving the way for autonomous operations across EnBW's entire gigawatt-scale solar portfolio'",
+      "Stack: 'DJI Dock 2 hardware with FlytBase's automation platform and Sitemark's AI analytics'",
+      "Before docks, 'pilots traveling two to six hours to remote sites often arrived to find conditions unsuitable for flying'"
+    ],
+    "how_to_use_it": "Use it as the German peer proof point in the first reply: 'another large German energy company moved routine thermal inspection to docked drones and went from annual to quarterly inspections without adding headcount'. Present the two-dock PoC as the template for E.ON's January pilot proposal (for example 1-2 docks at representative Bavarian substations). Say plainly that the EnBW assets are solar PV, not substations, so the claim stays honest, and use it to open a discussion of substation-specific missions, BVLOS approval in Germany and data integration.",
+    "url_verified": true
+  },
+  "secondary": {
+    "url": "https://flytbase.com/case-studies/axpo-hydropower-plant-monitoring-autonomous-drones",
+    "title": "Hydropower Monitoring with Autonomous Drones | FlytBase",
+    "why": "A DACH utility (Axpo, Switzerland's largest sustainable energy producer) using DJI Dock 2 for routine inspection of remote energy infrastructure in harsh Alpine weather. The page covers health and safety, permits and aviation-safety (FLARM) integration and says Axpo plans to expand to grid infrastructure. Use it for the regulatory and operational-readiness discussion around BVLOS. TNB (S2) can be added as the only page that mentions substations, though only as a planned deployment."
+  },
+  "referral_connection": {
+    "found": false,
+    "url": null,
+    "source_id": null,
+    "explanation": "Stage 1 found no referrer in the email (referral_source is null; the inbound came through flytbase.com/contact), so there is no referrer to connect to a case study."
+  },
+  "existing_relationship": {
+    "found": false,
+    "url": null,
+    "source_id": null,
+    "explanation": "None of the 24 case studies in the flytbase.com sitemap mention E.ON, and 'site:flytbase.com E.ON' returned no FlytBase pages. FlytBase's public site shows no existing E.ON operation, partner or result."
+  },
+  "people_named": [],
+  "pre_scores": [
+    {
+      "url": "https://flytbase.com/case-studies/enbw-scaled-solar-pv-inspections-150-mw-to-1-gw-autonomous-drone-docks",
+      "title": "EnBW Case Study: Autonomous Drones for Gigawatt Solar Portfolio | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "energy",
+        "germany",
+        "grid",
+        "high",
+        "inspection",
+        "line",
+        "lines",
+        "operations",
+        "power",
+        "routine",
+        "substation",
+        "substations",
+        "thermal",
+        "utilities",
+        "visual"
+      ],
+      "pre_score": 18,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S1"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/tnb-warehouse-asset-monitoring-autonomous-drones-malaysia",
+      "title": "How TNB Reduced Warehouse Inventory Verification Time by 90x with Autonomous Drones In Malaysia | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docked",
+        "docks",
+        "drone",
+        "energy",
+        "high",
+        "inspection",
+        "line",
+        "lines",
+        "operations",
+        "power",
+        "substation",
+        "substations",
+        "visual"
+      ],
+      "pre_score": 14,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S2"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/axpo-hydropower-plant-monitoring-autonomous-drones",
+      "title": "Hydropower Monitoring with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "docks",
+        "drone",
+        "electricity",
+        "energy",
+        "grid",
+        "high",
+        "inspection",
+        "line",
+        "lines",
+        "operations",
+        "power",
+        "routine",
+        "visual"
+      ],
+      "pre_score": 13,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S3"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/sqm-678-km2-mine-autonomous-inspection-adentu-and-flytbase",
+      "title": "How SQM Turned a 678 km² Mine into an Autonomous Inspection Zone | FlytBase | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "high",
+        "inspection",
+        "line",
+        "lines",
+        "operations",
+        "power",
+        "routine",
+        "thermal",
+        "visual"
+      ],
+      "pre_score": 12,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S4"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/sensorem-autonomous-docked-drones-deployment-australia",
+      "title": "How Sensorem Deployed 20+ Autonomous Drones Across Remote Australian Industrial Sites | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "grid",
+        "high",
+        "inspection",
+        "line",
+        "operations",
+        "power",
+        "routine",
+        "visual"
+      ],
+      "pre_score": 11,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S5"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/aerial-fences-automating-ranch-security-oversight-drones-flytbase",
+      "title": "How Aerial Fences is Automating Ranch Security and Oversight using Autonomous Drones | FlytBase | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "drone",
+        "high",
+        "inspection",
+        "line",
+        "lines",
+        "operations",
+        "power",
+        "routine",
+        "thermal"
+      ],
+      "pre_score": 10,
+      "mentions_referrer": false,
+      "mentions_lead_company": false,
+      "source_id": "S6"
+    },
+    {
+      "url": "https://flytbase.com/case-studies/csx-autonomous-drone-rail-inspection",
+      "title": "How CSX Enhances Rail Safety with Autonomous Drone Inspections | FlytBase",
+      "keyword_hits": [
+        "docks",
+        "drone",
+        "high",
+        "inspection",
+        "line",
+        "lines",
+        "operations",
+        "power",
+        "thermal",
+        "visual"
+      ],
+      "pre_score": 10,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/how-bf-kiel-turned-emergency-response-into-a-3-minute-aerial-operation-with-autonomous-drones",
+      "title": "Autonomous Emergency Response by BF Kiel Fire Department with FlytBase | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "germany",
+        "grid",
+        "high",
+        "line",
+        "operations",
+        "power",
+        "visual"
+      ],
+      "pre_score": 10,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/mss-security-airport-bvlos-drone-operations-australia",
+      "title": "MSS Security Transforms Airport Safety with BVLOS Drone Operations in Australia | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "high",
+        "inspection",
+        "line",
+        "lines",
+        "operations",
+        "power",
+        "visual"
+      ],
+      "pre_score": 10,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/anglo-american-autonomous-mining-drones-peru-case-study",
+      "title": "How Anglo American Uses Autonomous Drones to Transform Mining Safety in Peru | FlytBase Case Study | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "high",
+        "line",
+        "lines",
+        "operations",
+        "power",
+        "visual"
+      ],
+      "pre_score": 9,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/dole-asia-autonomous-plantation-drone-security-philippines",
+      "title": "How Dole Asia Company Enhanced Plantation Security with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docked",
+        "docks",
+        "drone",
+        "line",
+        "operations",
+        "power",
+        "routine",
+        "visual"
+      ],
+      "pre_score": 9,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/autonomous-drone-inspections-oil-and-gas",
+      "title": "Autonomous Drone Inspections Boost Oil & Gas Efficiency  | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "energy",
+        "high",
+        "inspection",
+        "operations",
+        "power",
+        "routine"
+      ],
+      "pre_score": 9,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/24-7-drone-force-residential-estate-security-docks-south-africa",
+      "title": "24-7 Drone Force Secures Residential Estates using Autonomous Drones in South Africa | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "grid",
+        "line",
+        "operations",
+        "power",
+        "visual"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/agtech360-livestock-monitoring-autonomous-drones-australia",
+      "title": "<title>Case Study: AgTech360 Transforms Livestock Monitoring with Autonomous Drones</title> | FlytBase",
+      "keyword_hits": [
+        "drone",
+        "high",
+        "inspection",
+        "line",
+        "operations",
+        "power",
+        "routine",
+        "visual"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/aiview-autonomous-drones-italian-highway-monitoring",
+      "title": "AI View Group Transforms Italian Highway Monitoring with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "docked",
+        "drone",
+        "high",
+        "inspection",
+        "operations",
+        "power",
+        "routine",
+        "visual"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/discovery-land-autonomous-drone-security",
+      "title": "How Discovery Land Company Enhanced Security with Autonomous Drones | Case Study | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "drone",
+        "high",
+        "line",
+        "operations",
+        "power",
+        "thermal",
+        "visual"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/premier-security-autonomous-drone-surveillance",
+      "title": "How Premier Security Reduces Theft with Autonomous Drone Surveillance | Case Study | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "drone",
+        "high",
+        "line",
+        "operations",
+        "routine",
+        "thermal",
+        "visual"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/slovakia-military-wildfire-detection-dock-drones",
+      "title": "How Slovakia's Military Forest Enhances Wildfire Detection with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "drone",
+        "energy",
+        "high",
+        "line",
+        "operations",
+        "power",
+        "thermal",
+        "visual"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/titan-protection-autonomous-drone-security",
+      "title": "How Titan Protection Reduced Security Costs by 60% with Autonomous Drones | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "drone",
+        "high",
+        "inspection",
+        "line",
+        "operations",
+        "power",
+        "visual"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/uae-waste-management-autonomous-drone-implementation-case-study",
+      "title": "Months ROI timeline | FlytBase",
+      "keyword_hits": [
+        "docks",
+        "drone",
+        "high",
+        "inspection",
+        "operations",
+        "power",
+        "routine",
+        "thermal"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/ibn-firnas-drone-center-oman-government-construction-monitoring",
+      "title": "How IFDC Monitors 3 Oman Gov't Sites With Zero Pilots | FlytBase | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "drone",
+        "high",
+        "inspection",
+        "line",
+        "operations",
+        "power",
+        "utilities"
+      ],
+      "pre_score": 8,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/accelerating-road-incident-response-with-remotely-operated-drone-technology-at-transport-for-nsw",
+      "title": "Accelerating Road Incident Response with BVLOS Drone Technology | Transport for NSW & FlytBase | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "drone",
+        "high",
+        "line",
+        "lines",
+        "operations",
+        "visual"
+      ],
+      "pre_score": 7,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/ovrwatch-asheville-hurricane-disaster-recovery-drones-public-safety",
+      "title": "Disaster Recovery Case Study: Autonomous Drone Network in Asheville | FlytBase",
+      "keyword_hits": [
+        "bvlos",
+        "docks",
+        "drone",
+        "line",
+        "operations",
+        "power",
+        "visual"
+      ],
+      "pre_score": 7,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    },
+    {
+      "url": "https://flytbase.com/case-studies/daniel-yomtobian-private-estate-autonomous-drone-surveillance",
+      "title": "How Daniel Yomtobian Secures His Private Estate With Autonomous Drones | FlytBase | FlytBase",
+      "keyword_hits": [
+        "drone",
+        "high",
+        "line",
+        "operations",
+        "power"
+      ],
+      "pre_score": 5,
+      "mentions_referrer": false,
+      "mentions_lead_company": false
+    }
+  ],
+  "case_studies_scanned": 24,
+  "prescore_inputs": {
+    "keyword_terms": [
+      "bavaria",
+      "bvlos",
+      "docked",
+      "docks",
+      "drone",
+      "electricity",
+      "energy",
+      "germany",
+      "grid",
+      "high",
+      "inspection",
+      "line",
+      "lines",
+      "operations",
+      "power",
+      "routine",
+      "substation",
+      "substations",
+      "thermal",
+      "utilities",
+      "visual",
+      "voltage"
+    ],
+    "referrer_names": [],
+    "own_company_names": [
+      "e.on se",
+      "e.on"
+    ]
+  },
+  "pdf_checklist": [
+    {
+      "item": "Autonomously searched FlytBase's public website for case studies",
+      "ok": true,
+      "detail": "24 case studies scanned"
+    },
+    {
+      "item": "Referral connection identified (no hard-coding)",
+      "ok": true,
+      "detail": "found=False "
+    },
+    {
+      "item": "Matched on industry, use case and operational context",
+      "ok": true
+    },
+    {
+      "item": "Explains why the case study is the strongest fit",
+      "ok": true,
+      "detail": "EnBW Case Study: Autonomous Drones for Gigawatt Solar Portfolio | FlytBase"
+    },
+    {
+      "item": "Primary match is a page the crawler actually read",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<section id="p14-limits" data-transition="fade" style="background:#FBFBFA;color:#141414;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#C4501F">limitations, honestly</p>
+<h2 style="font-size:64px;font-weight:600;line-height:1.15">What I’d improve with more time</h2>
+</div>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:26px;color:#141414">
+<tr><th style="width:30%;text-align:left">Limitation</th><th style="width:36%;text-align:left">Why it matters</th><th style="width:34%;text-align:left">Next fix</th></tr>
+<tr><td>The scheduler lives in the session</td><td>The cron stops when Claude Code closes and expires after 7 days</td><td>Headless runs on a real scheduler, or a Gmail push webhook</td></tr>
+<tr><td>Judgement is still model output</td><td>Verdicts, ratings and wording can be off even when bounded</td><td>Slack approval before email 1; human review stays</td></tr>
+<tr><td>Public web only</td><td>The contact and his division weren’t in any public source</td><td>CRM and enrichment data; LinkedIn through the browser</td></tr>
+<tr><td>No CRM sync yet</td><td>Results live in MongoDB and the Lead Desk</td><td>Write leads and tasks to the team’s CRM</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-family:'IBM Plex Mono', 'Courier New', monospace;font-size:24px;color:#6B6E74">Inbound Lead Desk · 14 / 15</p>
+<aside>[9:45 – 10:20] Now the limitations, honestly. The biggest: the five-minute cron lives inside the Claude Code session, so it stops when the session closes and expires after seven days. For production I'd run it headless on a real scheduler or trigger it from a Gmail push notification. Second, the judgement steps are still model output. Python bounds them with schemas, citations, verification and checklists, but a human should approve email 1, ideally through Slack. Third, it only uses the public web. Rodrigo and his division don't show up in any public source, and the system flags that rather than guessing; CRM and enrichment data, plus LinkedIn through the browser, would close that gap. And there's no CRM sync yet: results live in MongoDB and the Lead Desk. I'd prioritise those before running this unattended.</aside>
+</section>

@@ -1,0 +1,71 @@
+{
+  "motion": "AE-led with partner (co-sell)",
+  "justification": {
+    "region": "Germany (Bavaria), EMEA. A German-language, EASA/LBA-regulated market where BVLOS approval in the 'specific' category and airspace integration are prerequisites. FlytBase's partner directory lists German partners (Droniq, Solectric), and Droniq specifically handles DJI Dock BVLOS operating licences and airspace integration in Germany (S21). Local partners cover German-speaking on-site deployment and support for docks at remote substations.",
+    "deal_complexity": "High. E.ON SE is a large enterprise utility; ~40 high-voltage substations, procurement already engaged and wanting a pilot proposal by January, and likely stakeholders across grid operations, procurement, IT/OT security, HSE and aviation compliance. A strategic logo with enterprise procurement and a competitive evaluation this quarter calls for a FlytBase AE to own the account and commercial relationship directly, not hand it to a Bronze-tier reseller.",
+    "partner_availability": "FlytBase's partner page (S18) lists two Germany-based partners, both Bronze Reseller / Solution Provider: Droniq and Solectric. Droniq has a public partnership with FlytBase to provide FlytBase software for DJI Dock operations and offers BVLOS licensing plus UTM airspace integration (S25, S21). Solectric is a DJI Enterprise dealer in Germany that presents DJI Dock 2 for energy (solar) sites (S27). No Germany-based System Integrator or BVLOS Advisory partner is listed; the nearest BVLOS Advisory partner is Drone Architect (Belgium) (S18).",
+    "existing_account_relationship": "None found. Stage 4 found no FlytBase case study, partner or page mentioning E.ON (24 case studies scanned, site:flytbase.com E.ON returned nothing). No partner has delivered a FlytBase project for this account, so the partner is chosen on in-country capability, not prior delivery."
+  },
+  "recommended_partners": [
+    {
+      "name": "Droniq",
+      "type": "Reseller",
+      "country": "Germany",
+      "source_id": "S25",
+      "evidence": "'Droniq is entering a partnership with the US-based drone autonomy software platform FlytBase... The software is particularly suitable for operating the DJI Dock... Possible application scenarios include... inspecting critical infrastructure.' Also S21: Droniq 'obtained the first operating licence for the DJI Dock drone-in-a-box system in Europe' and 'will take care of integrating the system into airspace... in addition to obtaining the operating licence to conduct flights beyond the pilot's visual line of sight.' Listed on S18 as 'Droniq Bronze Reseller Solution Provider Germany'.",
+      "role_in_deal": "Primary co-sell partner. E.ON wants BVLOS docked operations in Bavaria; Droniq (a DFS / Deutsche Telekom joint venture per public reporting) brings German BVLOS operating-licence experience, UTM airspace integration and DJI Dock supply, which are the biggest pilot risks. Role: secure the specific-category / BVLOS approval for the pilot substations, supply and commission docks, and provide German-language on-site support while the FlytBase AE owns the E.ON commercial relationship and platform scope.",
+      "verified_in_sources": true
+    },
+    {
+      "name": "Solectric",
+      "type": "Reseller",
+      "country": "Germany",
+      "source_id": "S27",
+      "evidence": "DJI Enterprise webinar on DJI Dock 2 for solar parks: 'Unser Händler Solectric wird über die vielfältigen Einsatzmöglichkeiten der Dock 2 berichten', with a Solectric key account manager responsible for DJI Enterprise since 2021. Listed on S18 as 'Solectric Bronze Reseller Solution Provider Germany'.",
+      "role_in_deal": "Backup / hardware supply partner. A German DJI Enterprise dealer with DJI Dock 2 experience in energy (solar) sites; can supply and service dock hardware across the ~40 substations if E.ON procurement prefers an existing hardware vendor or if Droniq capacity is limited. Does not show BVLOS licensing capability in the stored sources, so it would pair with Droniq or a BVLOS advisor for approvals.",
+      "verified_in_sources": true
+    },
+    {
+      "name": "Drone Architect",
+      "type": "other",
+      "country": "Belgium",
+      "source_id": "S18",
+      "evidence": "Listed on the FlytBase partner page as 'Drone Architect BVLOS Advisory Belgium'.",
+      "role_in_deal": "Optional BVLOS advisory support (EU/EASA) if the Bavarian BVLOS approval needs extra regulatory help beyond what Droniq provides. No Germany-based BVLOS Advisory partner is listed, so this is the nearest EASA-region option.",
+      "verified_in_sources": true
+    }
+  ],
+  "partner_type_needed": "A Germany-based, German-speaking drone operations partner that can (1) obtain EASA specific-category / BVLOS operating approvals from the LBA for docked operations near high-voltage substations, (2) supply, install and maintain DJI Dock hardware at remote Bavarian sites, and (3) provide local first-line support. Ideally with utility or critical-infrastructure references and the ability to work under a large utility's procurement and vendor-onboarding requirements. Droniq is the closest match in FlytBase's directory.",
+  "roles": {
+    "flytbase_ae": "Owns the E.ON account and procurement relationship: runs discovery (economic buyer, decision criteria, tender format), scopes the January pilot proposal (for example 1-2 docks at representative substations, modelled on the EnBW two-dock PoC), leads commercial terms, security / on-prem hosting review and the pilot-to-rollout plan.",
+    "partner": "Droniq (primary): BVLOS / specific-category approvals, airspace (UTM) integration, dock supply, installation and German-language on-site support for the pilot substations. Solectric as hardware backup. Joins the second meeting once the pilot scope is outlined.",
+    "bdr": "Responds within 24h, qualifies the open MEDDPICC gaps (economic buyer, competitors, tender process, whether E.ON requires a local partner or has an existing DJI hardware vendor), books the AE discovery call, and alerts the FlytBase partner manager to loop in Droniq before the pilot proposal is drafted."
+  },
+  "risks": [
+    "Both German partners are Bronze tier on FlytBase's directory; their capacity for a 40-site enterprise utility rollout should be confirmed with the FlytBase partner team before committing them in the proposal.",
+    "No German System Integrator is listed; integration with E.ON asset-management / OT systems may fall to FlytBase or E.ON's own IT, which needs scoping.",
+    "BVLOS approval near high-voltage infrastructure in Germany may take longer than the January pilot deadline allows; start the approval conversation with the partner early.",
+    "E.ON procurement may have existing drone or DJI hardware vendors, or may require a specific contracting entity; ask before positioning a partner.",
+    "Channel conflict: if both Droniq and Solectric are introduced, deal registration and roles must be agreed up front."
+  ],
+  "pdf_checklist": [
+    {
+      "item": "Direct AE or partner-led motion for the region decided",
+      "ok": true,
+      "detail": "AE-led with partner (co-sell)"
+    },
+    {
+      "item": "Justified by region, deal complexity and partner availability",
+      "ok": true
+    },
+    {
+      "item": "If partner-led: specific partner type and rationale",
+      "ok": true,
+      "detail": "Droniq (Reseller), Solectric (Reseller), Drone Architect (other)"
+    },
+    {
+      "item": "Every named partner appears in a stored source",
+      "ok": true
+    }
+  ]
+}

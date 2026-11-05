@@ -37,9 +37,20 @@ def build(run, sources):
     L = []
     a = L.append
     a(f"# Inbound Lead Report: {c.get('name')} - {co.get('name')}")
-    a(f"_Generated automatically by the Inbound Lead Agent on {run['meta']['started']} in {run['meta']['seconds']}s "
-      f"({run['meta']['llm_calls']} AI calls, {len(sources.items)} sources). Every research fact links to its source._\n")
+    a(f"_Generated automatically by the Inbound Lead Desk agent (Claude Code, one subagent per stage) on {run['meta']['started']} "
+      f"in {run['meta']['seconds']}s ({run['meta']['llm_calls']} subagent calls, {len(sources.items)} sources). "
+      f"Every research fact links to its source._\n")
     a(f"> **{h.get('one_line_summary', '')}**\n")
+    checks = [(n, t, (run.get(k) or {}).get("pdf_checklist")) for n, t, k in (
+        (1, "Qualification", "qualification"), (2, "Deep account research", "research"), (3, "Response generation", "emails"),
+        (4, "Case study matching", "case_study"), (5, "Partner identification", "partner"), (6, "AE handoff", "handoff"))]
+    if any(c for _, _, c in checks):
+        a("## Assignment requirements check\n_Each requirement in the assignment PDF, checked in Python against the stage output._\n")
+        a("| Stage | Requirement | Met |\n|---|---|---|")
+        for n, t, c in checks:
+            for x in c or []:
+                a(f"| {n} {t} | {x['item']}{' (' + str(x['detail']) + ')' if x.get('detail') else ''} | {'yes' if x['ok'] else '**no**'} |")
+        a("")
 
     # ---------- Stage 1
     s = q["scores"]

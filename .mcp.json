@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "leaddesk": {
+      "type": "stdio",
+      "command": "py",
+      "args": ["-m", "leaddesk_mcp.server"],
+      "env": {}
+    }
+  }
+}

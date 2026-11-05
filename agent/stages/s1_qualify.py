@@ -1,10 +1,10 @@
-"""Stage 1: Qualification with MEDDPICC.
+"""Stage 1: Qualification (MEDDPICC). Deterministic part.
 
-Design choice: the LLM only does the *reading* (what is known, what is missing,
-rating each fit factor 0-5 with evidence). The *scoring* is plain Python below,
-so the priority score is transparent, repeatable and easy to change.
+The `stage-1-qualify` subagent (.claude/agents/stage-1-qualify.md) does the reading: it extracts the known
+information from the email, sets known / partial / unknown for each MEDDPICC element and rates each ICP fit
+factor 0-5 with evidence. The scoring is plain Python here, so the priority score is transparent,
+repeatable and easy to retune.
 """
-from .. import llm, log
 
 FRAMEWORK = "MEDDPICC"
 FRAMEWORK_WHY = (
@@ -39,33 +39,29 @@ FIT_FACTORS = {
 }
 
 STATUS_POINTS = {"known": 1.0, "partial": 0.5, "unknown": 0.0}
-
-PROMPT = """You are a senior enterprise BDR qualifying an inbound lead with MEDDPICC.
-Use ONLY the structured lead below. Do not invent facts.
-
-LEAD:
-{lead}
-
-Return JSON:
-{{
-  "elements": [
-    {{"key": "M", "name": "Metrics", "status": "known|partial|unknown",
-      "evidence": "exact detail from the lead, or null",
-      "missing": "what we still need to learn",
-      "discovery_question": "one natural question a BDR would ask to fill the gap"}}
-    ... one object for EACH of: {elements}
-  ],
-  "fit_ratings": {{ "<factor>": {{"rating": 0-5, "reason": "short, evidence-based"}} ... for each of: {factors} }},
-  "risks": ["things that could slow or kill the deal"],
-  "summary": "2-3 sentence qualification verdict"
-}}"""
+LEAD_REQUIRED = ["contact", "company", "subject", "requested_solution", "use_cases", "sites", "pain_points",
+                 "referral_source", "timeline_signals", "budget_signals", "search_keywords"]
 
 
-def _score(result):
-    fit = 0.0
+def rubric():
+    """What the subagent must fill in. Served by the MCP tool `get_rubric`, so Python stays the single source of truth."""
+    return {
+        "framework": FRAMEWORK, "framework_default_rationale": FRAMEWORK_WHY,
+        "elements": [{"key": k, "name": n, "definition": d} for k, n, d in ELEMENTS],
+        "fit_factors": [{"key": k, "weight": w, "definition": d} for k, (w, d) in FIT_FACTORS.items()],
+        "statuses": list(STATUS_POINTS),
+        "scoring": "priority = 0.7 x ICP fit + 0.3 x MEDDPICC completeness; tier set by ICP fit (>=75 P1, >=55 P2, else P3)",
+    }
+
+
+def score(result):
+    fit, parts = 0.0, []
     for factor, (weight, _) in FIT_FACTORS.items():
-        r = result.get("fit_ratings", {}).get(factor, {}).get("rating", 0) or 0
-        fit += weight * max(0, min(5, float(r))) / 5
+        r = (result.get("fit_ratings", {}).get(factor) or {}).get("rating", 0) or 0
+        r = max(0.0, min(5.0, float(r)))
+        pts = weight * r / 5
+        fit += pts
+        parts.append(f"{factor} {r:g}/5 x {weight} = {pts:.1f}")
     elements = result.get("elements", [])
     completeness = 100 * sum(STATUS_POINTS.get(e.get("status", "unknown"), 0) for e in elements) / max(1, len(ELEMENTS))
     priority = round(0.7 * fit + 0.3 * completeness)
@@ -81,26 +77,56 @@ def _score(result):
         "priority_score": priority,
         "priority_tier": tier,
         "formula": "priority = 0.7 x ICP fit + 0.3 x MEDDPICC completeness; tier set by ICP fit (>=75 P1, >=55 P2)",
+        "calculation": parts + [f"ICP fit = {fit:.1f}", f"MEDDPICC completeness = {completeness:.1f}%",
+                                f"priority = 0.7 x {fit:.1f} + 0.3 x {completeness:.1f} = {priority}"],
     }
 
 
-def run(lead):
-    log.stage(1, f"Qualification - {FRAMEWORK}")
-    import json
-    prompt = PROMPT.format(
-        lead=json.dumps(lead, indent=2, ensure_ascii=False),
-        elements=", ".join(f"{k} {n}" for k, n, _ in ELEMENTS),
-        factors=", ".join(f"{k} ({d})" for k, (_, d) in FIT_FACTORS.items()),
-    )
-    result = llm.ask(prompt, temperature=0.1, label="s1_qualify")
-    result["framework"] = FRAMEWORK
-    result["framework_rationale"] = FRAMEWORK_WHY
-    result["fit_weights"] = {k: w for k, (w, _) in FIT_FACTORS.items()}
-    result["scores"] = _score(result)
-    known = [e["name"] for e in result.get("elements", []) if e.get("status") == "known"]
-    unknown = [e["name"] for e in result.get("elements", []) if e.get("status") != "known"]
-    s = result["scores"]
-    log.ok(f"ICP fit {s['icp_fit_score']}/100 | MEDDPICC completeness {s['meddpicc_completeness']}% | {s['priority_tier']}")
-    log.ok(f"Known: {', '.join(known) or 'none'}")
-    log.ok(f"Gaps to discover: {', '.join(unknown)}")
-    return result
+def validate(data):
+    """Return a list of problems; an empty list means the subagent output has the required shape."""
+    problems = []
+    lead = data.get("lead") or {}
+    for k in LEAD_REQUIRED:
+        if k not in lead:
+            problems.append(f"lead.{k} missing")
+    keys = {e.get("key") for e in data.get("elements") or []}
+    for k, n, _ in ELEMENTS:
+        if k not in keys:
+            problems.append(f"MEDDPICC element {k} ({n}) missing")
+    for e in data.get("elements") or []:
+        if e.get("status") not in STATUS_POINTS:
+            problems.append(f"element {e.get('key')} has status {e.get('status')!r}")
+    for f in FIT_FACTORS:
+        if f not in (data.get("fit_ratings") or {}):
+            problems.append(f"fit_ratings.{f} missing")
+    return problems
+
+
+def postprocess(data):
+    """Python adds the framework metadata and computes the scores. Returns (qualification, lead)."""
+    lead = data.pop("lead")
+    data["framework"] = FRAMEWORK
+    data.setdefault("framework_rationale", FRAMEWORK_WHY)
+    data["fit_weights"] = {k: w for k, (w, _) in FIT_FACTORS.items()}
+    data["scores"] = score(data)
+    data["known_information"] = [e["name"] for e in data.get("elements", []) if e.get("status") == "known"]
+    data["missing_information"] = [{"element": e["name"], "status": e.get("status"), "missing": e.get("missing"),
+                                    "discovery_question": e.get("discovery_question")}
+                                   for e in data.get("elements", []) if e.get("status") != "known"]
+    return data, lead
+
+
+def checklist(q, lead):
+    s = q.get("scores") or {}
+    return [
+        {"item": "Framework stated and explained", "ok": bool(q.get("framework") and q.get("framework_rationale"))},
+        {"item": "Known information extracted from the email",
+         "ok": bool(lead.get("contact", {}).get("name") and q.get("known_information")),
+         "detail": ", ".join(q.get("known_information") or [])},
+        {"item": "Missing information required for full qualification", "ok": bool(q.get("missing_information")),
+         "detail": ", ".join(m["element"] for m in q.get("missing_information") or [])},
+        {"item": "Fit assessment (every ICP factor rated with a reason)",
+         "ok": all((q.get("fit_ratings", {}).get(f) or {}).get("reason") for f in FIT_FACTORS)},
+        {"item": "Priority score with reasoning", "ok": bool(s.get("priority_score") is not None and q.get("summary")),
+         "detail": f"{s.get('priority_score')}/100, {s.get('priority_tier')}"},
+    ]

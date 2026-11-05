@@ -1,17 +1,14 @@
-"""Stage 2: Deep account research.
+"""Stage 2: Deep account research. Deterministic part.
 
-Three steps, each inspectable:
-  1. PLAN    - the LLM writes search queries from the parsed lead (no hard-coded company).
-  2. GATHER  - Tavily runs every query; each result is stored with a source ID.
-  3. WRITE + VERIFY - the LLM writes the brief citing source IDs only, then a second,
-               separate check confirms every claim is supported by the cited text.
-               Unsupported claims are removed and listed in the output.
+Flow (each step inspectable):
+  1. PLAN + GATHER  - the `stage-2-research` subagent plans queries across the PDF categories, finds sources
+                      with WebSearch / Reddit / LinkedIn, and registers each one through the MCP tools
+                      `read_page` / `register_source`, which store the raw text and return an ID like S7.
+  2. WRITE          - the subagent writes the brief, citing only those IDs, and saves it as a draft.
+  3. VERIFY         - a separate `research-fact-checker` subagent gets every claim plus the stored text of the
+                      sources it cites (built here by `claims_for_check`) and returns a verdict per claim.
+  4. APPLY (Python) - `apply_fact_check` removes unsupported claims and claims citing unknown IDs, and records them.
 """
-import datetime
-import json
-import re
-
-from .. import config, llm, log, tools
 
 CATEGORIES = {
     "org_structure": "organisational structure, divisions, executives and reporting lines relevant to the contact",
@@ -22,174 +19,133 @@ CATEGORIES = {
     "technology_adoption": "drones, automation, digital innovation or remote operations already used by the company",
 }
 
-PLAN_PROMPT = """Today is {today}. Plan web research on this inbound lead's company.
-
-LEAD:
-{lead}
-
-Write {n} precise web search queries covering these categories:
-{cats}
-
-Tips: use the company's full and short name; include document types (annual report, 20-F,
-capex, investor presentation, sustainability report); include the current and previous year
-where useful; include the contact's division and sites. Return JSON:
-{{"queries": [{{"category": "<category key>", "query": "<search text>"}}]}}"""
-
-WRITE_SYSTEM = (
-    "You are a meticulous B2B account researcher. Every factual claim MUST cite one or more "
-    "source IDs like [S3] that appear in the provided sources. If the sources do not contain "
-    "something, say it was not found. Never use outside knowledge for facts, numbers, names or dates. "
-    "Never name a person unless that name appears in the sources - not even in an inference. "
-    "When sources conflict, use the MOST RECENT one and say which period it covers."
-)
-
-WRITE_PROMPT = """Today is {today}. Write a research brief on {company} for an inbound lead from {contact}, {title}.
-Seller: {vendor} (autonomous drone / drone-in-a-box operations platform for large industrial sites).
-
-LEAD CONTEXT:
-{lead}
-
-SOURCES:
-{sources}
-
-Return JSON:
-{{
-  "company_snapshot": [finding],
-  "org_structure": {{
-      "findings": [finding],
-      "relevant_stakeholders": [{{"name": str, "title": str, "why_relevant": str, "source_ids": [str]}}],
-      "likely_reporting_line": "how the contact's role probably fits, labelled as inference; use roles, not names, unless the name is in the sources"
-  }},
-  "budget_signals": [finding],
-  "recent_news": [finding],
-  "investor_priorities": [finding],
-  "operations_context": [finding],
-  "technology_adoption": [finding],
-  "positioning_recommendation": {{
-      "summary": "how {vendor} should position itself, 3-4 sentences",
-      "angles": ["specific angle tied to a finding, with [S#]"],
-      "risks_or_objections": [str]
-  }},
-  "not_found": ["important things we searched for but could not find"]
-}}
-where finding = {{"claim": "one factual sentence", "source_ids": ["S1"], "so_what": "why this matters for the deal"}}.
-Prefer recent, specific, numeric facts over generic descriptions. 3-6 findings per list."""
-
-VERIFY_PROMPT = """You are a fact-checker. For each claim, decide whether the cited source text supports it.
-"supported" = clearly stated; "partial" = mostly supported but a detail (number/date/name) is not in the text;
-"unsupported" = not in the text.
-
-{items}
-
-Return JSON: {{"results": [{{"n": int, "verdict": "supported|partial|unsupported", "note": str}}]}}"""
-
 FINDING_LISTS = ["company_snapshot", "budget_signals", "recent_news", "investor_priorities",
                  "operations_context", "technology_adoption"]
 
 
-def _collect_findings(brief):
-    """Yield (path, finding) for every cited claim in the brief."""
+def _collect(brief):
+    """Yield (path, finding) for every cited claim in the brief, in a stable order."""
     for key in FINDING_LISTS:
-        for f in brief.get(key, []) or []:
+        for f in brief.get(key) or []:
             yield key, f
-    for f in brief.get("org_structure", {}).get("findings", []) or []:
+    org = brief.get("org_structure") or {}
+    for f in org.get("findings") or []:
         yield "org_structure", f
-    for p in brief.get("org_structure", {}).get("relevant_stakeholders", []) or []:
-        yield "stakeholders", {"claim": f"{p.get('name')} is {p.get('title')}", "source_ids": p.get("source_ids", []), "_ref": p}
+    for p in org.get("relevant_stakeholders") or []:
+        yield "stakeholders", p
 
 
-def _verify(brief, sources):
-    items, refs = [], []
-    all_findings = list(_collect_findings(brief))
-    for path, f in all_findings:
-        ids = [i for i in f.get("source_ids", []) if sources.get(i)]
-        if not ids:
-            f["verification"] = "unsupported"
-            f["verification_note"] = "no valid source cited"
-            continue
-        excerpt = "\n".join(f"[{i}] {sources.get(i)['content'][:2500]}" for i in ids[:3])
-        refs.append(f)
-        items.append(f"CLAIM {len(refs)}: {f['claim']}\nCITED TEXT:\n{excerpt}\n")
-    # verify in batches to stay well inside free-tier limits
-    for start in range(0, len(items), 15):
-        batch = items[start:start + 15]
-        res = llm.ask(VERIFY_PROMPT.format(items="\n".join(batch)), temperature=0.0, label="s2_verify")
-        for r in res.get("results", []):
-            idx = start + int(r.get("n", 0)) - 1
-            if 0 <= idx < len(refs):
-                refs[idx]["verification"] = r.get("verdict", "unsupported")
-                refs[idx]["verification_note"] = r.get("note", "")
-    # remove unsupported claims, keep a record of what was removed
-    removed = []
-    for key in FINDING_LISTS:
-        keep = []
-        for f in brief.get(key, []) or []:
-            (removed.append(f) if f.get("verification") == "unsupported" else keep.append(f))
-        brief[key] = keep
-    org = brief.get("org_structure", {})
-    for key in ("findings",):
-        keep = []
-        for f in org.get(key, []) or []:
-            (removed.append(f) if f.get("verification") == "unsupported" else keep.append(f))
-        org[key] = keep
-    # stakeholder names: copy the verdict back onto the person and drop unsupported ones
-    keep_people = []
-    for path, f in all_findings:
-        if path != "stakeholders":
-            continue
-        person = f["_ref"]
-        person["verification"] = f.get("verification", "unsupported")
-        if person["verification"] == "unsupported":
-            removed.append({"claim": f["claim"], "source_ids": f.get("source_ids"), "verification": "unsupported"})
+def _claim_text(path, f):
+    if path == "stakeholders":
+        return f"{f.get('name')} is {f.get('title')}"
+    return f.get("claim") or ""
+
+
+def _passages(claim, text, max_chars=3500, window=700):
+    """The parts of a long source that matter for one claim: the opening, plus the windows that contain the
+    claim's numbers and names. Long filings put the key figure deep in the text, so the first N characters
+    are not enough (a fact-checker given only the table of contents would wrongly reject true claims)."""
+    import re
+    text = text or ""
+    if len(text) <= max_chars:
+        return text
+    terms = set(re.findall(r"\d[\d.,]*\d|\d", claim))
+    terms |= {w for w in re.findall(r"[A-ZÁÉÍÓÚÑ][\wáéíóúñ]{3,}", claim)}
+    terms |= {w for w in re.findall(r"[a-záéíóúñ]{7,}", claim.lower())}
+    low = text.lower()
+    hits = []
+    for t in terms:
+        start = 0
+        while True:
+            i = low.find(t.lower(), start)
+            if i < 0:
+                break
+            hits.append(i)
+            start = i + 1
+    # score each window by how many distinct terms it contains, keep the best non-overlapping ones
+    scored = []
+    for h in set(hits):
+        a = max(0, h - window // 2)
+        chunk = low[a:a + window]
+        scored.append((sum(1 for t in terms if t.lower() in chunk), a))
+    scored.sort(reverse=True)
+    picked = []
+    for _, a in scored:
+        if all(abs(a - b) >= window for b in picked):
+            picked.append(a)
+        if (len(picked) + 1) * window >= max_chars:
+            break
+    parts = [text[:window]] + [f"[... at char {a} ...] " + text[a:a + window] for a in sorted(picked)]
+    return "\n".join(parts)
+
+
+def claims_for_check(brief, get_source, max_chars=3500):
+    """Numbered claims with the relevant passages of their cited sources, for the fact-checker subagent.
+    The checker can read any source in full with get_sources(ids, max_chars=60000) if a passage is not enough."""
+    items = []
+    for n, (path, f) in enumerate(_collect(brief), start=1):
+        ids = [i for i in f.get("source_ids") or [] if get_source(i)]
+        claim = _claim_text(path, f)
+        items.append({
+            "n": n, "section": path, "claim": claim, "source_ids": f.get("source_ids") or [],
+            "cited_text": {i: _passages(claim, get_source(i).get("content") or "", max_chars) for i in ids[:3]},
+            "source_length": {i: len(get_source(i).get("content") or "") for i in ids[:3]},
+            "auto_unsupported": not ids,
+        })
+    return items
+
+
+def apply_fact_check(brief, verdicts, get_source):
+    """Copy each verdict onto its claim, then drop unsupported ones. Claims that cite no valid stored
+    source are unsupported no matter what the checker said."""
+    by_n = {int(v.get("n", 0)): v for v in verdicts or []}
+    found = list(_collect(brief))
+    for n, (path, f) in enumerate(found, start=1):
+        valid = [i for i in f.get("source_ids") or [] if get_source(i)]
+        v = by_n.get(n) or {}
+        if not valid:
+            f["verification"], f["verification_note"] = "unsupported", "no valid stored source cited"
         else:
-            keep_people.append(person)
-    org["relevant_stakeholders"] = keep_people
+            f["verification"] = v.get("verdict") if v.get("verdict") in ("supported", "partial", "unsupported") else "unsupported"
+            f["verification_note"] = v.get("note") or ("not checked" if not v else "")
+    removed = []
+
+    def keep(items):
+        out = []
+        for f in items or []:
+            (removed.append(f) if f.get("verification") == "unsupported" else out.append(f))
+        return out
+
+    for key in FINDING_LISTS:
+        brief[key] = keep(brief.get(key))
+    org = brief.setdefault("org_structure", {})
+    org["findings"] = keep(org.get("findings"))
+    people = []
+    for p in org.get("relevant_stakeholders") or []:
+        if p.get("verification") == "unsupported":
+            removed.append({"claim": f"{p.get('name')} is {p.get('title')}", "source_ids": p.get("source_ids"),
+                            "verification": "unsupported", "verification_note": p.get("verification_note")})
+        else:
+            people.append(p)
+    org["relevant_stakeholders"] = people
     brief["removed_by_fact_check"] = removed
+    brief["fact_check"] = {"claims_checked": len(found), "removed": len(removed),
+                           "partial": sum(1 for _, f in _collect(brief) if f.get("verification") == "partial")}
     return brief
 
 
-def run(lead, sources):
-    log.stage(2, "Deep account research")
-    company = lead["company"]["name"]
-    today = datetime.date.today().isoformat()
-
-    plan = llm.ask(
-        PLAN_PROMPT.format(
-            today=today, lead=json.dumps(lead, ensure_ascii=False), n=config.MAX_RESEARCH_QUERIES,
-            cats="\n".join(f"- {k}: {v}" for k, v in CATEGORIES.items()),
-        ),
-        temperature=0.2, label="s2_plan",
-    )
-    queries = plan.get("queries", [])[: config.MAX_RESEARCH_QUERIES]
-    log.ok(f"Planned {len(queries)} searches")
-
-    # relevance filter: keep only results that actually mention the company
-    names = {n.lower() for n in (lead["company"].get("short_name"), lead["company"].get("name")) if n}
-    names |= {re.sub(r"\(.*?\)", "", n).strip() for n in names}
-    dropped = 0
-    for q in queries:
-        log.step(f"[{q.get('category')}] {q.get('query')}")
-        topic = "news" if q.get("category") == "recent_news" else "general"
-        for r in tools.search(q["query"], max_results=config.RESEARCH_RESULTS_PER_QUERY, topic=topic):
-            blob = f"{r['title']} {r['url']} {r['content']}".lower()
-            if not any(n and n in blob for n in names):
-                dropped += 1
-                continue
-            sources.add(r["url"], r["title"], r["content"], kind=q.get("category"), query=q["query"], published=r["published"])
-    research_ids = list(sources.items.keys())
-    log.ok(f"Collected {len(research_ids)} relevant sources ({dropped} off-topic results filtered out)")
-
-    c = lead["contact"]
-    brief = llm.ask(
-        WRITE_PROMPT.format(
-            today=today, company=company, contact=c.get("name"), title=c.get("title"), vendor="FlytBase",
-            lead=json.dumps(lead, ensure_ascii=False), sources=sources.as_prompt(research_ids),
-        ),
-        system=WRITE_SYSTEM, temperature=0.2, label="s2_write",
-    )
-    log.step("Fact-checking every claim against its cited source")
-    brief = _verify(brief, sources)
-    kept = sum(1 for _ in _collect_findings(brief))
-    log.ok(f"{kept} claims kept, {len(brief['removed_by_fact_check'])} removed by fact-check")
-    brief["queries_run"] = queries
-    return brief
+def checklist(r):
+    org = r.get("org_structure") or {}
+    pos = r.get("positioning_recommendation") or {}
+    cited = all(f.get("source_ids") for _, f in _collect(r))
+    return [
+        {"item": "Organizational structure and reporting lines", "ok": bool(org.get("findings") or org.get("relevant_stakeholders")),
+         "detail": org.get("likely_reporting_line")},
+        {"item": "Budget signals from public filings (capex, opex, technology)", "ok": bool(r.get("budget_signals"))},
+        {"item": "Recent news, press releases, strategic announcements", "ok": bool(r.get("recent_news"))},
+        {"item": "Stakeholder or investor letters revealing priorities", "ok": bool(r.get("investor_priorities"))},
+        {"item": "Synthesized FlytBase positioning recommendation", "ok": bool(pos.get("summary"))},
+        {"item": "All research real: every kept claim cites a stored source and passed the fact-check", "ok": cited,
+         "detail": f"{(r.get('fact_check') or {}).get('claims_checked', 0)} claims checked, "
+                   f"{(r.get('fact_check') or {}).get('removed', 0)} removed"},
+    ]
