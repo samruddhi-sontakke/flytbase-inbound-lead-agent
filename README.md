@@ -79,7 +79,7 @@ The Gmail sweep decisions (marker score, verdict and reason for every unread mai
 
 1. `py -m pip install -r requirements.txt`
 2. Put a MongoDB connection string in `.env` (git-ignored): `mongodb=mongodb+srv://...`
-3. Web app: `py -m app.server` (or `app.bat`), then open http://127.0.0.1:8000. It binds to this machine only.
+3. Web app: `py -m app.server` (or `app.bat`), then open http://127.0.0.1:8000. It binds to 127.0.0.1, so only this machine can reach it.
 4. Agent: open Claude Code in this folder, approve the `leaddesk` MCP server, and make sure the Gmail connector is connected.
    Run `/process-inbox` once, then start the cron: *"create a cron every 5 minutes that runs /process-inbox"*. For LinkedIn
    research, keep Chrome open with the Claude in Chrome extension.
